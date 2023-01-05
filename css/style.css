@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100&display=swap');
+
+body {
+    background: #ffffff;
+}
+
+.block {
+    width: 80%;
+    height: 2295px;
+    background-color: rgb(214, 180, 246);
+    margin-left: 10%;
+    position: relative;
+}
+
+.firma {
+    position: relative;
+    width: 170px;
+    height: 170px;
+}
+
+.firmaFoto {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 20px;
+}
+
+.firmaText {
+    position: absolute;
+    width: 170px;
+    height: 40px;
+    top: 100px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+}
+
+.menu {
+    width: 180px;
+    height: 500px;
+    background-color: aqua;
+    position: absolute;
+    top: 305px;
+}
+
+.lineMenu {
+    width: 170px;
+    height: 0;
+    border-bottom: 3px solid #A4ACAD;
+    position: absolute;
+    top: 230px;
+}
+
+.centerMain {
+    position: absolute;
+    width: 1060px;
+    height: 2295px;
+    left: 180px;
+    top: 0px;
+    background: #c6a4a4;
+}
+
+.basket {
+    width: 260px;
+    height: 130px;
+    background-color: rgb(63, 63, 245);
+    position: absolute;
+    top: 60px;
+    left: 1248px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.basketText1 {
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.basketText2 {
+    height: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+    color: #A4ACAD;
+    margin-bottom: 22px;
+}
+
+.basketText3 {
+    width: 260px;
+    height: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    color: #F2F2F2;
+    background-color: #FF9846;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* -------------------------------------------------- */
+.map {
+    width: 260px;
+    height: 225px;
+    background-color: rgb(245, 63, 209);
+    position: absolute;
+    top: 200px;
+    left: 1248px;
+    text-align: center;
+}
+
+.fotoMap {
+    width: 260px;
+    height: 115px;
+}
+
+.dot {
+    position: absolute;
+    top: 85px;
+    left: 100px;
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    background: #FF9846;
+    text-align: center;
+}
+
+.dotFoto1 {
+    width: 25px;
+    height: 38px;
+    position: absolute;
+    top: calc(50% - 19px);
+    left: calc(50% - 12.5px);
+
+}
+
+.dotFoto2 {
+    position: absolute;
+    width: 14.3px;
+    height: 14.3px;
+    top: calc(50% - 13px);
+    left: calc(50% - 7.2px);
+}
+
+.mapText1 {
+    width: 162px;
+    height: 30px;
+    position: absolute;
+    bottom: 22px;
+    left: calc(50% - 81px);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.mapText2 {
+    position: absolute;
+    width: 215px;
+    height: 22px;
+    left: calc(50% - 107.5px);
+    bottom: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #A4ACAD;
+}
+
+/* ------------------------------------------ */
+#menuButton {
+    position: relative;
+    width: 170px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#menuButton:hover {
+    color: #FF9846;
+}
+
+#menuButtonText {
+    margin-left: 40px;
+}
+
+.pizza {
+    position: absolute;
+    left: 5px;
+}
+
+.pizza1 {
+    position: absolute;
+    top: 1px;
+}
+
+.set {
+    position: absolute;
+    top: 2px;
+    left: 15px;
+}
+
+.set1 {
+    position: absolute;
+    top: 7.5px;
+    left: 21px;
+}
+
+.set2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.set3 {
+    position: absolute;
+    top: 23px;
+    left: 23px;
+}
+
+.set4 {
+    position: absolute;
+    top: 13px;
+    left: 1px;
+}
+
+.set5 {
+    position: absolute;
+    top: 18px;
+    left: 7px;
+}
+
+.set6 {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+}
+
+.set7 {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+}
+
+.wok {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.roll {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.sushi {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+}
+
+.salad {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+}
+
+.soup {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.kornDogi {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.drinks {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.stock {
+    position: absolute;
+    top: 0;
+    left: 2px;
+}
+
+.percent {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    color: #A4ACAD;
+}
+
+.phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100px;
+    border-right: 1px solid #A4ACAD;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contactsText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #000000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.watch1 {
+    position: absolute;
+    top: 4px;
+    left: 15px;
+}
+
+.tel11 {
+    text-align: center;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.phoneText {
+    position: relative;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #A4ACAD;
+    display: inline;
+}
+
+.tel1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 3px;
+    color: #FF9846;
+}
+
+.tel2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 3px;
+    color: #FF9846;
+}
+
+.cityText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #A4ACAD;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+}
+
+.city {
+    position: absolute;
+    top: 0;
+    left: 235px;
+    width: 400px;
+    height: 100px;
+}
+
+.selectSity {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+option:checked {
+    color: #FF9846;
+}
+
+.reviews {
+    font-family: 'Roboto';
+    position: absolute;
+    top: 40px;
+    left: 750px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+.delivery {
+    font-family: 'Roboto';
+    position: absolute;
+    top: 40px;
+    left: 850px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+.reviews:hover {
+    color: #FF9846;
+}
+
+.delivery:hover {
+    color: #FF9846;
+}
+
+.lineHed {
+    position: absolute;
+    top: 100px;
+    width: 1060px;
+    height: 0;
+    border-bottom: 1px solid #A4ACAD;
+}
+
+/* ---------------------------------------------- */
+.mainSlider {
+    position: absolute;
+    width: 950px;
+    height: 470px;
+    left: 55px;
+    top: 124px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.mainSliderFoto {
+    width: 100%;
+    height: 100%;
+}
+
+.mainSliderText {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 48%;
+    text-align: right;
+}
+
+.mainSliderText1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 70px;
+    font-style: italic;
+    color: #f08c0a;
+}
+
+.mainSliderText2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 15px;
+    font-style: normal;
+    color: #f08c0a;
+}
+
+.mainSliderTextPrice {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 40px;
+    font-style: normal;
+    color: #f08c0a;
+    position: absolute;
+    top: 170px;
+    left: 320px;
+}
+
+.mainSliderTextLine {
+    width: 130px;
+    height: 4px;
+    background-color: #000000;
+    position: absolute;
+    top: 190px;
+    left: 320px;
+    transform: rotate(-15deg);
+    z-index: 2;
+}
+
+.mainSliderTextNewPrice {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 60px;
+    font-style: normal;
+    color: #f08c0a;
+    position: absolute;
+    top: 220px;
+    left: 270px;
+}
+
+.mainSliderTextButton {
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #f66206;
+    position: absolute;
+    top: 380px;
+    left: 200px;
+}
+
+.mainSliderTextButtonText {
+    width: 110px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 20px;
+    letter-spacing: 3px;
+    font-style: normal;
+    color: #ffffff;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 55px);
+}
