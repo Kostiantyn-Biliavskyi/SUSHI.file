@@ -509,9 +509,8 @@ option:checked {
     height: 470px;
     left: 55px;
     top: 124px;
-    border: 1px solid black;
     border-radius: 5px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .mainSliderFoto {
