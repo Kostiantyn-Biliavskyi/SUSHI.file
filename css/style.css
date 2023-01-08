@@ -614,3 +614,31 @@ option:checked {
     left: calc(50% - 55px);
     cursor: pointer;
 }
+
+/* ---------------------------- navigationMainSlider ---------------------------------- */
+
+.navigationMainSlider {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+    position: absolute;
+    top: 610px;
+    left: calc(50% - 100px);
+    list-style: block;
+
+}
+
+.navigationMainSlider>ul>li {
+    background-color: #A4ACAD;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.navigationMainSliderDot {
+    display: flex;
+    padding: 0;
+    position: absolute;
+    left: calc(50% - 45px);
+}
