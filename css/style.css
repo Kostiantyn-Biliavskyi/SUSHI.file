@@ -62,7 +62,7 @@ body {
     height: 2295px;
     left: 180px;
     top: 0px;
-    background: #c6a4a4;
+    background: #F2F2F2;
 }
 
 .basket {
@@ -511,6 +511,7 @@ option:checked {
     top: 124px;
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .mainSliderFoto {
@@ -620,12 +621,10 @@ option:checked {
 .navigationMainSlider {
     width: 200px;
     height: 20px;
-    border: 1px solid black;
     position: absolute;
-    top: 610px;
+    top: 605px;
     left: calc(50% - 100px);
     list-style: block;
-
 }
 
 .navigationMainSlider>ul>li {
@@ -641,4 +640,160 @@ option:checked {
     padding: 0;
     position: absolute;
     left: calc(50% - 45px);
+}
+
+/* ------------------- navigationMainSlider ---------------------------- */
+#blockChiсken {
+    position: absolute;
+    width: 450px;
+    height: 200px;
+    top: 644px;
+    left: 55px;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.3) 100%), url(css.foto/чикен.png.png);
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#blockWithEel {
+    position: absolute;
+    width: 224px;
+    height: 200px;
+    left: 535px;
+    top: 644px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), url(css.foto/Сугрем.png);
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#blocCornDog {
+    position: absolute;
+    width: 224px;
+    height: 200px;
+    left: 781px;
+    top: 644px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%), url(css.foto/corn-dog.png);
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#blockPizza {
+    position: absolute;
+    width: 450px;
+    height: 200px;
+    left: 55px;
+    top: 874px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%), url(css.foto/pizza.png);
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#blockStock {
+    position: absolute;
+    width: 470px;
+    height: 200px;
+    left: 535px;
+    top: 874px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%), url(css.foto/stock.png);
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.blockChiсkenText {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 10px;
+    top: 160px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.blockWithEelText {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 10px;
+    top: 160px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.blocCornDogText {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    left: 10px;
+    top: 160px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.blockPizzaText {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 10px;
+    top: 160px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.blockStockText {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 10px;
+    top: 160px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#blockChiсken:hover {
+    color: #f08c0a;
+}
+
+#blocCornDog:hover {
+    color: #f08c0a;
+}
+
+#blockWithEel:hover {
+    color: #f08c0a;
+}
+
+#blockPizza:hover {
+    color: #f08c0a;
+}
+
+#blockStock:hover {
+    color: #f08c0a;
 }
