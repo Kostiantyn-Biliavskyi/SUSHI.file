@@ -797,3 +797,52 @@ option:checked {
 #blockStock:hover {
     color: #f08c0a;
 }
+
+.blockSliderMini {
+    position: absolute;
+    width: 1060px;
+    height: 460px;
+    top: 1124px;
+    left: 0;
+}
+
+#blockSliderMiniText1 {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 55px;
+    top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+#blockSliderMiniText2 {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 185px;
+    top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+}
+
+.sliderMini {
+    position: absolute;
+    width: 950px;
+    height: 400px;
+    border: 1px solid black;
+    top: 60px;
+    left: 55px;
+}
