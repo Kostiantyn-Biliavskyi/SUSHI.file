@@ -22,6 +22,7 @@ function movementFotoMain() {
     let sum = widthMainSliderFoto;
     sliderDot = navigationMainSlider.querySelectorAll('ul>li');
     i = -1;
+
     function go() {
         i++;
         if (i < lengthFoto.length) {
@@ -43,7 +44,6 @@ function movementFotoMain() {
                 sliderDot[0].style.backgroundColor = "#A4ACAD";
                 sliderDot[1].style.backgroundColor = "#f66206";
                 break;
-
             case 2:
                 sliderDot[1].style.backgroundColor = "#A4ACAD";
                 sliderDot[2].style.backgroundColor = "#f66206";
@@ -66,7 +66,7 @@ movementFotoMain();
 
 mainSlider.addEventListener("mouseover", mouseMainSlider);
 mainSlider.addEventListener("mouseout", mouseLeavesMainSlider);
-function mouseMainSlider(e) {
+function mouseMainSlider() {
     clearTimeout(stopSetTimeoutGo);
     return 0;
 };
