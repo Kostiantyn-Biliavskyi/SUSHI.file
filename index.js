@@ -63,16 +63,26 @@ function movementFotoMain() {
 
 };
 movementFotoMain();
-
+var po = 0;
 mainSlider.addEventListener("mouseover", mouseMainSlider);
-mainSlider.addEventListener("mouseout", mouseLeavesMainSlider);
+// mainSlider.addEventListener("mouseout", mouseLeavesMainSlider);
+
+centerMain.addEventListener("mouseover", mouseLeavesMainSlider);
+
 function mouseMainSlider() {
+    po = 1;
+    // alert(e.target.id + e.target.className + "  заходит");
     clearTimeout(stopSetTimeoutGo);
     return 0;
 };
 function mouseLeavesMainSlider() {
-    sliderDot[i].style.backgroundColor = "#A4ACAD";
-    movementFotoMain();
+
+    if (po == 1) {
+        // alert(e.target.id + e.target.className + "  ПОКИДАЕТ");
+        sliderDot[i].style.backgroundColor = "#A4ACAD";
+        movementFotoMain();
+        po = 0;
+    }
     return 0;
 };
 // ----------------------- функция слайдера фото и точки меняют цвет ------------------

@@ -508,6 +508,16 @@ option:checked {
     cursor: pointer;
 }
 
+#mainSliderWrapper {
+    position: absolute;
+    width: 950px;
+    height: 470px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    border: 1px solid red;
+}
+
 #mainSliderUl {
     display: flex;
     padding: 0;
@@ -523,25 +533,32 @@ option:checked {
     position: relative;
 }
 
-.mainSliderText {
+/* .mainSliderText {
     position: absolute;
-    width: 475px;
-    height: 235px;
+    width: 400px;
+    height: 380px;
     left: 48%;
     text-align: right;
-}
+    border: 1px solid black;
+} */
 
 .mainSliderText1 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
     font-size: 30px;
-    line-height: 70px;
+    line-height: 50px;
     font-style: italic;
     color: #f08c0a;
 }
 
 .mainSliderText2 {
+    position: absolute;
+    top: 70px;
+    right: 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -561,7 +578,7 @@ option:checked {
     color: #f08c0a;
     position: absolute;
     top: 170px;
-    left: 320px;
+    right: 20px;
 }
 
 .mainSliderTextLine {
@@ -569,8 +586,8 @@ option:checked {
     height: 4px;
     background-color: #000000;
     position: absolute;
-    top: 190px;
-    left: 320px;
+    top: 20px;
+    left: 0px;
     transform: rotate(-15deg);
     z-index: 2;
 }
@@ -585,7 +602,7 @@ option:checked {
     color: #f08c0a;
     position: absolute;
     top: 220px;
-    left: 270px;
+    right: 20px;
 }
 
 .mainSliderTextButton {
@@ -595,7 +612,7 @@ option:checked {
     background-color: #f66206;
     position: absolute;
     top: 380px;
-    left: 200px;
+    right: 20px;
     cursor: pointer;
 }
 
@@ -614,6 +631,10 @@ option:checked {
     top: calc(50% - 15px);
     left: calc(50% - 55px);
     cursor: pointer;
+}
+
+.mainSliderTextButton:hover {
+    background-color: #c44f06;
 }
 
 /* ---------------------------- navigationMainSlider ---------------------------------- */
@@ -798,12 +819,14 @@ option:checked {
     color: #f08c0a;
 }
 
+/* ------------------------------- */
 .blockSliderMini {
     position: absolute;
     width: 1060px;
     height: 460px;
     top: 1124px;
     left: 0;
+    border: 1px solid black;
 }
 
 #blockSliderMiniText1 {
@@ -838,7 +861,6 @@ option:checked {
     color: #A4ACAD;
 }
 
-/* --------------------------------------------------- */
 .sliderMini {
     position: absolute;
     width: 950px;
@@ -846,9 +868,10 @@ option:checked {
     border: 1px solid black;
     top: 60px;
     left: 55px;
+    overflow: hidden;
 }
 
-#sliderMini1 {
+#sliderMiniUl1 {
     display: flex;
     padding: 0;
     position: absolute;
@@ -856,7 +879,7 @@ option:checked {
     height: 400px;
 }
 
-#sliderMini2 {}
+#sliderMiniUl2 {}
 
 .sliderMiniLi {
     width: 316.6px;
@@ -948,4 +971,36 @@ option:checked {
     align-items: center;
     text-align: center;
     color: #F2F2F2;
+}
+
+#sliderMiniLiButton:hover {
+    background: #ff4000;
+}
+
+#blockSliderMiniButtonLeft {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    background-color: #f3be79;
+    border-radius: 30px;
+}
+
+#blockSliderMiniButtonRigth {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    right: 0;
+    background-color: #f3be79;
+    border-radius: 30px;
+}
+
+#blockSliderMiniButtonLeft:hover {
+    background-color: #f08c0a;
+}
+
+#blockSliderMiniButtonRigth:hover {
+    background-color: #f08c0a;
 }
