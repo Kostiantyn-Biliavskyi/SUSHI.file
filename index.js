@@ -64,43 +64,44 @@ function movementFotoMain() {
 };
 movementFotoMain();
 
-mainSlider.addEventListener("mouseover", mouseMainSlider);
-mainSlider.addEventListener("mouseout", mouseLeavesMainSlider);
-var bi, bo, mi;
-function mouseMainSlider(e) {
 
-    bi = e.target.dataset.mig;
-    // if (e.target.className == "mainSliderFoto" && bi != "hlop") {
-    // alert(e.target.id + e.target.className + " заходит");
-    // clearTimeout(stopSetTimeoutGo);
-    // }
-    ku();
-    return 0;
+mainSlider.addEventListener("mouseenter", mouseMainSlider);
+mainSlider.addEventListener("mouseleave", mouseLeavesMainSlider)
+
+function mouseMainSlider(e) {
+    clearTimeout(stopSetTimeoutGo);
 };
 function mouseLeavesMainSlider(e) {
-    bo = e.target.dataset.mig;
-    mi = e.target.className;
-    if (e.target.className == "mainSliderFoto" && bo != "hlop") {
-        alert(e.target.id + e.target.className + " покидает");
-        sliderDot[i].style.backgroundColor = "#A4ACAD";
-        movementFotoMain();
-    }
-    // ty();
-    return 0;
+    sliderDot[i].style.backgroundColor = "#A4ACAD";
+    movementFotoMain();
 };
 
-function ku() {
-    if (bi != "hlop") {
-        alert(bo + " - ku - зашёл");
-        // alert(e.target.id + e.target.className + " заходит");
-        clearTimeout(stopSetTimeoutGo);
+// ----------------------- функция слайдера фото и точки меняют цвет ------------------
+blockSliderMiniButtonLeft.addEventListener("click", sliderMiniLeft);
+blockSliderMiniButtonRigth.addEventListener("click", sliderMiniRigth);
+var sumSliderMini = 0, sliderMiniWidth, widthSliderMiniUl1 = sliderMiniUl1.offsetWidth;
+var sumSliderMiniUl1 = 0;
+function sliderMiniLeft() {
+    let sliderMiniClass = document.querySelector(".sliderMini");
+    sliderMiniWidth = sliderMiniClass.offsetWidth;
+    sumSliderMini = sumSliderMini - sliderMiniWidth;
+
+    sumSliderMiniUl1 = widthSliderMiniUl1 - sliderMiniWidth;
+    alert(sumSliderMiniUl1);
+    if (sumSliderMiniUl1 >= sliderMiniWidth) {
+        sliderMiniUl1.style.left = sumSliderMini + "px";
     }
 };
-// function ty() {
-if (mi == "mainSliderFoto" && bo == "hlop") {
-    //         alert(e.target.id + e.target.className + " покидает");
-    //         sliderDot[i].style.backgroundColor = "#A4ACAD";
-    //         movementFotoMain();
-}
-// }
-// ----------------------- функция слайдера фото и точки меняют цвет ------------------
+function sliderMiniRigth() {
+    // let sliderMiniClass = document.querySelector(".sliderMini");
+    // sliderMiniWidth = sliderMiniClass.offsetWidth;
+
+    // sumSliderMini = sumSliderMini + sliderMiniWidth;
+
+    // sumSliderMiniUl1 = widthSliderMiniUl1 + sumSliderMini;
+
+    // if (sumSliderMiniUl1 > sliderMiniWidth) {
+    //     sliderMiniUl1.style.left = sumSliderMini + "px";
+    // }
+
+};
