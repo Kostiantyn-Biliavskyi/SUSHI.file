@@ -63,6 +63,7 @@ body {
     left: 180px;
     top: 0px;
     background: #F2F2F2;
+    border: 1px solid black;
 }
 
 .basket {
@@ -506,16 +507,6 @@ option:checked {
     border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
-}
-
-#mainSliderWrapper {
-    position: absolute;
-    width: 950px;
-    height: 470px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10;
-    border: 1px solid red;
 }
 
 #mainSliderUl {
