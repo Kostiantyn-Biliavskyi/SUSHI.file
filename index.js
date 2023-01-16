@@ -66,13 +66,41 @@ movementFotoMain();
 
 mainSlider.addEventListener("mouseover", mouseMainSlider);
 mainSlider.addEventListener("mouseout", mouseLeavesMainSlider);
-function mouseMainSlider() {
-    clearTimeout(stopSetTimeoutGo);
+var bi, bo, mi;
+function mouseMainSlider(e) {
+
+    bi = e.target.dataset.mig;
+    // if (e.target.className == "mainSliderFoto" && bi != "hlop") {
+    // alert(e.target.id + e.target.className + " заходит");
+    // clearTimeout(stopSetTimeoutGo);
+    // }
+    ku();
     return 0;
 };
-function mouseLeavesMainSlider() {
-    sliderDot[i].style.backgroundColor = "#A4ACAD";
-    movementFotoMain();
+function mouseLeavesMainSlider(e) {
+    bo = e.target.dataset.mig;
+    mi = e.target.className;
+    if (e.target.className == "mainSliderFoto" && bo != "hlop") {
+        alert(e.target.id + e.target.className + " покидает");
+        sliderDot[i].style.backgroundColor = "#A4ACAD";
+        movementFotoMain();
+    }
+    // ty();
     return 0;
 };
+
+function ku() {
+    if (bi != "hlop") {
+        alert(bo + " - ku - зашёл");
+        // alert(e.target.id + e.target.className + " заходит");
+        clearTimeout(stopSetTimeoutGo);
+    }
+};
+// function ty() {
+if (mi == "mainSliderFoto" && bo == "hlop") {
+    //         alert(e.target.id + e.target.className + " покидает");
+    //         sliderDot[i].style.backgroundColor = "#A4ACAD";
+    //         movementFotoMain();
+}
+// }
 // ----------------------- функция слайдера фото и точки меняют цвет ------------------
