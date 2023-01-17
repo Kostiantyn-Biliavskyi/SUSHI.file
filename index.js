@@ -64,44 +64,114 @@ function movementFotoMain() {
 };
 movementFotoMain();
 
-
 mainSlider.addEventListener("mouseenter", mouseMainSlider);
 mainSlider.addEventListener("mouseleave", mouseLeavesMainSlider)
-
 function mouseMainSlider(e) {
     clearTimeout(stopSetTimeoutGo);
+    return 0;
 };
 function mouseLeavesMainSlider(e) {
     sliderDot[i].style.backgroundColor = "#A4ACAD";
     movementFotoMain();
+    return 0;
 };
-
 // ----------------------- функция слайдера фото и точки меняют цвет ------------------
-blockSliderMiniButtonLeft.addEventListener("click", sliderMiniLeft);
-blockSliderMiniButtonRigth.addEventListener("click", sliderMiniRigth);
+// --------------------------- MINI slider ---------------------------
+blockSliderMiniTextNew.addEventListener("click", clickTextNew);
+blockSliderMiniTextPopular.addEventListener("click", clickTextPopular);
+
 var sumSliderMini = 0, sliderMiniWidth, widthSliderMiniUl1 = sliderMiniUl1.offsetWidth;
-var sumSliderMiniUl1 = 0;
-function sliderMiniLeft() {
-    let sliderMiniClass = document.querySelector(".sliderMini");
+var sumSliderMiniUl1 = widthSliderMiniUl1, targetSliderMiniUl = sliderMiniUl1;
+var sliderMiniClass = document.querySelector(".sliderMini");
+sliderMiniWidth = sliderMiniClass.offsetWidth;
+
+function clickTextNew() {
+    blockSliderMiniTextNew.style.color = "#000000";
+    blockSliderMiniTextPopular.style.color = "#A4ACAD";
+    sliderMiniUl1.style.display = "";
+    sliderMiniUl2.style.display = "none";
+
+    widthSliderMiniUl1 = sliderMiniUl1.offsetWidth;
+    sumSliderMiniUl1 = widthSliderMiniUl1;
+    targetSliderMiniUl = sliderMiniUl1;
     sliderMiniWidth = sliderMiniClass.offsetWidth;
-    sumSliderMini = sumSliderMini - sliderMiniWidth;
+    sumSliderMini = 0;
+    return 0;
+};
+function clickTextPopular() {
+    blockSliderMiniTextPopular.style.color = "#000000";
+    blockSliderMiniTextNew.style.color = "#A4ACAD";
+    sliderMiniUl1.style.display = "none";
+    sliderMiniUl2.style.display = "";
 
-    sumSliderMiniUl1 = widthSliderMiniUl1 - sliderMiniWidth;
-    alert(sumSliderMiniUl1);
-    if (sumSliderMiniUl1 >= sliderMiniWidth) {
-        sliderMiniUl1.style.left = sumSliderMini + "px";
+    widthSliderMiniUl1 = sliderMiniUl2.offsetWidth;
+    sumSliderMiniUl1 = widthSliderMiniUl1;
+    targetSliderMiniUl = sliderMiniUl2;
+    sliderMiniWidth = sliderMiniClass.offsetWidth;
+    sumSliderMini = 0;
+    return 0;
+};
+
+blockSliderMiniButtonLeft.addEventListener("click", sliderMiniLeft);
+blockSliderMiniButtonLeft.addEventListener("mouseover", leftSaturated);
+blockSliderMiniButtonLeft.addEventListener("mouseout", leftDull);
+
+blockSliderMiniButtonRigth.addEventListener("click", sliderMiniRigth);
+blockSliderMiniButtonRigth.addEventListener("mouseover", rigthSaturated);
+blockSliderMiniButtonRigth.addEventListener("mouseout", rigthDull);
+
+function sliderMiniLeft() {
+    if (sumSliderMiniUl1 > sliderMiniWidth) {
+        sumSliderMini = sumSliderMini - sliderMiniWidth;
+        sumSliderMiniUl1 = sumSliderMiniUl1 - sliderMiniWidth;
+        targetSliderMiniUl.style.left = sumSliderMini + "px";
+        // blockSliderMiniButtonRigth.addEventListener("click", sliderMiniRigth);
+    } else {
+        blockSliderMiniButtonLeft.style.opacity = 0.3;
+        // blockSliderMiniButtonLeft.removeEventListener("click", sliderMiniLeft);
     }
+    return 0;
 };
+
 function sliderMiniRigth() {
-    // let sliderMiniClass = document.querySelector(".sliderMini");
-    // sliderMiniWidth = sliderMiniClass.offsetWidth;
-
-    // sumSliderMini = sumSliderMini + sliderMiniWidth;
-
-    // sumSliderMiniUl1 = widthSliderMiniUl1 + sumSliderMini;
-
-    // if (sumSliderMiniUl1 > sliderMiniWidth) {
-    //     sliderMiniUl1.style.left = sumSliderMini + "px";
-    // }
-
+    if (sumSliderMiniUl1 < widthSliderMiniUl1) {
+        sumSliderMini = sumSliderMini + sliderMiniWidth;
+        sumSliderMiniUl1 = sumSliderMiniUl1 + sliderMiniWidth;
+        targetSliderMiniUl.style.left = sumSliderMini + "px";
+        // blockSliderMiniButtonLeft.addEventListener("click", sliderMiniLeft);
+    } else {
+        blockSliderMiniButtonRigth.style.opacity = 0.3;
+        // blockSliderMiniButtonRigth.removeEventListener("click", sliderMiniRigth);
+    }
+    return 0;
 };
+// --------------------------------------------------------------------------
+function leftSaturated() {
+    if (sumSliderMiniUl1 > sliderMiniWidth) {
+        blockSliderMiniButtonLeft.style.opacity = 1;
+    } else {
+        blockSliderMiniButtonLeft.style.opacity = 0.3;
+    }
+    return 0;
+};
+
+function leftDull() {
+    blockSliderMiniButtonLeft.style.opacity = 0.3;
+    return 0;
+};
+
+function rigthSaturated() {
+    if (sumSliderMiniUl1 < widthSliderMiniUl1) {
+        blockSliderMiniButtonRigth.style.opacity = 1;
+    } else {
+        blockSliderMiniButtonRigth.style.opacity = 0.3;
+    }
+    return 0;
+};
+
+function rigthDull() {
+    blockSliderMiniButtonRigth.style.opacity = 0.3;
+    return 0;
+};
+sliderMiniUl2.style.display = "none";
+// -----------------------------------------------------------
