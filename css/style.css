@@ -1039,7 +1039,7 @@ option:checked {
     color: #A4ACAD;
     list-style: "";
     overflow: hidden;
-    background: linear-gradient(#F2F2F2, 90%, #ececec);
+    background: linear-gradient(#F2F2F2, 90%, #e3e1e1);
     background-color: #F2F2F2;
     z-index: 5;
 }
@@ -1151,33 +1151,165 @@ option:checked {
     height: 2px;
     background-color: #A4ACAD;
     position: absolute;
-    top: 1994px;
+    top: 2019px;
     left: 55px;
 }
 
 .centerMainInfa {
     width: 316px;
-    height: 270px;
-    border: 1px solid black;
+    height: 247px;
     position: absolute;
-    top: 2016px;
+    top: 2043px;
     left: 55px;
+    border-right: 0.5px solid #A4ACAD;
 }
 
 .centerMainMesenger {
     width: 316px;
-    height: 270px;
-    border: 1px solid black;
+    height: 247px;
     position: absolute;
-    top: 2016px;
+    top: 2043px;
     left: 371px;
 }
 
 .centerMainTelefon {
     width: 316px;
-    height: 270px;
-    border: 1px solid black;
+    height: 247px;
     position: absolute;
-    top: 2016px;
+    top: 2043px;
     left: 687px;
+    border-left: 0.5px solid #A4ACAD;
+}
+
+
+#centerMainInfaCompany {
+    position: absolute;
+    width: 310px;
+    height: 18px;
+    top: 0;
+    left: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+#centerMainInfaDelivery {
+    position: absolute;
+    width: 310px;
+    height: 18px;
+    top: 38px;
+    left: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+#centerMainInfaMaterials {
+    position: absolute;
+    width: 310px;
+    height: 18px;
+    top: 76px;
+    left: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+#centerMainInfaReturn {
+    position: absolute;
+    width: 310px;
+    height: 18px;
+    top: 114px;
+    left: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+#centerMainInfaCompany:hover {
+    color: #FF9846;
+}
+
+#centerMainInfaDelivery:hover {
+    color: #FF9846;
+}
+
+#centerMainInfaMaterials:hover {
+    color: #FF9846;
+}
+
+#centerMainInfaReturn:hover {
+    color: #FF9846;
+}
+
+.centerMainTelefonNumber1 {
+    position: absolute;
+    width: 310px;
+    height: 22px;
+    left: 40px;
+    top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+}
+
+.centerMainTelefonNumber2 {
+    position: absolute;
+    width: 310px;
+    height: 22px;
+    left: 40px;
+    top: 27px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+}
+
+.centerMainTelefonAddress {
+    position: absolute;
+    width: 310px;
+    height: 22px;
+    left: 40px;
+    top: 54px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
 }
