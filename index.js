@@ -175,3 +175,6 @@ function rigthDull() {
 };
 sliderMiniUl2.style.display = "none";
 // -----------------------------------------------------------
+jQuery(function ($) {
+    $("#telUser").mask("+380( 99 ) 999 99 99");
+});

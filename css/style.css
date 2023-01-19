@@ -1268,7 +1268,7 @@ option:checked {
 
 .centerMainTelefonNumber1 {
     position: absolute;
-    width: 310px;
+    width: 175px;
     height: 22px;
     left: 40px;
     top: 0;
@@ -1280,11 +1280,12 @@ option:checked {
     display: flex;
     align-items: center;
     color: #A4ACAD;
+    border-bottom: 1px solid #A4ACAD;
 }
 
 .centerMainTelefonNumber2 {
     position: absolute;
-    width: 310px;
+    width: 175px;
     height: 22px;
     left: 40px;
     top: 27px;
@@ -1296,11 +1297,12 @@ option:checked {
     display: flex;
     align-items: center;
     color: #A4ACAD;
+    border-bottom: 1px solid #A4ACAD;
 }
 
 .centerMainTelefonAddress {
     position: absolute;
-    width: 310px;
+    width: 260px;
     height: 22px;
     left: 40px;
     top: 54px;
@@ -1312,4 +1314,65 @@ option:checked {
     display: flex;
     align-items: center;
     color: #A4ACAD;
+}
+
+.centerMainMesengerText1 {
+    position: absolute;
+    width: 260px;
+    height: 22px;
+    left: 40px;
+    top: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.centerMainMesengerTel {
+    position: absolute;
+    width: 260px;
+    height: 22px;
+    left: 40px;
+    top: 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+}
+
+.centerMainMesengerText2 {
+    position: absolute;
+    width: 260px;
+    height: 44px;
+    left: 40px;
+    top: 74px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+}
+
+.centerMainMesengerTel input {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
 }
