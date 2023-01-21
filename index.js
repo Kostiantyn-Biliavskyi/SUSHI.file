@@ -174,7 +174,68 @@ function rigthDull() {
     return 0;
 };
 sliderMiniUl2.style.display = "none";
+// ------------------------------------------------------------
+blockTextAnotaciyaButton.addEventListener("click", textOpening);
+var AnotaciyaButtonI = 0;
+function textOpening() {
+    if (AnotaciyaButtonI == 0) {
+        AnotaciyaButtonI++;
+        document.querySelector(".blockTextAnotaciya").style.height = 350 + "px";
+        blockTextAnotaciyaButton.style.top = 1990 + "px";
+        document.querySelector(".blockTextAnotaciyaP3").style.opacity = 1;
+        document.querySelector(".blockTextAnotaciyaLi2").style.opacity = 1;
+        document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 1;
+        document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-315deg)";
+        document.querySelector(".blockTextAnotaciyaTrigle").style.top = 10 + "px";
+
+    } else {
+        AnotaciyaButtonI = 0;
+        document.querySelector(".blockTextAnotaciya").style.height = 270 + "px";
+        blockTextAnotaciyaButton.style.top = 1934 + "px";
+        document.querySelector(".blockTextAnotaciyaP3").style.opacity = 0.3;
+        document.querySelector(".blockTextAnotaciyaLi2").style.opacity = 0.5;
+        document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 0.6;
+        document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-135deg)";
+        document.querySelector(".blockTextAnotaciyaTrigle").style.top = 3 + "px";
+    }
+};
+// ---------------------------------------------------------
+var cityTarget = document.querySelector(".selectSity");
+
+cityTarget.addEventListener("click", citySelection);
+
+function citySelection(e) {
+
+    switch (e.target.value) {
+        case 'Харьков':
+            kharkiv.style.display = "block";
+            kiiv.style.display = "none";
+            lviv.style.display = "none";
+            dnipro.style.display = "none";
+            break;
+        case 'Киев':
+            kiiv.style.display = "block";
+            kharkiv.style.display = "none";
+            lviv.style.display = "none";
+            dnipro.style.display = "none";
+            break;
+        case 'Львов':
+            lviv.style.display = "block";
+            kharkiv.style.display = "none";
+            kiiv.style.display = "none";
+            dnipro.style.display = "none";
+            break;
+        case 'Днепр':
+            dnipro.style.display = "block";
+            kharkiv.style.display = "none";
+            kiiv.style.display = "none";
+            lviv.style.display = "none";
+            break;
+    };
+}
+
 // -----------------------------------------------------------
 jQuery(function ($) {
     $("#telUser").mask("+380( 99 ) 999 99 99");
 });
+// ------------------------------------------------------------

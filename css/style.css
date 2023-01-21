@@ -5,9 +5,9 @@ body {
 }
 
 .block {
-    width: 80%;
+    width: 1510px;
     height: 2295px;
-    background-color: rgb(214, 180, 246);
+    /* background-color: rgb(214, 180, 246); */
     margin-left: 10%;
     position: relative;
 }
@@ -16,6 +16,7 @@ body {
     position: relative;
     width: 170px;
     height: 170px;
+    left: 5px;
 }
 
 .firmaFoto {
@@ -43,13 +44,13 @@ body {
 .menu {
     width: 180px;
     height: 500px;
-    background-color: aqua;
+    /* background-color: aqua; */
     position: absolute;
     top: 305px;
 }
 
 .lineMenu {
-    width: 170px;
+    width: 180px;
     height: 0;
     border-bottom: 3px solid #A4ACAD;
     position: absolute;
@@ -62,13 +63,13 @@ body {
     height: 2295px;
     left: 180px;
     top: 0px;
-    background: #F2F2F2;
+    background: #ecebeb;
 }
 
 .basket {
     width: 260px;
     height: 130px;
-    background-color: rgb(63, 63, 245);
+    /* background-color: rgb(63, 63, 245); */
     position: absolute;
     top: 60px;
     left: 1248px;
@@ -110,7 +111,7 @@ body {
     align-items: center;
     text-align: center;
     color: #F2F2F2;
-    background-color: #FF9846;
+    /* background-color: #FF9846; */
     display: table-cell;
     vertical-align: middle;
 }
@@ -119,7 +120,7 @@ body {
 .map {
     width: 260px;
     height: 225px;
-    background-color: rgb(245, 63, 209);
+    /* background-color: rgb(245, 63, 209); */
     position: absolute;
     top: 200px;
     left: 1248px;
@@ -129,6 +130,18 @@ body {
 .fotoMap {
     width: 260px;
     height: 115px;
+}
+
+#kiiv {
+    display: none;
+}
+
+#lviv {
+    display: none;
+}
+
+#dnipro {
+    display: none;
 }
 
 .dot {
@@ -1039,7 +1052,6 @@ option:checked {
     color: #A4ACAD;
     list-style: "";
     overflow: hidden;
-    background: linear-gradient(#F2F2F2, 90%, #e3e1e1);
     background-color: #F2F2F2;
     z-index: 5;
 }
@@ -1375,4 +1387,58 @@ option:checked {
     line-height: 22px;
     display: flex;
     align-items: center;
+}
+
+#centrViber {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 128px;
+    left: 40px;
+    border-radius: 25px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#centrViber:hover {
+    opacity: 1;
+}
+
+#centrTelegram {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 128px;
+    left: 120px;
+    border-radius: 25px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#centrTelegram:hover {
+    opacity: 1;
+}
+
+#centrInstagram {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 128px;
+    left: 200px;
+    border-radius: 25px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#centrInstagram:hover {
+    opacity: 1;
+}
+
+#w {
+    width: 50px;
+    height: 30px;
+    background-color: #c44f06;
+    position: absolute;
+    top: 190px;
+
 }

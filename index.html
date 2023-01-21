@@ -97,10 +97,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="city">
+            <div class="city" id="city">
                 <div class="cityText">Город :</div>
                 <form>
-                    <select class="selectSity">
+                    <select class="selectSity" value="">
                         <option>Харьков</option>
                         <option>Киев</option>
                         <option>Львов</option>
@@ -430,10 +430,16 @@
             </div>
             <div class="centerMainMesenger">
                 <div class="centerMainMesengerText1">Введите номер</div>
-                <div class="centerMainMesengerTel"> <input type="tel" id="telUser" name="tel"
+                <div class="centerMainMesengerTel"> <input type="tel" id="telUser" name="tel" value="0"
                         placeholder="+380( __ )___ __ __"></div>
                 <div class="centerMainMesengerText2">Выберите удобный мессенджер для общения</div>
-                <div></div>
+                <a href="https://www.viber.com/ru/"> <img id="centrViber" src="css\css.foto\free-icon-viber-3670059.png"
+                        alt="viber"></a>
+                <a href="https://telegram.org/"> <img id="centrTelegram"
+                        src="css\css.foto\free-icon-telegram-3670070.png" alt="telegram"></a>
+                <a
+                    href="https://www.instagram.com/challenge/?next=https%3A%2F%2Fwww.instagram.com%2F%3F__coig_challenged%3D1">
+                    <img id="centrInstagram" src="css\css.foto\free-icon-instagram-3955024.png" alt="instagram"></a>
             </div>
             <div class="centerMainTelefon">
                 <div class="centerMainTelefonNumber1">Тел:+389 777 887 78</div>
@@ -455,8 +461,18 @@
                 <img class="dotFoto2" src="css\css.foto\Vector12.png">
             </div>
 
-            <a href="https://www.google.ru/maps/@49.9634294,36.3194639,13z"><img class="fotoMap"
+            <a href="https://www.google.ru/maps/@49.9634294,36.3194639,13z"><img class="fotoMap" id="kharkiv"
                     src="css\css.foto\Харьков.png"></a>
+
+            <a href="https://www.google.ru/maps/@50.4385162,30.6180069,12.08z"><img class="fotoMap" id="kiiv"
+                    src="css\css.foto\Kiiv.png"></a>
+
+            <a href="https://www.google.ru/maps/@49.8647152,24.1245191,11.96z"><img class="fotoMap" id="lviv"
+                    src="css\css.foto\Lviv.png"></a>
+
+            <a href="https://www.google.ru/maps/@48.4568826,35.0416506,12.96z"><img class="fotoMap" id="dnipro"
+                    src="css\css.foto\Dnipro.png"></a>
+
             <div class="mapText1">Укажите адрес</div>
             <div class="mapText2">И узнаете времи доставки</div>
         </div>
