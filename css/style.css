@@ -638,7 +638,7 @@ option:checked {
 }
 
 .mainSliderTextButton:hover {
-    background-color: #c44f06;
+    background-color: #ff4000;
 }
 
 /* ---------------------------- navigationMainSlider ---------------------------------- */
@@ -1434,11 +1434,4 @@ option:checked {
     opacity: 1;
 }
 
-#w {
-    width: 50px;
-    height: 30px;
-    background-color: #c44f06;
-    position: absolute;
-    top: 190px;
-
-}
+#blockCentrSliders {}

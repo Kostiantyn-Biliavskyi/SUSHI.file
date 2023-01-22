@@ -1,9 +1,8 @@
 
-var stopSetTimeoutGo, stopGoDotBlack, i = -1, sliderDot;
 mainSlider.addEventListener("click", typ);
 
 function typ(e) {
-    var y = e.target.dataset.nameSushi;
+    let y = e.target.dataset.nameSushi;
     switch (y) {
         case 'fil':
             alert("lososi");
@@ -15,7 +14,7 @@ function typ(e) {
     }
 };
 // --------------- функция слайдера фото и точки меняют цвет ------------------------
-
+var stopSetTimeoutGo, i = -1, sliderDot;
 function movementFotoMain() {
     let lengthFoto = mainSlider.querySelectorAll('ul>li>img');
     let widthMainSliderFoto = mainSlider.offsetWidth;
@@ -60,7 +59,7 @@ function movementFotoMain() {
         }
     };
     go();
-
+    return 0;
 };
 movementFotoMain();
 
@@ -174,31 +173,37 @@ function rigthDull() {
     return 0;
 };
 sliderMiniUl2.style.display = "none";
-// ------------------------------------------------------------
-blockTextAnotaciyaButton.addEventListener("click", textOpening);
-var AnotaciyaButtonI = 0;
-function textOpening() {
-    if (AnotaciyaButtonI == 0) {
-        AnotaciyaButtonI++;
-        document.querySelector(".blockTextAnotaciya").style.height = 350 + "px";
-        blockTextAnotaciyaButton.style.top = 1990 + "px";
-        document.querySelector(".blockTextAnotaciyaP3").style.opacity = 1;
-        document.querySelector(".blockTextAnotaciyaLi2").style.opacity = 1;
-        document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 1;
-        document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-315deg)";
-        document.querySelector(".blockTextAnotaciyaTrigle").style.top = 10 + "px";
 
-    } else {
-        AnotaciyaButtonI = 0;
-        document.querySelector(".blockTextAnotaciya").style.height = 270 + "px";
-        blockTextAnotaciyaButton.style.top = 1934 + "px";
-        document.querySelector(".blockTextAnotaciyaP3").style.opacity = 0.3;
-        document.querySelector(".blockTextAnotaciyaLi2").style.opacity = 0.5;
-        document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 0.6;
-        document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-135deg)";
-        document.querySelector(".blockTextAnotaciyaTrigle").style.top = 3 + "px";
-    }
+// ------------------------------------------------------------
+function textOpeningBlock() {
+
+    blockTextAnotaciyaButton.addEventListener("click", textOpening);
+    var AnotaciyaButtonI = 0;
+    function textOpening() {
+        if (AnotaciyaButtonI == 0) {
+            AnotaciyaButtonI++;
+            document.querySelector(".blockTextAnotaciya").style.height = 350 + "px";
+            blockTextAnotaciyaButton.style.top = 1990 + "px";
+            document.querySelector(".blockTextAnotaciyaP3").style.opacity = 1;
+            document.querySelector(".blockTextAnotaciyaLi2").style.opacity = 1;
+            document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 1;
+            document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-315deg)";
+            document.querySelector(".blockTextAnotaciyaTrigle").style.top = 10 + "px";
+
+        } else {
+            AnotaciyaButtonI = 0;
+            document.querySelector(".blockTextAnotaciya").style.height = 270 + "px";
+            blockTextAnotaciyaButton.style.top = 1934 + "px";
+            document.querySelector(".blockTextAnotaciyaP3").style.opacity = 0.3;
+            document.querySelector(".blockTextAnotaciyaLi2").style.opacity = 0.5;
+            document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 0.6;
+            document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-135deg)";
+            document.querySelector(".blockTextAnotaciyaTrigle").style.top = 3 + "px";
+        }
+    };
+    return 0;
 };
+textOpeningBlock();
 // ---------------------------------------------------------
 var cityTarget = document.querySelector(".selectSity");
 
@@ -232,10 +237,17 @@ function citySelection(e) {
             lviv.style.display = "none";
             break;
     };
-}
-
+    return 0;
+};
 // -----------------------------------------------------------
 jQuery(function ($) {
     $("#telUser").mask("+380( 99 ) 999 99 99");
 });
+
 // ------------------------------------------------------------
+menuButton.addEventListener("click", mi);
+
+
+
+
+
