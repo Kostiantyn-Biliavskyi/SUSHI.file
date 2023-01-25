@@ -18,14 +18,12 @@
         </div>
         <div class="lineMenu"></div>
 
-        <div class="menu">
-            <a href="pizza.html">
-                <div id="menuButton">
-                    <img class="pizza" src="css\css.foto\Vector.png" alt="pizza">
-                    <img class="pizza1" src="css\css.foto\Vector1.png" alt="pizza1">
-                    <div id="menuButtonText"> Пицца</div>
-                </div>
-            </a>
+        <div class="menu" id="menu">
+            <div id="menuButton" data-product="pizza">
+                <img data-product="pizza" class="pizza" src="css\css.foto\Vector.png" alt="pizza">
+                <img data-product="pizza" class="pizza1" src="css\css.foto\Vector1.png" alt="pizza1">
+                <div id="menuButtonText" data-product="pizza"> Пицца</div>
+            </div>
             <div id="menuButton">
                 <img class="set" src="css\css.foto\Ellipse 2.png">
                 <img class="set1" src="css\css.foto\Ellipse 4.png">
@@ -482,7 +480,116 @@
             <div class="mapText2">И узнаете времи доставки</div>
         </div>
 
+        <template id="templatePizza">
 
+            <table id="tablePizza">
+                <div class="titleProduct">
+                    <img class="pizzaLarge" src="css\css.foto\Vector.png" alt="pizza">
+                    <img class="pizza1Large" src="css\css.foto\Vector1.png" alt="pizza">
+                    <div class="textPizzaLarge">Пицца</div>
+                </div>
+
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg" alt="foto">
+                        <div class="sliderMiniLiTextName">Саломон сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\1617186819_41-p-krasivaya-pitstsa-krasivo-49.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\1617186821_6-p-krasivaya-pitstsa-krasivo-6.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Пицца с сыром и грибами</div>
+                        <div class="sliderMiniLiTextWeight">1050 г.</div>
+                        <div class="sliderMiniLiTextPrice">500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\1617186823_2-p-krasivaya-pitstsa-krasivo-2.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\1617186838_8-p-krasivaya-pitstsa-krasivo-10.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\1617186861_4-p-krasivaya-pitstsa-krasivo-4.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\1617186872_10-p-krasivaya-pitstsa-krasivo-13.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\1617186881_35-p-krasivaya-pitstsa-krasivo-43.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+
+
+            </table>
+
+        </template>
 
 
     </div>

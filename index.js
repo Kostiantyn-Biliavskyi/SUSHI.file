@@ -245,7 +245,25 @@ jQuery(function ($) {
 });
 
 // ------------------------------------------------------------
-menuButton.addEventListener("click", mi);
+menu.addEventListener("click", productSelection);
+
+function productSelection(e) {
+    let neo, divPizza;
+    if (e.target.dataset.product == "pizza") {
+
+        blockCentrSliders.style.display = "none";
+        neo = document.querySelector(".lineHed");
+        divPizza = document.createElement('div');
+        divPizza.className = "createdDivPizza";
+        divPizza.append(templatePizza.content.cloneNode(true));
+        neo.after(divPizza);
+    }
+};
+
+
+
+
+
 
 
 

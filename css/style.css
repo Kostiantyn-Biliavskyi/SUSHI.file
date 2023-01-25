@@ -111,7 +111,6 @@ body {
     align-items: center;
     text-align: center;
     color: #F2F2F2;
-    /* background-color: #FF9846; */
     display: table-cell;
     vertical-align: middle;
 }
@@ -120,7 +119,6 @@ body {
 .map {
     width: 260px;
     height: 225px;
-    /* background-color: rgb(245, 63, 209); */
     position: absolute;
     top: 200px;
     left: 1248px;
@@ -1434,4 +1432,40 @@ option:checked {
     opacity: 1;
 }
 
-#blockCentrSliders {}
+.createdDivPizza {
+    position: absolute;
+    top: 124px;
+    left: 55px;
+    border: 1px solid red;
+}
+
+#tablePizza {
+    /* width: 1060px;
+    height: 1500px; */
+    margin-top: 100px;
+}
+
+.titleProduct {
+    position: absolute;
+}
+
+.pizzaLarge {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 5px;
+}
+
+.pizza1Large {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 1px;
+}
+
+.product {
+    width: 316.6px;
+    height: 400px;
+    position: relative;
+    border: 1px solid black;
+}
