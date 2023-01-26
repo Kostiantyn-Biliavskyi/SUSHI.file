@@ -246,9 +246,12 @@ jQuery(function ($) {
 
 // ------------------------------------------------------------
 menu.addEventListener("click", productSelection);
+// page_1.addEventListener("click", productSelection);
+// page_2.addEventListener("click", productSelection);
+
 var cordLineHed, createDivPizza;
 function productSelection(e) {
-
+    alert(9999);
     cordLineHed = document.querySelector(".lineHed");
     if (e.target.id != "menu") {
         if (document.body.querySelector(".createdDivPizza") != null) {
@@ -276,12 +279,28 @@ function productSelection(e) {
             case "roll":
                 createDivPizza.append(templateRoll.content.cloneNode(true));
                 break;
+            case "sushi_1":
+                createDivPizza.append(templateSushi_1.content.cloneNode(true));
+                break;
+            case "sushi_2":
+                createDivPizza.append(templateSushi_2.content.cloneNode(true));
+                break;
+            case "salad":
+                createDivPizza.append(templateSalad.content.cloneNode(true));
+                break;
+            case "soup":
+                createDivPizza.append(templateSoup.content.cloneNode(true));
+                break;
             default:
         }
     }
 };
 
+// ryt.addEventListener("click", tu);
 
+function tu() {
+    alert(454689779);
+};
 
 
 

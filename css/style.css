@@ -1523,3 +1523,62 @@ option:checked {
     position: absolute;
     left: 7px;
 }
+
+.productLargeFotoSushi {
+    width: 65px;
+    height: 45px;
+}
+
+.textProductLargeSushi {
+    position: absolute;
+    left: 85px;
+    top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.sushiNavigation {
+    width: 70px;
+    height: 30px;
+    border: 1px solid red;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 495px;
+    position: absolute;
+}
+
+#page_1 {
+    width: 30px;
+    height: 30px;
+    color: blueviolet;
+    float: left;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: white;
+    line-height: 30px;
+    box-shadow: 0px 0px 3px 2px darkgrey;
+    background-color: #F46D40;
+    cursor: pointer;
+}
+
+#page_2 {
+    width: 30px;
+    height: 30px;
+    color: blueviolet;
+    float: left;
+    border-radius: 5px;
+    background-color: white;
+    line-height: 30px;
+    box-shadow: 0px 0px 3px 2px darkgrey;
+    cursor: pointer;
+}
