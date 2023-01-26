@@ -69,7 +69,6 @@ body {
 .basket {
     width: 260px;
     height: 130px;
-    /* background-color: rgb(63, 63, 245); */
     position: absolute;
     top: 60px;
     left: 1248px;
@@ -202,6 +201,40 @@ body {
 }
 
 /* ------------------------------------------ */
+#mainPage {
+    position: relative;
+    width: 170px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.mainPageFoto {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 3px;
+}
+
+.mainPageText {
+    position: absolute;
+    left: 40px;
+}
+
+#mainPage:hover {
+    color: #FF9846;
+}
+
 #menuButton {
     position: relative;
     width: 170px;
