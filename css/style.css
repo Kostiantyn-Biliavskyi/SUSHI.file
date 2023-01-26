@@ -44,7 +44,6 @@ body {
 .menu {
     width: 180px;
     height: 500px;
-    /* background-color: aqua; */
     position: absolute;
     top: 305px;
 }
@@ -1488,10 +1487,9 @@ option:checked {
     height: 23px;
     position: absolute;
     top: -3px;
-
 }
 
-.textPizzaLarge {
+.textProductLarge {
     position: absolute;
     left: 65px;
     top: 0;
@@ -1511,17 +1509,17 @@ option:checked {
     position: relative;
     margin-bottom: 30px;
     display: inline-table;
-    /* border: 1px solid black; */
 }
 
 .createdDivPizza {
     position: absolute;
     top: 130px;
     left: 55px;
-    /* border: 1px solid rgb(9, 238, 28); */
 }
 
-.tablePizzaTr {
-    margin-bottom: 100px;
-    border: 1px solid black;
+.productLargeFoto {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 7px;
 }

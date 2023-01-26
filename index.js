@@ -246,17 +246,38 @@ jQuery(function ($) {
 
 // ------------------------------------------------------------
 menu.addEventListener("click", productSelection);
-
+var cordLineHed, createDivPizza;
 function productSelection(e) {
-    let neo, divPizza;
-    if (e.target.dataset.product == "pizza") {
 
-        blockCentrSliders.style.display = "none";
-        neo = document.querySelector(".lineHed");
-        divPizza = document.createElement('div');
-        divPizza.className = "createdDivPizza";
-        divPizza.append(templatePizza.content.cloneNode(true));
-        neo.after(divPizza);
+    cordLineHed = document.querySelector(".lineHed");
+    if (e.target.id != "menu") {
+        if (document.body.querySelector(".createdDivPizza") != null) {
+            createDivPizza.remove();
+        }
+
+        if (e.target.dataset.product == "mainPage") {
+            blockCentrSliders.style.display = "";
+        } else {
+            blockCentrSliders.style.display = "none";
+            createDivPizza = document.createElement('div');
+            createDivPizza.className = "createdDivPizza";
+            cordLineHed.after(createDivPizza);
+        }
+        switch (e.target.dataset.product) {
+            case "pizza":
+                createDivPizza.append(templatePizza.content.cloneNode(true));
+                break;
+            case "seti":
+                createDivPizza.append(templateSeti.content.cloneNode(true));
+                break;
+            case "wok":
+                createDivPizza.append(templateWok.content.cloneNode(true));
+                break;
+            case "roll":
+                createDivPizza.append(templateRoll.content.cloneNode(true));
+                break;
+            default:
+        }
     }
 };
 

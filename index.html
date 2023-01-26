@@ -19,34 +19,35 @@
         <div class="lineMenu"></div>
 
         <div class="menu" id="menu">
-            <div id="mainPage">
-                <img class="mainPageFoto" src="css\css.foto\logo.png">
-                <div class="mainPageText">Главная</div>
+
+            <div id="mainPage" data-product="mainPage">
+                <img class="mainPageFoto" data-product="mainPage" src="css\css.foto\logo.png">
+                <div class="mainPageText" data-product="mainPage">Главная</div>
             </div>
             <div id="menuButton" data-product="pizza">
                 <img data-product="pizza" class="pizza" src="css\css.foto\Vector.png" alt="pizza">
                 <img data-product="pizza" class="pizza1" src="css\css.foto\Vector1.png" alt="pizza1">
                 <div id="menuButtonText" data-product="pizza"> Пицца</div>
             </div>
-            <div id="menuButton">
-                <img class="set" src="css\css.foto\Ellipse 2.png">
-                <img class="set1" src="css\css.foto\Ellipse 4.png">
-                <img class="set2" src="css\css.foto\Ellipse 5.png">
-                <img class="set3" src="css\css.foto\Ellipse 3.png">
+            <div id="menuButton" data-product="seti">
+                <img class="set" data-product="seti" src="css\css.foto\Ellipse 2.png">
+                <img class="set1" data-product="seti" src="css\css.foto\Ellipse 4.png">
+                <img class="set2" data-product="seti" src="css\css.foto\Ellipse 5.png">
+                <img class="set3" data-product="seti" src="css\css.foto\Ellipse 3.png">
 
-                <img class="set4" src="css\css.foto\Ellipse 2.png">
-                <img class="set5" src="css\css.foto\Ellipse 4.png">
-                <img class="set6" src="css\css.foto\Ellipse 5.png">
-                <img class="set7" src="css\css.foto\Ellipse 3.png">
-                <div id="menuButtonText">Сеты</div>
+                <img class="set4" data-product="seti" src="css\css.foto\Ellipse 2.png">
+                <img class="set5" data-product="seti" src="css\css.foto\Ellipse 4.png">
+                <img class="set6" data-product="seti" src="css\css.foto\Ellipse 5.png">
+                <img class="set7" data-product="seti" src="css\css.foto\Ellipse 3.png">
+                <div id="menuButtonText" data-product="seti">Сеты</div>
             </div>
-            <div id="menuButton">
-                <img class="wok" src="css\css.foto\Vector2.png">
-                <div id="menuButtonText"> WOK </div>
+            <div id="menuButton" data-product="wok">
+                <img class="wok" data-product="wok" src="css\css.foto\Vector2.png">
+                <div id="menuButtonText" data-product="wok"> WOK </div>
             </div>
-            <div id="menuButton">
-                <img class="roll" src="css\css.foto\Vector3.png">
-                <div id="menuButtonText"> Роллы </div>
+            <div id="menuButton" data-product="roll">
+                <img class="roll" data-product="roll" src="css\css.foto\Vector3.png">
+                <div id="menuButtonText" data-product="roll"> Роллы </div>
             </div>
             <div id="menuButton">
                 <img class="sushi" src="css\css.foto\Vector4.png">
@@ -489,7 +490,7 @@
             <div class="titleProduct">
                 <img class="pizzaLargeFoto" src="css\css.foto\Vector.png" alt="pizza">
                 <img class="pizza1LargeFoto" src="css\css.foto\Vector1.png" alt="pizza">
-                <div class="textPizzaLarge">Пицца</div>
+                <div class="textProductLarge">Пицца</div>
             </div>
             <table id="tablePizza">
                 <tr class="tablePizzaTr">
@@ -548,7 +549,7 @@
                     <th class="product">
                         <img class="sliderMiniLiFoto" src="css\css.foto\1617186838_8-p-krasivaya-pitstsa-krasivo-10.jpg"
                             alt="">
-                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextName">Пицца с сыром и салями</div>
                         <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
                         <div class="sliderMiniLiTextPrice">1500грн.</div>
                         <div id="sliderMiniLiButton">
@@ -560,9 +561,9 @@
                     <th class="product">
                         <img class="sliderMiniLiFoto" src="css\css.foto\1617186861_4-p-krasivaya-pitstsa-krasivo-4.jpg"
                             alt="">
-                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
-                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
-                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div class="sliderMiniLiTextName">Пицца с анчёусами</div>
+                        <div class="sliderMiniLiTextWeight">500 грамм.</div>
+                        <div class="sliderMiniLiTextPrice">250грн.</div>
                         <div id="sliderMiniLiButton">
                             <div class="sliderMiniLiButtonText">Хочу</div>
                         </div>
@@ -570,6 +571,103 @@
                     <th class="product">
                         <img class="sliderMiniLiFoto"
                             src="css\css.foto\1617186872_10-p-krasivaya-pitstsa-krasivo-13.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Пицца овощная</div>
+                        <div class="sliderMiniLiTextWeight">500 грамм.</div>
+                        <div class="sliderMiniLiTextPrice">200грн. </div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\1617186881_35-p-krasivaya-pitstsa-krasivo-43.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Пицца с потрахами</div>
+                        <div class="sliderMiniLiTextWeight">2010 грамм.</div>
+                        <div class="sliderMiniLiTextPrice">350грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </template>
+        <!-- --------------------------------------------------------------- -->
+        <template id="templateSeti">
+
+            <div class="titleProduct">
+                <img class="pizzaLargeFoto" src="css\css.foto\Vector.png" alt="pizza">
+                <img class="pizza1LargeFoto" src="css\css.foto\Vector1.png" alt="pizza">
+                <div class="textProductLarge">Сеты</div>
+            </div>
+            <table id="tablePizza">
+                <tr class="tablePizzaTr">
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\assortments-sushi-with-sticks-top-view.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Саломон сет</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1000грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\assortments-sushi-with-sticks-top-view.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Сет "5 Филадельфий" </div>
+                        <div class="sliderMiniLiTextWeight">1120 грамм 40 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\assortments-sushi-with-sticks-top-view.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет</div>
+                        <div class="sliderMiniLiTextWeight">1260 грамм 36 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1499грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\sushi-tray-with-makis-and-tuna-nigiris-and-salmon-view-from-above.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Камикадзе сет</div>
+                        <div class="sliderMiniLiTextWeight">1200 грамм 52 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1350грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\assortments-sushi-with-sticks-top-view.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия LOVE сет</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\assortments-sushi-with-sticks-top-view.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Якудза сет</div>
+                        <div class="sliderMiniLiTextWeight">1270 грамм 50 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-plate-with-chopsticks-topview.jpg" alt="">
                         <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
                         <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
                         <div class="sliderMiniLiTextPrice">1500грн.</div>
@@ -579,7 +677,18 @@
                     </th>
                     <th class="product">
                         <img class="sliderMiniLiFoto"
-                            src="css\css.foto\1617186881_35-p-krasivaya-pitstsa-krasivo-43.jpg" alt="">
+                            src="css\css.foto\maki-and-california-sushi-rolls-on-white-background.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\sushi-tray-with-makis-and-tuna-nigiris-and-salmon-view-from-above.jpg"
+                            alt="">
                         <div class="sliderMiniLiTextName">Филадельфия и лосось сет топ</div>
                         <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
                         <div class="sliderMiniLiTextPrice">1500грн.</div>
@@ -588,8 +697,220 @@
                         </div>
                     </th>
                 </tr>
+            </table>
 
+        </template>
+        <!-- ------------------------------------------------------------------- -->
+        <template id="templateRoll">
 
+            <div class="titleProduct">
+                <img class="productLargeFoto" src="css\css.foto\Vector3.png" alt="foto">
+
+                <div class="textProductLarge">Роллы</div>
+            </div>
+            <table id="tablePizza">
+                <tr class="tablePizzaTr">
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-dish-at-asian-restaurant (1).jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Саломон Роллы</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1000грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-dish-at-asian-restaurant (1).jpg" alt="">
+                        <div class="sliderMiniLiTextName">Роллы "5 Филадельфий" </div>
+                        <div class="sliderMiniLiTextWeight">1120 грамм 40 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-dish-at-asian-restaurant.jpg" alt="foto">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось Роллы</div>
+                        <div class="sliderMiniLiTextWeight">1260 грамм 36 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1499грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg" alt="">
+                        <div class="sliderMiniLiTextName">Камикадзе Роллы</div>
+                        <div class="sliderMiniLiTextWeight">1200 грамм 52 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1350грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\top-view-sushi-set-with-soy-sauce-and-chopsticks-in-wooden-serving-board.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Филадельфия LOVE Роллы</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\top-view-sushi-set-with-soy-sauce-and-chopsticks-in-wooden-serving-board.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Якудза Роллы</div>
+                        <div class="sliderMiniLiTextWeight">1270 грамм 50 кусочек</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\traditional-japanese-sushi-arrangement.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Филадельфия и лосось Роллы топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-set-with-various-filling.jpg" alt="foto">
+                        <div class="sliderMiniLiTextName">Калифпрния Роллы </div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-set-with-various-filling.jpg" alt="foto">
+                        <div class="sliderMiniLiTextName"> С лосось Роллы топ</div>
+                        <div class="sliderMiniLiTextWeight">1050 грамм, 30 кусочков</div>
+                        <div class="sliderMiniLiTextPrice">1500грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+
+        </template>
+        <!-- --------------------------------------------------------------------------- -->
+        <template id="templateWok">
+
+            <div class="titleProduct">
+                <img class="productLargeFoto" src="css\css.foto\Vector2.png" alt="foto">
+                <div class="textProductLarge">WOK</div>
+            </div>
+
+            <table id="tablePizza">
+                <tr class="tablePizzaTr">
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\asian-food-with-bunch-of-tomatoes.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Wok </div>
+                        <div class="sliderMiniLiTextWeight">800 грамм</div>
+                        <div class="sliderMiniLiTextPrice">250грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\top-view-of-delicious-noodles-concept.jpg"
+                            alt="">
+                        <div class="sliderMiniLiTextName">Wok </div>
+                        <div class="sliderMiniLiTextWeight">400 грамм</div>
+                        <div class="sliderMiniLiTextPrice">350грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\top-view-of-delicious-noodles-concept.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">350 грамм</div>
+                        <div class="sliderMiniLiTextPrice">1499грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">120 грамм</div>
+                        <div class="sliderMiniLiTextPrice">180грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto"
+                            src="css\css.foto\schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">450 грамм</div>
+                        <div class="sliderMiniLiTextPrice">350грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\pasta-spaghetti-with-shrimps-and-sauce.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">400 грамм</div>
+                        <div class="sliderMiniLiTextPrice">300грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\pasta-spaghetti-with-shrimps-and-sauce.jpg"
+                            alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">350 грамм</div>
+                        <div class="sliderMiniLiTextPrice">290грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-set-with-various-filling.jpg" alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">500 грамм</div>
+                        <div class="sliderMiniLiTextPrice">450грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                    <th class="product">
+                        <img class="sliderMiniLiFoto" src="css\css.foto\sushi-set-with-various-filling.jpg" alt="foto">
+                        <div class="sliderMiniLiTextName">Wok</div>
+                        <div class="sliderMiniLiTextWeight">450 грамм</div>
+                        <div class="sliderMiniLiTextPrice">420грн.</div>
+                        <div id="sliderMiniLiButton">
+                            <div class="sliderMiniLiButtonText">Хочу</div>
+                        </div>
+                    </th>
+                </tr>
             </table>
 
         </template>
