@@ -248,63 +248,84 @@ jQuery(function ($) {
 menu.addEventListener("click", productSelection);
 
 
-var cordLineHed, createDivPizza;
+var cordLineHed, createDivProdukt;
 function productSelection(e) {
-    alert(" ku ku");
+
     cordLineHed = document.querySelector(".lineHed");
-    if (e.target.id != "menu") {
-        if (document.body.querySelector(".createdDivPizza") != null) {
-            createDivPizza.remove();
+
+    if (e.target.id == "menu" || e.target.id == "pageNavigation") {
+        return 0;
+    } else {
+        if (document.body.querySelector(".createDivNew") != null) {
+            createDivProdukt.remove();
         }
 
         if (e.target.dataset.product == "mainPage") {
             blockCentrSliders.style.display = "";
         } else {
             blockCentrSliders.style.display = "none";
-            createDivPizza = document.createElement('div');
-            createDivPizza.className = "createdDivPizza";
-            cordLineHed.after(createDivPizza);
+            createDivProdukt = document.createElement('div');
+            createDivProdukt.className = "createDivNew";
+            cordLineHed.after(createDivProdukt);
         }
         switch (e.target.dataset.product) {
             case "pizza":
-                createDivPizza.append(templatePizza.content.cloneNode(true));
+                createDivProdukt.append(templatePizza.content.cloneNode(true));
                 break;
             case "seti":
-                createDivPizza.append(templateSeti.content.cloneNode(true));
+                createDivProdukt.append(templateSeti.content.cloneNode(true));
                 break;
             case "wok":
-                createDivPizza.append(templateWok.content.cloneNode(true));
+                createDivProdukt.append(templateWok.content.cloneNode(true));
                 break;
             case "roll":
-                createDivPizza.append(templateRoll.content.cloneNode(true));
+                createDivProdukt.append(templateRoll.content.cloneNode(true));
                 break;
             case "sushi_1":
-                createDivPizza.append(templateSushi_1.content.cloneNode(true));
+                createDivProdukt.append(templateSushi_1.content.cloneNode(true));
                 search();
-                // nik.classList.remove("templateSushi_1");
-                // nik.classList.add("createdDivPizza1");
                 break;
             case "sushi_2":
-                createDivPizza.append(templateSushi_2.content.cloneNode(true));
+                createDivProdukt.append(templateSushi_2.content.cloneNode(true));
+                search();
+                break;
+            case "sushi_3":
+                createDivProdukt.append(templateSushi_3.content.cloneNode(true));
                 search();
                 break;
             case "salad":
-                createDivPizza.append(templateSalad.content.cloneNode(true));
+                createDivProdukt.append(templateSalad.content.cloneNode(true));
                 break;
             case "soup":
-                createDivPizza.append(templateSoup.content.cloneNode(true));
+                createDivProdukt.append(templateSoup.content.cloneNode(true));
                 break;
             default:
         }
+        let widthCreatedDiv = document.body.querySelector(".createDivNew");
+        let widthBlockPage = pageNavigation.offsetWidth / 2;
+        let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
+        widthCreatedDiv = widthblockCenterMain - widthBlockPage;
+        pageNavigation.style.marginLeft = widthCreatedDiv + "px";
     }
+    return 0;
 };
 
-var targetPage_1, targetPage_2;
 function search() {
-    targetPage_1 = document.getElementById("page_1");
-    targetPage_2 = document.getElementById("page_2");
-    targetPage_1.addEventListener("click", productSelection);
-    targetPage_2.addEventListener("click", productSelection);
+    pageNavigation.addEventListener("click", productSelection);
+    pageNavigation.addEventListener("click", styleButtonNavigation);
+};
+var saveClick;
+function styleButtonNavigation(e) {
+    if (e.target.id == "pageNavigation") {
+        return 0;
+    } else {
+        page_1.style.backgroundColor = "white";
+        saveClick = document.getElementById(e.target.id);
+        saveClick.style.backgroundColor = "#F46D40";
+        saveClick.style.color = "white";
+        saveClick.style.boxShadow = "0px 0px 3px 2px darkgrey";
+    }
+    return 0;
 };
 
 
