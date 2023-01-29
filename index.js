@@ -299,12 +299,9 @@ function productSelection(e) {
     }
 };
 
-var targetPage_1, targetPage_2;
 function search() {
-    targetPage_1 = document.getElementById("page_1");
-    targetPage_2 = document.getElementById("page_2");
-    targetPage_1.addEventListener("click", productSelection);
-    targetPage_2.addEventListener("click", productSelection);
+    page_1.addEventListener("click", productSelection);
+    page_2.addEventListener("click", productSelection);
 };
 
 
