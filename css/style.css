@@ -5,11 +5,11 @@ body {
 }
 
 .block {
-    width: 1510px;
+    width: 100%;
+    /* width: 1510px; */
     height: 2295px;
-    /* background-color: rgb(214, 180, 246); */
-    margin-left: 10%;
     position: relative;
+    left: 10%;
 }
 
 .firma {
@@ -1581,4 +1581,56 @@ option:checked {
 
 .page_2:hover {
     box-shadow: 0px 0px 3px 2px darkgrey;
+}
+
+.blokcBasketHed {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 650px;
+}
+
+#sumProduct {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    left: 32.5px;
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+}
+
+.basketHed {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.basketHed:hover {
+    background-color: #f08c0a;
+}
+
+/* -------------------------- @ MEDIA --------------------------------- */
+@media screen and (min-width:1300px) {
+    .block {
+        left: 0;
+    }
+
+    .basket {
+        display: none;
+    }
+
+    .map {
+        display: none;
+    }
 }
