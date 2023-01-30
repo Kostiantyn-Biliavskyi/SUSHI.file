@@ -1511,7 +1511,7 @@ option:checked {
     display: inline-table;
 }
 
-.createdDivPizza {
+.createDivNew {
     position: absolute;
     top: 130px;
     left: 55px;
@@ -1544,17 +1544,26 @@ option:checked {
 }
 
 
-.sushiNavigation {
-    width: 70px;
-    height: 30px;
-    border: 1px solid red;
+#pageNavigation {
     text-align: center;
     margin-top: 20px;
-    margin-left: 495px;
-    position: absolute;
+    display: inline-table;
 }
 
-#page_1 {
+.page_1 {
+    width: 30px;
+    height: 30px;
+    color: blueviolet;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    line-height: 30px;
+    background-color: #F46D40;
+    cursor: pointer;
+}
+
+.page_2 {
     width: 30px;
     height: 30px;
     color: blueviolet;
@@ -1563,19 +1572,13 @@ option:checked {
     border-radius: 5px;
     background-color: white;
     line-height: 30px;
-    box-shadow: 0px 0px 3px 2px darkgrey;
-    background-color: #F46D40;
     cursor: pointer;
 }
 
-#page_2 {
-    width: 30px;
-    height: 30px;
-    color: blueviolet;
-    float: left;
-    border-radius: 5px;
-    background-color: white;
-    line-height: 30px;
+.page_1:hover {
     box-shadow: 0px 0px 3px 2px darkgrey;
-    cursor: pointer;
+}
+
+.page_2:hover {
+    box-shadow: 0px 0px 3px 2px darkgrey;
 }
