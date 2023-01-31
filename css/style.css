@@ -5,8 +5,8 @@ body {
 }
 
 .block {
-    width: 100%;
-    /* width: 1510px; */
+    /* width: 100%; */
+    width: 1510px;
     height: 2295px;
     position: relative;
     left: 10%;
@@ -1621,9 +1621,10 @@ option:checked {
 }
 
 /* -------------------------- @ MEDIA --------------------------------- */
-@media screen and (min-width:1300px) {
+@media screen and (max-width:1400px) {
     .block {
         left: 0;
+        width: 1250px;
     }
 
     .basket {
