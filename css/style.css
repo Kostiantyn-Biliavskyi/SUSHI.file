@@ -1470,9 +1470,9 @@ option:checked {
 
 .titleProduct {
     position: absolute;
-    width: 500px;
+    width: 957px;
     height: 45px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .pizzaLargeFoto {
@@ -1507,14 +1507,29 @@ option:checked {
     width: 316.6px;
     height: 400px;
     position: relative;
+    top: -75px;
     margin-bottom: 30px;
     display: inline-table;
+    background-color: aquamarine;
+    /* border: 1px solid green; */
 }
 
 .createDivNew {
     position: absolute;
     top: 130px;
     left: 55px;
+    border: 1px solid rgb(29, 6, 241);
+}
+
+.pageHiddenSushi {
+    /* width: 949.8px; */
+    width: 970px;
+    height: 1290px;
+    position: absolute;
+    top: 45px;
+    /* overflow: hidden; */
+    border: 1px solid red;
+
 }
 
 .productLargeFoto {
@@ -1542,7 +1557,6 @@ option:checked {
     align-items: center;
     color: #000000;
 }
-
 
 #pageNavigation {
     text-align: center;
