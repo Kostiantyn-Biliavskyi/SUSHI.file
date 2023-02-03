@@ -313,6 +313,7 @@ function productSelection(e) {
 function search() {
     pageNavigation.addEventListener("click", productSelection);
     pageNavigation.addEventListener("click", styleButtonNavigation);
+    sortingProduct.addEventListener("click", sortProduct);
 };
 var saveClick;
 function styleButtonNavigation(e) {
@@ -324,6 +325,55 @@ function styleButtonNavigation(e) {
         saveClick.style.backgroundColor = "#F46D40";
         saveClick.style.color = "white";
         saveClick.style.boxShadow = "0px 0px 3px 2px darkgrey";
+    }
+    return 0;
+};
+
+function sortProduct() {
+    // alert(tablePizza.rows[0].cells[0].querySelector(".sliderMiniLiTextPrice").innerHTML);
+    let masProduct = [], iii = 0;
+
+    for (let ix = 0; ix < tablePizza.rows.length; ix++) {
+        for (let iy = 0; iy < tablePizza.rows[0].cells.length; iy++) {
+            masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(".Thprices").textContent;
+            iii++;
+        }
+    }
+    masProduct.sort(function (a, b) { return a - b });
+    // alert(masProduct);
+
+    let rut, lup = 0;
+    var Irow = 0, Icells = 0;
+    for (let ir = 0; ir < masProduct.length; ir++) {
+        let iim = 0
+
+        if (ir == 3 || ir == 6) {
+            Irow = Irow + 1;
+        }
+        if (Icells == 2) {
+            Icells = 0;
+        }
+        alert(tablePizza.rows[Irow].cells[Icells].innerHTML);
+
+        for (let it = 0; it < tablePizza.rows.length; it++) {
+            let iik = 0;
+
+            for (let id = 0; id < tablePizza.rows[0].cells.length; id++) {
+
+                if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(".Thprices").textContent) {
+                    // alert(tablePizza.rows[Irow].cells[Icells].innerHTML);
+
+                    rut = tablePizza.rows[iim].cells[iik].innerHTML;
+                    tablePizza.rows[iim].cells[iim].innerHTML = tablePizza.rows[it].cells[iim].innerHTML;
+
+                    tablePizza.rows[it].cells[id].innerHTML = rut;
+                    iik++;
+                }
+            }
+            iim++;
+        }
+        lup++;
+        Icells++;
     }
     return 0;
 };

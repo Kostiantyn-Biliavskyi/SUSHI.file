@@ -1620,6 +1620,15 @@ option:checked {
     background-color: #f08c0a;
 }
 
+#sortingProduct {
+    width: 150px;
+    height: 40px;
+    background-color: #F46D40;
+    position: absolute;
+    left: 300px;
+    top: 0;
+}
+
 /* -------------------------- @ MEDIA --------------------------------- */
 @media screen and (max-width:1400px) {
     .block {
