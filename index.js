@@ -334,23 +334,23 @@ function sortProduct() {
     let masProduct = [], iii = 0;
 
     for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-        for (let iy = 0; iy < tablePizza.rows[0].cells.length; iy++) {
+        for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
             masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(".Thprices").textContent;
             iii++;
         }
     }
     masProduct.sort(function (a, b) { return a - b });
-    alert(masProduct + "  - " + masProduct.length);
     var Irow = 0, Ikcells = 0, rut;
+    var clon;
     for (let ir = 0; ir < masProduct.length; ir++) {
-
-        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18) {
+        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15) {
             Irow = Irow + 1;
             Ikcells = 0;
         }
 
         for (let it = 0; it < tablePizza.rows.length; it++) {
-            for (let id = 0; id < tablePizza.rows[0].cells.length; id++) {
+
+            for (let id = 0; id < tablePizza.rows[it].cells.length; id++) {
 
                 if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(".Thprices").textContent) {
                     rut = tablePizza.rows[Irow].cells[Ikcells].innerHTML;
