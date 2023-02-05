@@ -325,8 +325,6 @@ function switchingPage(e) {
             break;
         default:
     }
-
-
     return 0;
 };
 
@@ -376,11 +374,11 @@ function sortProduct() {// сортирует страницу по возрос
         }
     }
     masProduct.sort(function (a, b) { return a - b });
-    alert(masProduct + "  - " + masProduct.length);
+
     var Irow = 0, Ikcells = 0, rut;
     for (let ir = 0; ir < masProduct.length; ir++) {
 
-        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18) {
+        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
             Irow = Irow + 1;
             Ikcells = 0;
         }
