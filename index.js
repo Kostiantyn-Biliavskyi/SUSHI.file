@@ -247,7 +247,6 @@ jQuery(function ($) {
 // ------------------------------------------------------------
 menu.addEventListener("click", productSelection);
 
-
 var cordLineHed, createDivProdukt;
 function productSelection(e) {
 
@@ -282,15 +281,7 @@ function productSelection(e) {
                 createDivProdukt.append(templateRoll.content.cloneNode(true));
                 break;
             case "sushi_1":
-                createDivProdukt.append(templateSushi_1.content.cloneNode(true));
-                search();
-                break;
-            case "sushi_2":
-                createDivProdukt.append(templateSushi_2.content.cloneNode(true));
-                search();
-                break;
-            case "sushi_3":
-                createDivProdukt.append(templateSushi_3.content.cloneNode(true));
+                createDivProdukt.append(templateSushi.content.cloneNode(true));
                 search();
                 break;
             case "salad":
@@ -301,47 +292,80 @@ function productSelection(e) {
                 break;
             default:
         }
-        let widthCreatedDiv = document.body.querySelector(".createDivNew");
+        let widthCreatedDiv = document.body.querySelector(".createDivNew");// центрирует кнопки страниц внизу
         let widthBlockPage = pageNavigation.offsetWidth / 2;
         let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
         widthCreatedDiv = widthblockCenterMain - widthBlockPage;
-        pageNavigation.style.marginLeft = widthCreatedDiv + "px";
+        pageNavigation.style.left = widthCreatedDiv + "px";
     }
     return 0;
 };
-
+var saveClick_1, saveClick_2, iPage = 0;
 function search() {
-    // pageNavigation.addEventListener("click", productSelection);
     pageNavigation.addEventListener("click", styleButtonNavigation);
+    pageNavigation.addEventListener("click", switchingPage);
     sortingProduct.addEventListener("click", sortProduct);
+    saveClick_2 = document.getElementById("page_1");
+    iPage = 0;
 };
-var saveClick, iPage = 0;
-function styleButtonNavigation(e) {
+var heightPage;
+function switchingPage(e) {
+    heightPage = tablePizza.offsetHeight;
+
+    switch (e.target.id) {
+
+        case "page_1":
+            tablePizza.style.top = 0 + "px";
+            break;
+        case "page_2":
+            tablePizza.style.top = -1290 + "px";
+            break;
+        case "page_3":
+            tablePizza.style.top = -(1290 * 2) + "px";
+            break;
+        default:
+    }
+
+
+    return 0;
+};
+
+function styleButtonNavigation(e) {// стилезует кнопки переключения страниц
+
     if (e.target.id == "pageNavigation") {
         return 0;
     } else {
-        // page_1.style.backgroundColor = "white";
-
+        iPage++;
         switch (iPage) {
-            case 0:
-
-                break;
             case 1:
+                saveClick_1 = document.getElementById(e.target.id);
+                saveClick_1.style.backgroundColor = "#F46D40";
+                saveClick_1.style.color = "white";
+                saveClick_1.style.boxShadow = "0px 0px 3px 2px darkgrey";
 
+                saveClick_2.style.backgroundColor = "white";
+                saveClick_2.style.color = "blueviolet";
+                saveClick_2.style.boxShadow = "0px 0px 0px 0px";
+                break;
+            case 2:
+                saveClick_2 = document.getElementById(e.target.id);
+                saveClick_2.style.backgroundColor = "#F46D40";
+                saveClick_2.style.color = "white";
+                saveClick_2.style.boxShadow = "0px 0px 3px 2px darkgrey";
+
+                saveClick_1.style.backgroundColor = "white";
+                saveClick_1.style.color = "blueviolet";
+                saveClick_1.style.boxShadow = "0px 0px 0px 0px";
+                iPage = 0;
                 break;
             default:
         }
 
-        saveClick = document.getElementById(e.target.id);
-        saveClick.style.backgroundColor = "#F46D40";
-        saveClick.style.color = "white";
-        saveClick.style.boxShadow = "0px 0px 3px 2px darkgrey";
-        iPage++;
     }
     return 0;
 };
 var iFunc = 0;
-function sortProduct() {
+function sortProduct() {// сортирует страницу по возростанию
 
     let masProduct = [], iii = 0;
 
