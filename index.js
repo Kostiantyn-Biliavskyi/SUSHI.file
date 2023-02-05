@@ -301,34 +301,46 @@ function productSelection(e) {
                 break;
             default:
         }
-        /* let widthCreatedDiv = document.body.querySelector(".createDivNew");
-         let widthBlockPage = pageNavigation.offsetWidth / 2;
-         let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
-         widthCreatedDiv = widthblockCenterMain - widthBlockPage;
-         pageNavigation.style.marginLeft = widthCreatedDiv + "px";*/
+        let widthCreatedDiv = document.body.querySelector(".createDivNew");
+        let widthBlockPage = pageNavigation.offsetWidth / 2;
+        let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
+        widthCreatedDiv = widthblockCenterMain - widthBlockPage;
+        pageNavigation.style.marginLeft = widthCreatedDiv + "px";
     }
     return 0;
 };
 
 function search() {
     // pageNavigation.addEventListener("click", productSelection);
-    // pageNavigation.addEventListener("click", styleButtonNavigation);
+    pageNavigation.addEventListener("click", styleButtonNavigation);
     sortingProduct.addEventListener("click", sortProduct);
 };
-/*var saveClick;
+var saveClick, iPage = 0;
 function styleButtonNavigation(e) {
     if (e.target.id == "pageNavigation") {
         return 0;
     } else {
-        page_1.style.backgroundColor = "white";
+        // page_1.style.backgroundColor = "white";
+
+        switch (iPage) {
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+            default:
+        }
+
         saveClick = document.getElementById(e.target.id);
         saveClick.style.backgroundColor = "#F46D40";
         saveClick.style.color = "white";
         saveClick.style.boxShadow = "0px 0px 3px 2px darkgrey";
+        iPage++;
     }
     return 0;
-};*/
-
+};
+var iFunc = 0;
 function sortProduct() {
 
     let masProduct = [], iii = 0;
@@ -340,10 +352,10 @@ function sortProduct() {
         }
     }
     masProduct.sort(function (a, b) { return a - b });
-    var Irow = 0, Ikcells = 0, rut;
-    var clon;
-    for (let ir = 0; ir < masProduct.length; ir++) {
-        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15) {
+    let Irow = 0, Ikcells = 0, rut;
+
+    for (var ir = 0; ir < masProduct.length; ir++) {
+        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
             Irow = Irow + 1;
             Ikcells = 0;
         }
@@ -361,7 +373,12 @@ function sortProduct() {
         }
         Ikcells++;
     }
-    return 0;
+    if (iFunc == 4) {
+        iFunc = 0;
+        return 0;
+    }
+    iFunc++;
+    sortProduct();
 };
 
 
