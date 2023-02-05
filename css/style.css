@@ -1465,14 +1465,15 @@ option:checked {
 }
 
 #tablePizza {
-    margin-top: 75px;
+    position: absolute;
+    border-collapse: collapse;
 }
 
 .titleProduct {
     position: absolute;
     width: 957px;
     height: 45px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .pizzaLargeFoto {
@@ -1507,29 +1508,26 @@ option:checked {
     width: 316.6px;
     height: 400px;
     position: relative;
-    top: -75px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: inline-table;
-    background-color: aquamarine;
-    /* border: 1px solid green; */
 }
 
 .createDivNew {
+    width: 960px;
+    height: 1420px;
     position: absolute;
     top: 130px;
     left: 55px;
-    border: 1px solid rgb(29, 6, 241);
 }
 
 .pageHiddenSushi {
-    /* width: 949.8px; */
-    width: 970px;
+    width: 950px;
     height: 1290px;
     position: absolute;
     top: 45px;
-    /* overflow: hidden; */
+    overflow: hidden;
     border: 1px solid red;
-
 }
 
 .productLargeFoto {
@@ -1561,14 +1559,15 @@ option:checked {
 #pageNavigation {
     text-align: center;
     margin-top: 20px;
-    display: inline-table;
+    display: flex;
+    position: absolute;
+    top: 1350px;
 }
 
 .page_1 {
     width: 30px;
     height: 30px;
-    color: blueviolet;
-    float: left;
+    color: white;
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 5px;
@@ -1589,13 +1588,13 @@ option:checked {
     cursor: pointer;
 }
 
-.page_1:hover {
+/* .page_1:hover {
     box-shadow: 0px 0px 3px 2px darkgrey;
 }
 
 .page_2:hover {
     box-shadow: 0px 0px 3px 2px darkgrey;
-}
+} */
 
 .blokcBasketHed {
     width: 100px;
@@ -1627,7 +1626,6 @@ option:checked {
     left: 30px;
     border-radius: 5px;
     cursor: pointer;
-
 }
 
 .basketHed:hover {
