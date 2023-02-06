@@ -306,14 +306,38 @@ function search() {
     pageNavigation.addEventListener("click", switchingPage);
     sortingProduct.addEventListener("click", sortProduct);
     saveClick_2 = document.getElementById("page_1");
+    pageNavigation.addEventListener("mouseover", comesButton);
+    pageNavigation.addEventListener("mouseout", leavesButton);
+    sortingProduct.addEventListener("mouseover", menuSortingOpen);
+    sortingProduct.addEventListener("mouseout", menuSortingClose);
     iPage = 0;
 };
+
+function comesButton(e) {
+    if (e.target.id != "pageNavigation") {
+        e.target.style.boxShadow = "0px 0px 3px 2px darkgrey";
+    }
+    return 0;
+};
+function leavesButton(e) {
+    if (e.target.id != "pageNavigation") {
+        e.target.style.boxShadow = "0px 0px 0px 0px";
+    }
+    return 0;
+};
+
+function menuSortingOpen() {
+    menuSort.style.display = "block";
+};
+function menuSortingClose() {
+    menuSort.style.display = "none";
+};
+
 var heightPage;
-function switchingPage(e) {
+function switchingPage(e) {// перенключение страниц
     heightPage = tablePizza.offsetHeight;
 
     switch (e.target.id) {
-
         case "page_1":
             tablePizza.style.top = 0 + "px";
             break;
@@ -325,8 +349,6 @@ function switchingPage(e) {
             break;
         default:
     }
-
-
     return 0;
 };
 
@@ -341,21 +363,17 @@ function styleButtonNavigation(e) {// стилезует кнопки перек
                 saveClick_1 = document.getElementById(e.target.id);
                 saveClick_1.style.backgroundColor = "#F46D40";
                 saveClick_1.style.color = "white";
-                saveClick_1.style.boxShadow = "0px 0px 3px 2px darkgrey";
 
                 saveClick_2.style.backgroundColor = "white";
                 saveClick_2.style.color = "blueviolet";
-                saveClick_2.style.boxShadow = "0px 0px 0px 0px";
                 break;
             case 2:
                 saveClick_2 = document.getElementById(e.target.id);
                 saveClick_2.style.backgroundColor = "#F46D40";
                 saveClick_2.style.color = "white";
-                saveClick_2.style.boxShadow = "0px 0px 3px 2px darkgrey";
 
                 saveClick_1.style.backgroundColor = "white";
                 saveClick_1.style.color = "blueviolet";
-                saveClick_1.style.boxShadow = "0px 0px 0px 0px";
                 iPage = 0;
                 break;
             default:
@@ -365,44 +383,55 @@ function styleButtonNavigation(e) {// стилезует кнопки перек
     return 0;
 };
 var iFunc = 0;
-function sortProduct() {// сортирует страницу по возростанию
+function sortProduct(e) {// сортирует страницу по возростанию
+    switch (e.target.id) {
+        case "sortCheap":
+            sortCheap();
+            function sortCheap() {
+                let masProduct = [], iii = 0;
 
-    let masProduct = [], iii = 0;
-
-    for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-        for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
-            masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(".Thprices").textContent;
-            iii++;
-        }
-    }
-    masProduct.sort(function (a, b) { return a - b });
-    let Irow = 0, Ikcells = 0, rut;
-
-    for (var ir = 0; ir < masProduct.length; ir++) {
-        if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
-            Irow = Irow + 1;
-            Ikcells = 0;
-        }
-
-        for (let it = 0; it < tablePizza.rows.length; it++) {
-
-            for (let id = 0; id < tablePizza.rows[it].cells.length; id++) {
-
-                if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(".Thprices").textContent) {
-                    rut = tablePizza.rows[Irow].cells[Ikcells].innerHTML;
-                    tablePizza.rows[Irow].cells[Ikcells].innerHTML = tablePizza.rows[it].cells[id].innerHTML;
-                    tablePizza.rows[it].cells[id].innerHTML = rut;
+                for (let ix = 0; ix < tablePizza.rows.length; ix++) {
+                    for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
+                        masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(".Thprices").textContent;
+                        iii++;
+                    }
                 }
+                masProduct.sort(function (a, b) { return a - b });
+                let Irow = 0, Ikcells = 0, rut;
+
+                for (var ir = 0; ir < masProduct.length; ir++) {
+                    if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
+                        Irow = Irow + 1;
+                        Ikcells = 0;
+                    }
+
+                    for (let it = 0; it < tablePizza.rows.length; it++) {
+
+                        for (let id = 0; id < tablePizza.rows[it].cells.length; id++) {
+
+                            if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(".Thprices").textContent) {
+                                rut = tablePizza.rows[Irow].cells[Ikcells].innerHTML;
+                                tablePizza.rows[Irow].cells[Ikcells].innerHTML = tablePizza.rows[it].cells[id].innerHTML;
+                                tablePizza.rows[it].cells[id].innerHTML = rut;
+                            }
+                        }
+                    }
+                    Ikcells++;
+                }
+
+                if (iFunc == 4) {
+                    iFunc = 0;
+                    return 0;
+                }
+                iFunc++;
+                sortCheap();
             }
-        }
-        Ikcells++;
+            break;
+        default:
+            break;
     }
-    if (iFunc == 4) {
-        iFunc = 0;
-        return 0;
-    }
-    iFunc++;
-    sortProduct();
+
+    return 0;
 };
 
 

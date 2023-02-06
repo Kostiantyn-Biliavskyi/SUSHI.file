@@ -1527,7 +1527,6 @@ option:checked {
     position: absolute;
     top: 45px;
     overflow: hidden;
-    border: 1px solid red;
 }
 
 .productLargeFoto {
@@ -1588,14 +1587,6 @@ option:checked {
     cursor: pointer;
 }
 
-/* .page_1:hover {
-    box-shadow: 0px 0px 3px 2px darkgrey;
-}
-
-.page_2:hover {
-    box-shadow: 0px 0px 3px 2px darkgrey;
-} */
-
 .blokcBasketHed {
     width: 100px;
     height: 100px;
@@ -1635,10 +1626,59 @@ option:checked {
 #sortingProduct {
     width: 150px;
     height: 40px;
-    background-color: #F46D40;
     position: absolute;
-    left: 300px;
+    left: 700px;
     top: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+}
+
+#sortingProduct:hover {
+    color: #f08c0a;
+}
+
+#menuSort {
+    width: 200px;
+    height: 290px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+}
+
+.nameMenuSort {
+    font-family: 'Roboto';
+    color: #000000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+    margin-top: 20px;
+}
+
+.nameMenuSort:hover {
+    color: #d47c09;
+    text-shadow: 0px 5px 3px darkgrey;
+}
+
+#menuSort ul {
+    padding: 0;
+    margin: 0;
+}
+
+#menuSort li {
+    list-style: none;
 }
 
 /* -------------------------- @ MEDIA --------------------------------- */
