@@ -438,9 +438,7 @@ function sortProduct(e) {// сортирует страницу по возро�
                     iii++;
                 }
             }
-            alert(masProduct);
             masProduct.sort((a, b) => a.localeCompare(b));
-            alert(masProduct);
             break;
         default:
             break;
