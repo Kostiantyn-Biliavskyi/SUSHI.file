@@ -270,47 +270,59 @@ function productSelection(e) {
         switch (e.target.dataset.product) {
             case "pizza":
                 createDivProdukt.append(templatePizza.content.cloneNode(true));
+                search();
+                centrButton();
                 break;
             case "seti":
                 createDivProdukt.append(templateSeti.content.cloneNode(true));
+                search();
                 break;
             case "wok":
                 createDivProdukt.append(templateWok.content.cloneNode(true));
+                search();
                 break;
             case "roll":
                 createDivProdukt.append(templateRoll.content.cloneNode(true));
+                search();
                 break;
             case "sushi_1":
                 createDivProdukt.append(templateSushi.content.cloneNode(true));
                 search();
+                centrButton();
                 break;
             case "salad":
                 createDivProdukt.append(templateSalad.content.cloneNode(true));
+                search();
                 break;
             case "soup":
                 createDivProdukt.append(templateSoup.content.cloneNode(true));
+                search();
                 break;
             default:
         }
-        let widthCreatedDiv = document.body.querySelector(".createDivNew");// центрирует кнопки страниц внизу
-        let widthBlockPage = pageNavigation.offsetWidth / 2;
-        let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
-        widthCreatedDiv = widthblockCenterMain - widthBlockPage;
-        pageNavigation.style.left = widthCreatedDiv + "px";
     }
     return 0;
 };
-var saveClick_1, saveClick_2, iPage = 0;
-function search() {
+
+function centrButton() {// для мностараничных меню. делает кнопки активными
+    let widthCreatedDiv = document.body.querySelector(".createDivNew");// центрирует кнопки страниц внизу
+    let widthBlockPage = pageNavigation.offsetWidth / 2;
+    let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
+    widthCreatedDiv = widthblockCenterMain - widthBlockPage;
+    pageNavigation.style.left = widthCreatedDiv + "px";
     pageNavigation.addEventListener("click", styleButtonNavigation);
     pageNavigation.addEventListener("click", switchingPage);
-    sortingProduct.addEventListener("click", sortProduct);
-    saveClick_2 = document.getElementById("page_1");
     pageNavigation.addEventListener("mouseover", comesButton);
     pageNavigation.addEventListener("mouseout", leavesButton);
+    saveClick_2 = document.getElementById("page_1");
+    iPage = 0;
+    return 0;
+};
+var saveClick_1, saveClick_2, iPage = 0;
+function search() { // одностраничное меню
+    sortingProduct.addEventListener("click", sortProduct);
     sortingProduct.addEventListener("mouseover", menuSortingOpen);
     sortingProduct.addEventListener("mouseout", menuSortingClose);
-    iPage = 0;
 };
 
 function comesButton(e) {
@@ -382,54 +394,86 @@ function styleButtonNavigation(e) {// стилезует кнопки перек
     }
     return 0;
 };
-var iFunc = 0;
+
 function sortProduct(e) {// сортирует страницу по возростанию
+    let iFunc = 0, masProduct = [], iii = 0, nameClassSort = "";
+
     switch (e.target.id) {
         case "sortCheap":
-            sortCheap();
-            function sortCheap() {
-                let masProduct = [], iii = 0;
-
-                for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-                    for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
-                        masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(".Thprices").textContent;
-                        iii++;
-                    }
+            nameClassSort = ".Thprices";
+            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
+                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
+                    masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
+                    iii++;
                 }
-                masProduct.sort(function (a, b) { return a - b });
-                let Irow = 0, Ikcells = 0, rut;
-
-                for (var ir = 0; ir < masProduct.length; ir++) {
-                    if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
-                        Irow = Irow + 1;
-                        Ikcells = 0;
-                    }
-
-                    for (let it = 0; it < tablePizza.rows.length; it++) {
-
-                        for (let id = 0; id < tablePizza.rows[it].cells.length; id++) {
-
-                            if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(".Thprices").textContent) {
-                                rut = tablePizza.rows[Irow].cells[Ikcells].innerHTML;
-                                tablePizza.rows[Irow].cells[Ikcells].innerHTML = tablePizza.rows[it].cells[id].innerHTML;
-                                tablePizza.rows[it].cells[id].innerHTML = rut;
-                            }
-                        }
-                    }
-                    Ikcells++;
-                }
-
-                if (iFunc == 4) {
-                    iFunc = 0;
-                    return 0;
-                }
-                iFunc++;
-                sortCheap();
             }
+            masProduct.sort(function (a, b) { return a - b });
+            break;
+        case "sortExpensive":
+            nameClassSort = ".Thprices";
+            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
+                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
+                    masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
+                    iii++;
+                }
+            }
+            masProduct.sort(function (a, b) { return a - b });
+            masProduct.reverse();
+            break;
+        case "sortWeight":
+            nameClassSort = ".productWeight";
+            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
+                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
+                    masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
+                    iii++;
+                }
+            }
+            masProduct.sort(function (a, b) { return a - b });
+            break;
+        case "sortName":
+            nameClassSort = ".productName";
+            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
+                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
+                    masProduct[iii] = tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
+                    iii++;
+                }
+            }
+            alert(masProduct);
+            masProduct.sort((a, b) => a.localeCompare(b));
+            alert(masProduct);
             break;
         default:
             break;
     }
+
+    function sortCheap() {
+        let Irow = 0, Ikcells = 0, rut;
+        for (let ir = 0; ir < masProduct.length; ir++) {
+            if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
+                Irow = Irow + 1;
+                Ikcells = 0;
+            }
+            for (let it = 0; it < tablePizza.rows.length; it++) {
+                for (let id = 0; id < tablePizza.rows[it].cells.length; id++) {
+                    if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(nameClassSort).textContent) {
+                        rut = tablePizza.rows[Irow].cells[Ikcells].innerHTML;
+                        tablePizza.rows[Irow].cells[Ikcells].innerHTML = tablePizza.rows[it].cells[id].innerHTML;
+                        tablePizza.rows[it].cells[id].innerHTML = rut;
+                    }
+                }
+            }
+            Ikcells++;
+        }
+
+        if (iFunc == 4) {
+            iFunc = 0;
+            return 0;
+        } else {
+            iFunc++;
+            sortCheap();
+        }
+    }
+    sortCheap();
 
     return 0;
 };
