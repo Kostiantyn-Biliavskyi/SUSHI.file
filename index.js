@@ -245,8 +245,15 @@ jQuery(function ($) {
 });
 
 // ------------------------------------------------------------
+var review = document.querySelector(".reviews");
+review = addEventListener("click", callProductSelection);
 menu.addEventListener("click", productSelection);
-
+function callProductSelection(e) {
+    if (e.target.className == "reviews") {
+        productSelection(e);
+    }
+    return 0;
+};
 var cordLineHed, createDivProdukt;
 function productSelection(e) {
 
@@ -261,6 +268,7 @@ function productSelection(e) {
 
         if (e.target.dataset.product == "mainPage") {
             blockCentrSliders.style.display = "";
+            return 0;
         } else {
             blockCentrSliders.style.display = "none";
             createDivProdukt = document.createElement('div');
@@ -298,7 +306,15 @@ function productSelection(e) {
                 createDivProdukt.append(templateSoup.content.cloneNode(true));
                 search();
                 break;
+            case "review":
+                createDivProdukt.append(templateReview.content.cloneNode(true));
+                clickCreateReview();
+                break;
+            case "akcii":
+                clientWritesReview();
+                break;
             default:
+                alert("ERROR");
         }
     }
     return 0;
@@ -475,12 +491,18 @@ function sortProduct(e) {// сортирует страницу по возро�
 
     return 0;
 };
+function clickCreateReview() {
+    createReview.addEventListener("click", clientWritesReview);
+};
+// 
 
+function clientWritesReview() {
+    alert();
 
-
-
-
-
-
+    var div = document.createElement('textarea');
+    div.innerHTML = "hello kostya";
+    div.id = "hello";
+    menu.after(div);
+};
 
 

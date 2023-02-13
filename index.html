@@ -69,10 +69,10 @@
                 <img class="drinks" src="css\css.foto\Vector8.png">
                 <div id="menuButtonText"> Напитки </div>
             </div>
-            <div id="menuButton">
-                <img class="stock" src="css\css.foto\Vector9.png">
-                <div class="percent"> % </div>
-                <div id="menuButtonText"> Акции </div>
+            <div id="menuButton" data-product="akcii">
+                <img class="stock" data-product="akcii" src="css\css.foto\Vector9.png">
+                <div class="percent" data-product="akcii"> % </div>
+                <div id="menuButtonText" data-product="akcii"> Акции </div>
             </div>
         </div>
         <!-- ----------------------- centerMain --------------------------------- -->
@@ -118,7 +118,7 @@
                 <img class="basketHed" src="css\css.foto\free-icon-shopping-cart-of-checkered-design-34627.png"
                     alt="корзина">
             </div>
-            <div class="reviews">Отзывы</div>
+            <div class="reviews" data-product="review">Отзывы</div>
 
             <div class="delivery">Доставка и оплата</div>
             <div class="lineHed"></div>
@@ -1802,10 +1802,21 @@
             </div>
         </template>
         <!-- ------------------------------------------------------------------ -->
+        <template id="templateReview">
 
+            <div class="titleProduct">
+                <div class="textProductLarge">Отзывы</div>
+                <div id="createReview">
+                    <div id="createReviewText">+ Добавить отзыв</div>
+                </div>
+            </div>
+        </template>
     </div>
+    <!-- <textarea id="myText" rows="5" cols="50">hello kostya, gut day</textarea> -->
+
+
     <script src="maskinput.js/maskinput.js"></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </body>
 
 </html>
