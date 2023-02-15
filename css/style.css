@@ -1471,7 +1471,6 @@ option:checked {
     position: absolute;
     width: 957px;
     height: 45px;
-    border: 1px solid black;
 }
 
 .pizzaLargeFoto {
@@ -1709,8 +1708,58 @@ option:checked {
 #hello {
     width: 140px;
     height: 200px;
-    background-color: #d47c09;
     z-index: 10;
+}
+
+.blockReview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.userReview {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.nameUserReview {
+    display: inline;
+    margin: 10px 20px 20px 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    align-items: center;
+    color: #000000;
+}
+
+.dateReview {
+    display: inline;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    color: #A4ACAD;
+}
+
+.textReview {
+    margin: 20px 0 0 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
 }
 
 /* -------------------------- @ MEDIA --------------------------------- */

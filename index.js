@@ -309,9 +309,7 @@ function productSelection(e) {
             case "review":
                 createDivProdukt.append(templateReview.content.cloneNode(true));
                 clickCreateReview();
-                break;
-            case "akcii":
-                clientWritesReview();
+
                 break;
             default:
                 alert("ERROR");
@@ -494,7 +492,6 @@ function sortProduct(e) {// сортирует страницу по возро�
 function clickCreateReview() {
     createReview.addEventListener("click", clientWritesReview);
 };
-// 
 
 function clientWritesReview() {
     alert();
