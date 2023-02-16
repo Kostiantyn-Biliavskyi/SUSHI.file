@@ -495,11 +495,8 @@ function clickCreateReview() {
 
 function clientWritesReview() {
     alert();
+    paranja.id = "paranjaClass";
 
-    var div = document.createElement('textarea');
-    div.innerHTML = "hello kostya";
-    div.id = "hello";
-    menu.after(div);
 };
 
 

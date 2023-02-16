@@ -1762,6 +1762,16 @@ option:checked {
     color: #000000;
 }
 
+#paranjaClass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 0;
+    background-color: black;
+    opacity: 0.5;
+}
+
 /* -------------------------- @ MEDIA --------------------------------- */
 @media screen and (max-width:1400px) {
     .block {
