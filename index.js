@@ -248,6 +248,7 @@ jQuery(function ($) {
 var review = document.querySelector(".reviews");
 review = addEventListener("click", callProductSelection);
 menu.addEventListener("click", productSelection);
+firma.addEventListener("click", productSelection);
 function callProductSelection(e) {
     if (e.target.className == "reviews") {
         productSelection(e);
@@ -309,7 +310,6 @@ function productSelection(e) {
             case "review":
                 createDivProdukt.append(templateReview.content.cloneNode(true));
                 clickCreateReview();
-
                 break;
             default:
                 alert("ERROR");
@@ -318,7 +318,7 @@ function productSelection(e) {
     return 0;
 };
 
-function centrButton() {// для мностараничных меню. делает кнопки активными
+function centrButton() {// для многостараничных меню. делает кнопки активными
     let widthCreatedDiv = document.body.querySelector(".createDivNew");// центрирует кнопки страниц внизу
     let widthBlockPage = pageNavigation.offsetWidth / 2;
     let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
@@ -494,9 +494,32 @@ function clickCreateReview() {
 };
 
 function clientWritesReview() {
-    alert();
-    paranja.id = "paranjaClass";
-
+    paranja.classList.toggle('paranjaClass');
+    paranjaForm.classList.toggle('paranjaFormClass');
+    paranjaForm.style.display = "block";
+    buttonForm.addEventListener("click", sendingForm);
+    closeForm.addEventListener("click", clickCloseForm);
 };
 
+function sendingForm() {
 
+    if (nameUserForm.value === "" || nameUserForm.value === " ") {
+        nameUserForm.style.boxShadow = "0 0 15px #f74a47";
+        nameUserForm.value = "Укажите имя.";
+        setTimeout(() => { nameUserForm.style.boxShadow = ""; nameUserForm.value = ""; }, 1500);
+    }
+    if (textMessage.value === "" || textMessage.value === " ") {
+        textMessage.style.boxShadow = "0 0 15px #f74a47";
+        textMessage.value = "Оставте отзыв.";
+        setTimeout(() => { textMessage.style.boxShadow = ""; textMessage.value = ""; }, 1500);
+    }
+
+
+    // clickCloseForm();
+};
+
+function clickCloseForm() {
+    paranja.classList.toggle('paranjaClass');
+    paranjaForm.classList.toggle('paranjaFormClass');
+    paranjaForm.style.display = "none";
+}

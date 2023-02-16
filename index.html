@@ -13,9 +13,9 @@
 
 <body>
     <div class="block">
-        <div class="firma">
-            <img class="firmaFoto" src="css\css.foto\logo.png">
-            <h3 class="firmaText">Bomset</h3>
+        <div class="firma" id="firma" data-product="mainPage">
+            <img class="firmaFoto" data-product="mainPage" src="css\css.foto\logo.png">
+            <h3 class="firmaText" data-product="mainPage">Bomset</h3>
         </div>
         <div class="lineMenu"></div>
 
@@ -1888,9 +1888,22 @@
                         курьеры и девушки на телефоне.</p>
                 </li>
             </ul>
-
+            <div id="paranja"></div>
+            <div id="paranjaForm">
+                <div id="closeForm">
+                    <div id="lineClose1"></div>
+                    <div id="lineClose2"></div>
+                </div>
+                <form action="#" class="formUserReview">
+                    <label class="labelText" for="nameUserForm">Ваше имя*:</label><br>
+                    <input id="nameUserForm" type="text" name="name"><br>
+                    <label class="labelText" for="textMessage">Отзыв*:</label><br>
+                    <textarea name="text" id="textMessage"></textarea><br>
+                    <button id="buttonForm" type="button">Оставить отзыв</button>
+                </form>
+            </div>
         </template>
-        <div id="paranja"></div>
+
     </div>
     <!-- <textarea id="myText" rows="5" cols="50">hello kostya, gut day</textarea> -->
 
