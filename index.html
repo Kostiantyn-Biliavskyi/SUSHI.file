@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" src="css\css.foto\logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="css\css.foto\logo.png" type="image/x-icon">
     <title>Bomset</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
@@ -1894,12 +1894,12 @@
                     <div id="lineClose1"></div>
                     <div id="lineClose2"></div>
                 </div>
-                <form action="#" class="formUserReview">
+                <form action="send.php" method="post" class="formUserReview">
                     <label class="labelText" for="nameUserForm">Ваше имя*:</label><br>
-                    <input id="nameUserForm" type="text" name="name"><br>
+                    <input id="nameUserForm" type="text" name="name" required><br>
                     <label class="labelText" for="textMessage">Отзыв*:</label><br>
-                    <textarea name="text" id="textMessage"></textarea><br>
-                    <button id="buttonForm" type="button">Оставить отзыв</button>
+                    <textarea name="text" id="textMessage" required></textarea><br>
+                    <input id="buttonForm" type="submit" value="Оставить отзыв">
                 </form>
             </div>
         </template>
