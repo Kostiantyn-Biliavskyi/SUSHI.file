@@ -1,17 +1,17 @@
 <?php
-$fio = $_POST['fio'];
+$name = $_POST['name'];
 $text = $_POST['text'];
-$fio = htmlspecialchars($fio);
+$name = htmlspecialchars($name);
 $text = htmlspecialchars($text);
-$fio = urldecode($fio);
+$name = urldecode($name);
 $text = urldecode($text);
-$fio = trim($fio);
+$name = trim($name);
 $text = trim($text);
 // echo $fio;
 // echo "<br>";
 // echo $email;
-if (mail("gattikostya@gmail.com", "Отзыв о сайте", "ФИО:".$fio.". Отзыв: ".$text ,"From: 78@bomset.zzz.com.ua \r\n"))
+if (mail("gattikostya@gmail.com", "Отзыв о сайте", "Имя:".$name.". Отзыв: ".$text ,"From: 78@bomset.zzz.com.ua \r\n"))
  {     echo "сообщение успешно отправлено";
 } else {
     echo "при отправке сообщения возникли ошибки";
-}?>
+}

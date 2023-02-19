@@ -337,6 +337,8 @@ function search() { // одностраничное меню
     sortingProduct.addEventListener("click", sortProduct);
     sortingProduct.addEventListener("mouseover", menuSortingOpen);
     sortingProduct.addEventListener("mouseout", menuSortingClose);
+    // let choice = document.querySelector(".choice");
+    tablePizza.addEventListener("click", customerСhoice);
 };
 
 function comesButton(e) {
@@ -513,13 +515,16 @@ function sendingForm() {
         textMessage.value = "Оставте отзыв.";
         setTimeout(() => { textMessage.style.boxShadow = ""; textMessage.value = ""; }, 1500);
     }
-
-
-    // clickCloseForm();
 };
 
 function clickCloseForm() {
     paranja.classList.toggle('paranjaClass');
     paranjaForm.classList.toggle('paranjaFormClass');
     paranjaForm.style.display = "none";
-}
+};
+
+function customerСhoice(e) {
+
+    alert(e.target.dataset.nameorder + " - " + e.target.dataset.priceproduct + " - " + e.target.dataset.src);
+
+};
