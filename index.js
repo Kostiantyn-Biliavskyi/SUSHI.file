@@ -1,4 +1,4 @@
-
+var iBasket = 0;
 mainSlider.addEventListener("click", typ);
 
 function typ(e) {
@@ -337,7 +337,6 @@ function search() { // одностраничное меню
     sortingProduct.addEventListener("click", sortProduct);
     sortingProduct.addEventListener("mouseover", menuSortingOpen);
     sortingProduct.addEventListener("mouseout", menuSortingClose);
-    // let choice = document.querySelector(".choice");
     tablePizza.addEventListener("click", customerСhoice);
 };
 
@@ -505,12 +504,12 @@ function clientWritesReview() {
 
 function sendingForm() {
 
-    if (nameUserForm.value === "" || nameUserForm.value === " ") {
+    if (nameUserForm.value === "" || nameUserForm.value === " " || textMessage.value === "  " || textMessage.value === "," || textMessage.value === ".") {
         nameUserForm.style.boxShadow = "0 0 15px #f74a47";
         nameUserForm.value = "Укажите имя.";
         setTimeout(() => { nameUserForm.style.boxShadow = ""; nameUserForm.value = ""; }, 1500);
     }
-    if (textMessage.value === "" || textMessage.value === " ") {
+    if (textMessage.value === "" || textMessage.value === " " || textMessage.value === "  ") {
         textMessage.style.boxShadow = "0 0 15px #f74a47";
         textMessage.value = "Оставте отзыв.";
         setTimeout(() => { textMessage.style.boxShadow = ""; textMessage.value = ""; }, 1500);
@@ -521,10 +520,19 @@ function clickCloseForm() {
     paranja.classList.toggle('paranjaClass');
     paranjaForm.classList.toggle('paranjaFormClass');
     paranjaForm.style.display = "none";
+    return 0;
 };
+var nameOrder, priceProduct, src;
 
 function customerСhoice(e) {
+    iBasket++;
 
-    alert(e.target.dataset.nameorder + " - " + e.target.dataset.priceproduct + " - " + e.target.dataset.src);
-
+    sumProduct.innerHTML = iBasket;
+    nameOrder = e.target.dataset.nameorder;
+    priceProduct = e.target.dataset.priceproduct;
+    src = e.target.dataset.src;
+    localStorage.setItem('nameOrder', nameOrder);
+    localStorage.setItem('priceProduct', priceProduct);
+    localStorage.setItem('src', src);
+    localStorage.setItem('iBasket', iBasket);
 };
