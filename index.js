@@ -522,26 +522,35 @@ function clickCloseForm() {
     paranjaForm.style.display = "none";
     return 0;
 };
-var nameOrder, priceProduct, src;
-var iBasket = localStorage.getItem('iBas');
-sumProduct.innerHTML = iBasket;
-function customerСhoice(e) {
-    // iBas1 = localStorage.getItem('iBas');
-    // iBasket=iBas1;
-    iBasket++;
+// -------------------------------------------------------------------
+var nameOrder = [], priceProduct = [], src = [];
+var iBasket = 0;
+// alert(iBasket);
+basketClick.addEventListener('click', def);
 
+function def() {
+    iBasket = localStorage.getItem('iBasket');
     sumProduct.innerHTML = iBasket;
-    nameOrder = e.target.dataset.nameorder;
-    priceProduct = e.target.dataset.priceproduct;
-    src = e.target.dataset.src;
+    // nameOrder = localStorage.getItem('nameOr');
+    return 0;
+};
+def();
+var is = 0;
+function customerСhoice(e) {
+    if (iBasket == null) {
+        iBasket = 0;
+    }
+
+    nameOrder[iBasket] = e.target.dataset.nameorder;
+    alert(nameOrder);
+    priceProduct[iBasket] = e.target.dataset.priceproduct;
+    src[is] = e.target.dataset.src;
     localStorage.setItem('nameOrder', nameOrder);
     localStorage.setItem('priceProduct', priceProduct);
     localStorage.setItem('src', src);
 
+    iBasket++;
+    sumProduct.innerHTML = iBasket;
     localStorage.setItem('iBasket', iBasket);
-
-
-
-    // iBasket1 = localStorage.getItem('iBasket1');
-
+    is++;
 };
