@@ -1,4 +1,4 @@
-var iBasket = 0;
+
 mainSlider.addEventListener("click", typ);
 
 function typ(e) {
@@ -523,8 +523,11 @@ function clickCloseForm() {
     return 0;
 };
 var nameOrder, priceProduct, src;
-
+var iBasket = localStorage.getItem('iBas');
+sumProduct.innerHTML = iBasket;
 function customerСhoice(e) {
+    // iBas1 = localStorage.getItem('iBas');
+    // iBasket=iBas1;
     iBasket++;
 
     sumProduct.innerHTML = iBasket;
@@ -534,5 +537,11 @@ function customerСhoice(e) {
     localStorage.setItem('nameOrder', nameOrder);
     localStorage.setItem('priceProduct', priceProduct);
     localStorage.setItem('src', src);
+
     localStorage.setItem('iBasket', iBasket);
+
+
+
+    // iBasket1 = localStorage.getItem('iBasket1');
+
 };

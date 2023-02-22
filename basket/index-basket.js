@@ -1,10 +1,12 @@
 var nameOrder = localStorage.getItem('nameOrder');
 var priceProduct = localStorage.getItem('priceProduct');
 var src = localStorage.getItem('src');
-var iBasket = localStorage.getItem('iBasket');
+var iBasket1 = 0;
+iBasket1 = localStorage.getItem('iBasket');
+document.getElementById("de").innerHTML = iBasket1;
 
-document.getElementById("de").innerHTML = iBasket;
 
+localStorage.setItem('iBas', iBasket1);
 
 var img = document.createElement('img');
 img.src = '../' + src;

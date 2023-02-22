@@ -1897,6 +1897,7 @@ option:checked {
     color: #000000;
     border-radius: 5px;
     padding-left: 10px;
+    transition: 2s;
 }
 
 #textMessage {
@@ -1915,6 +1916,7 @@ option:checked {
     padding: 10px;
     overflow: auto;
     resize: none;
+    transition: 2s;
 }
 
 #buttonForm {
