@@ -2,13 +2,12 @@ var nameOrder = [], priceProduct = [], src = [];
 var iBasket1 = 0;
 
 iBasket1 = localStorage.getItem('iBasket');
-localStorage.setItem('iBas', iBasket1);
 
 nameOrder = localStorage.getItem('nameOrder').split(',');
 priceProduct = localStorage.getItem('priceProduct').split(',');
 src = localStorage.getItem('src').split(',');
 
-document.getElementById("de").innerHTML = iBasket1;
+document.getElementById("de").innerHTML = nameOrder;
 
 for (let a = 0; a < iBasket1; a++) {
     var img;

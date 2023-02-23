@@ -523,28 +523,31 @@ function clickCloseForm() {
     return 0;
 };
 // -------------------------------------------------------------------
-var nameOrder = [], priceProduct = [], src = [];
+var nameOrder = '', priceProduct = '', src = '';
 var iBasket = 0;
-// alert(iBasket);
-basketClick.addEventListener('click', def);
 
 function def() {
     iBasket = localStorage.getItem('iBasket');
     sumProduct.innerHTML = iBasket;
-    // nameOrder = localStorage.getItem('nameOr');
+    nameOrder = localStorage.getItem('nameOrder');
+    src = localStorage.getItem('src');
+    priceProduct = localStorage.getItem('priceProduct');
     return 0;
 };
 def();
-var is = 0;
+
 function customerСhoice(e) {
     if (iBasket == null) {
         iBasket = 0;
+        nameOrder = '';
+        src = '';
+        priceProduct = '';
     }
 
-    nameOrder[iBasket] = e.target.dataset.nameorder;
+    nameOrder = nameOrder + ((e.target.dataset.nameorder) + ',');
+    src = src + ((e.target.dataset.src) + ',');
+    priceProduct = priceProduct + ((e.target.dataset.priceproduct) + ',');
     alert(nameOrder);
-    priceProduct[iBasket] = e.target.dataset.priceproduct;
-    src[is] = e.target.dataset.src;
     localStorage.setItem('nameOrder', nameOrder);
     localStorage.setItem('priceProduct', priceProduct);
     localStorage.setItem('src', src);
@@ -552,5 +555,4 @@ function customerСhoice(e) {
     iBasket++;
     sumProduct.innerHTML = iBasket;
     localStorage.setItem('iBasket', iBasket);
-    is++;
 };
