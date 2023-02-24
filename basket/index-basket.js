@@ -44,12 +44,15 @@ function createBlock() {
 };
 //localStorage.clear();
 bodyBlock.addEventListener("click", deleteBlock);
-
+let y;
 function deleteBlock(e) {
-    let y;
-    if (e.target.className === 'deleterProduct') {
-        y = +e.targe.parentElement.dataset.iterator;
-        alert(typeof (y));
+
+    alert(e.target.className);
+    if (e.target.className == 'deleterProduct') {
+
+        alert('777');
+        y = e.target.parentElement.dataset.iterator;
+        alert(y);
         e.target.parentElement.remove();
         delete nameOrder[y];
         delete priceProduct[y];
