@@ -547,7 +547,7 @@ function customerСhoice(e) {
     nameOrder = nameOrder + ((e.target.dataset.nameorder) + ',');
     src = src + ((e.target.dataset.src) + ',');
     priceProduct = priceProduct + ((e.target.dataset.priceproduct) + ',');
-    alert(nameOrder);
+
     localStorage.setItem('nameOrder', nameOrder);
     localStorage.setItem('priceProduct', priceProduct);
     localStorage.setItem('src', src);
