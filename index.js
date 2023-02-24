@@ -556,3 +556,4 @@ function customerСhoice(e) {
     sumProduct.innerHTML = iBasket;
     localStorage.setItem('iBasket', iBasket);
 };
+// alert(nameOrder);
