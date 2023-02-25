@@ -58,12 +58,14 @@ function deleteBlock(e) {
         string = nameOrder.join('');
         if (string == '') {
             localStorage.clear();
+            return 0;
+        } else {
+            iBasket1 = iBasket1 - 1;
+            localStorage.setItem('iBasket', iBasket1)
+            localStorage.setItem('nameOrder', nameOrder);
+            localStorage.setItem('src', src);
+            localStorage.setItem('priceProduct', priceProduct);
         }
-        iBasket1 = iBasket1 - 1;
-        localStorage.setItem('iBasket', iBasket1)
-        localStorage.setItem('nameOrder', nameOrder);
-        localStorage.setItem('src', src);
-        localStorage.setItem('priceProduct', priceProduct);
     }
 
 };

@@ -533,26 +533,30 @@ function def() {
     } else {
         sumProduct.innerHTML = iBasket;
     }
-    nameOrder = localStorage.getItem('nn');
-    src = localStorage.getItem('ss');
-    priceProduct = localStorage.getItem('pp');
+    nameOrder = localStorage.getItem('nameOrder');
+    src = localStorage.getItem('src');
+    priceProduct = localStorage.getItem('priceProduct');
 };
 def();
 
 function customerСhoice(e) {
-    if (nameOrder == null || iBasket == '') {
-        iBasket = 0;
-        nameOrder = '';
-        src = '';
-        priceProduct = '';
+    if (e.target.id === 'sliderMiniLiButton') {
+        if (nameOrder == null) {
+            iBasket = 0;
+            nameOrder = '';
+            src = '';
+            priceProduct = '';
+        }
+        nameOrder = nameOrder + ((e.target.dataset.nameorder) + ',');
+        src = src + ((e.target.dataset.src) + ',');
+        priceProduct = priceProduct + ((e.target.dataset.priceproduct) + ',');
+        localStorage.setItem('nameOrder', nameOrder);
+        localStorage.setItem('priceProduct', priceProduct);
+        localStorage.setItem('src', src);
+        iBasket++;
+        sumProduct.innerHTML = iBasket;
+        localStorage.setItem('iBasket', iBasket);
+    } else {
+        return 0;
     }
-    nameOrder = nameOrder + ((e.target.dataset.nameorder) + ',');
-    src = src + ((e.target.dataset.src) + ',');
-    priceProduct = priceProduct + ((e.target.dataset.priceproduct) + ',');
-    localStorage.setItem('nameOrder', nameOrder);
-    localStorage.setItem('priceProduct', priceProduct);
-    localStorage.setItem('src', src);
-    iBasket++;
-    sumProduct.innerHTML = iBasket;
-    localStorage.setItem('iBasket', iBasket);
 };
