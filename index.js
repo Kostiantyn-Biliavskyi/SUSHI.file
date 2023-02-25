@@ -528,32 +528,31 @@ var iBasket = 0;
 
 function def() {
     iBasket = localStorage.getItem('iBasket');
-    sumProduct.innerHTML = iBasket;
-    nameOrder = localStorage.getItem('nameOrder');
-    src = localStorage.getItem('src');
-    priceProduct = localStorage.getItem('priceProduct');
-    return 0;
+    if (iBasket == 0) {
+        sumProduct.innerHTML = '';
+    } else {
+        sumProduct.innerHTML = iBasket;
+    }
+    nameOrder = localStorage.getItem('nn');
+    src = localStorage.getItem('ss');
+    priceProduct = localStorage.getItem('pp');
 };
 def();
 
 function customerСhoice(e) {
-    if (iBasket == null) {
+    if (nameOrder == null || iBasket == '') {
         iBasket = 0;
         nameOrder = '';
         src = '';
         priceProduct = '';
     }
-
     nameOrder = nameOrder + ((e.target.dataset.nameorder) + ',');
     src = src + ((e.target.dataset.src) + ',');
     priceProduct = priceProduct + ((e.target.dataset.priceproduct) + ',');
-
     localStorage.setItem('nameOrder', nameOrder);
     localStorage.setItem('priceProduct', priceProduct);
     localStorage.setItem('src', src);
-
     iBasket++;
     sumProduct.innerHTML = iBasket;
     localStorage.setItem('iBasket', iBasket);
 };
-// alert(nameOrder);
