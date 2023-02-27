@@ -337,7 +337,7 @@ function search() { // одностраничное меню
     sortingProduct.addEventListener("click", sortProduct);
     sortingProduct.addEventListener("mouseover", menuSortingOpen);
     sortingProduct.addEventListener("mouseout", menuSortingClose);
-    tablePizza.addEventListener("click", customerСhoice);
+    // tablePizza.addEventListener("click", customerСhoice);
 };
 
 function comesButton(e) {
@@ -523,6 +523,7 @@ function clickCloseForm() {
     return 0;
 };
 // -------------------------------------------------------------------
+window.addEventListener("click", customerСhoice);
 var nameOrder = '', priceProduct = '', src = '';
 var iBasket = 0;
 
@@ -541,15 +542,18 @@ def();
 
 function customerСhoice(e) {
     if (e.target.id === 'sliderMiniLiButton') {
+
         if (nameOrder == null) {
             iBasket = 0;
             nameOrder = '';
             src = '';
             priceProduct = '';
         }
-        nameOrder = nameOrder + ((e.target.dataset.nameorder) + ',');
-        src = src + ((e.target.dataset.src) + ',');
-        priceProduct = priceProduct + ((e.target.dataset.priceproduct) + ',');
+        // e.target.closest('.product')
+        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
+        nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
+        priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
+
         localStorage.setItem('nameOrder', nameOrder);
         localStorage.setItem('priceProduct', priceProduct);
         localStorage.setItem('src', src);

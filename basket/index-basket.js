@@ -23,28 +23,10 @@ function createBlock() {
             nameProd.innerHTML = nameOrder[a];
             priceProd.innerHTML = priceProduct[a];
             blockProd.dataset.iterator = a;
-            /* let block = document.createElement('div');
-             block.id = 'blockProdukt';
-             de.prepend(block);
-     
-             let img = document.createElement('img');
-             img.src = '../' + src[a];
-             img.id = 'fotoMini';
-             block.prepend(img);
-     
-             let nameProduct = document.createElement('div');
-             nameProduct.innerHTML = nameOrder[a];
-             nameProduct.id = 'yt';
-             block.prepend(nameProduct);
-     
-             let clearBl = document.createElement('div');
-             clearBl.innerHTML = 'clear';
-             clearBl.id = 'clearBlock';
-             block.prepend(clearBl);*/
         }
     }
 };
-// localStorage.clear();
+
 bodyBlock.addEventListener("click", deleteBlock);
 let y;
 function deleteBlock(e) {
