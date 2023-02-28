@@ -7,8 +7,6 @@ function createBlock() {
     priceProduct = localStorage.getItem('priceProduct').split(',');
     src = localStorage.getItem('src').split(',');
 
-    // document.getElementById("de").innerHTML = nameOrder;
-
     for (let a = 0; a < nameOrder.length - 1; a++) {
         if (nameOrder[a] == '' || nameOrder == ' ') {
         } else {
