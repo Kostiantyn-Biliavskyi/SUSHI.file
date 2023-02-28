@@ -195,7 +195,7 @@ a {
 
 .textData {
     position: absolute;
-    left: 30px;
+    left: 50px;
     top: 130px;
     font-family: 'Roboto';
     font-style: normal;
@@ -211,7 +211,7 @@ a {
 .formOrder {
     position: absolute;
     top: 180px;
-    left: 30px;
+    left: 50px;
 }
 
 .formText {
@@ -229,7 +229,8 @@ a {
     border-radius: 5px;
     padding-left: 10px;
     transition: 2s;
-    border: 1px solid black;
+    border: none;
+    cursor: pointer;
 }
 
 .formText:focus {
@@ -255,6 +256,8 @@ a {
     padding: 5px;
     overflow: auto;
     resize: none;
+    border: none;
+    cursor: pointer;
 }
 
 .textareaCommit:focus {
@@ -264,7 +267,7 @@ a {
 }
 
 .cashUser {
-    width: 105px;
+    width: 110px;
     height: 30px;
     position: absolute;
     background-color: white;
@@ -276,17 +279,125 @@ a {
     line-height: 22px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+.cashUser span {
+    margin-left: 10px;
+}
+
+.cardUser {
+    width: 110px;
+    height: 30px;
+    position: absolute;
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+    left: 110px;
+    cursor: pointer;
+}
+
+.cardUser span {
+    margin-left: 23px;
 }
 
 #cash:checked+.cashUser {
     background-color: #FF9846;
+    color: white;
 }
 
 #card:checked+.cardUser {
     background-color: #FF9846;
+    color: white;
 }
 
-#courier:checked+.formCourier {}
+.formCourier {
+    width: 110px;
+    height: 30px;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px 0px 0px 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+    top: 0px;
+    left: 300px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
 
-#pickup:checked+.formPickup {}
+.formCourier span {
+    margin-left: 10px;
+}
+
+.formPickup {
+    width: 110px;
+    height: 30px;
+    position: absolute;
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+    top: 0px;
+    left: 410px;
+    cursor: pointer;
+}
+
+.formPickup span {
+    margin-left: 5px;
+}
+
+#courier:checked+.formCourier {
+    background-color: #FF9846;
+    color: white;
+}
+
+#pickup:checked+.formPickup {
+    background-color: #FF9846;
+    color: white;
+}
+
+.inpetAddres {
+    margin-bottom: 10px;
+    width: 210px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+    border-radius: 5px;
+    padding-left: 10px;
+    transition: 2s;
+    border: none;
+    position: absolute;
+    top: 58px;
+    left: 300px;
+    cursor: pointer;
+}
