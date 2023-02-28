@@ -25,10 +25,10 @@ function createBlock() {
     }
 };
 
-bodyBlock.addEventListener("click", deleteBlock);
-let y;
+window.addEventListener("click", deleteBlock);
+
 function deleteBlock(e) {
-    let string;
+    let string, y;
     if (e.target.className == 'deleterProduct') {
         y = e.target.parentElement.dataset.iterator;
         e.target.parentElement.remove();
