@@ -11,10 +11,68 @@
     <title>Document</title>
 </head>
 
-<body id="bodyBlock">
-
+<body>
     <div id="mainBlock">
-        <!-- <div id="de"></div> -->
+        <div class="blockForm">
+            <div class="blockFormHed">
+
+                <div class="formBackButton">
+                    <div class="formBackСircle">
+                        <div class="formBackTrigle"></div>
+                    </div>
+                    <div class="formBackButtonText">назад</div>
+                </div>
+
+                <div class="phone">
+                    <ul>
+                        <li>
+                            <div class="contactsText">Наш телефон</div>
+                        </li>
+                        <li>
+                            <div class="tel11">
+                                <a class="tel1" href=tel:"+38077878877">+38077878877</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tel11">
+                                <a class="tel2" href=tel:"+38999998888">+38999998888</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tel11">
+                                <img class="watch" src="css\css.foto\watch.png">
+                                <img class="watch1" src="css\css.foto\watch1.png">
+                                <div class="phoneText"> работаем с 10:00 до 00:00</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="textData">Ваши данные</div>
+
+            <form class="formOrder" action="order.php" method="post">
+                <input class="formText" type="text" name="name" value="Имя*"><br>
+                <input class="formText" type="text" name="surname" value="Фамилия*"><br>
+                <input class="formText" type="text" name="tel" value="Телефон*"><br>
+                <textarea class="textareaCommit" name="commit" value="Коментарий к заказу"></textarea><br>
+                <input class="formText" type="text" name="promo" value="Введите промокод">
+
+                <input style="display: none;" type="radio" name="mani" id="cash">
+                <label class="cashUser" for="cash">Наличные</label>
+
+                <input style="display: none;" type="radio" name="mani" id="card">
+                <label class="cardUser" for="card">Картой</label>
+
+                <input type="radio" style="display: none;" name="delivery" id="courier">
+                <label class="formCourier" for="courier">Доставка</label>
+
+                <input type="radio" style="display: none;" name="delivery" id="pickup">
+                <label class="formPickup" for="pickup">Самовывоз</label>
+            </form>
+
+        </div>
+
+
         <template id="templateCloneBlock">
             <div id="clickDelet" class="blockProduct" data-iterator="">
                 <img class="fotoProductMini" src="../css/css.foto/1617186819_41-p-krasivaya-pitstsa-krasivo-49.jpg"

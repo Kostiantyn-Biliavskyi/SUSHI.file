@@ -549,7 +549,6 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
-        // e.target.closest('.product')
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');

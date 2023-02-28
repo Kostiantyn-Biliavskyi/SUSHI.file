@@ -7,8 +7,6 @@ function createBlock() {
     priceProduct = localStorage.getItem('priceProduct').split(',');
     src = localStorage.getItem('src').split(',');
 
-    // document.getElementById("de").innerHTML = nameOrder;
-
     for (let a = 0; a < nameOrder.length - 1; a++) {
         if (nameOrder[a] == '' || nameOrder == ' ') {
         } else {
@@ -27,10 +25,10 @@ function createBlock() {
     }
 };
 
-bodyBlock.addEventListener("click", deleteBlock);
-let y;
+window.addEventListener("click", deleteBlock);
+
 function deleteBlock(e) {
-    let string;
+    let string, y;
     if (e.target.className == 'deleterProduct') {
         y = e.target.parentElement.dataset.iterator;
         e.target.parentElement.remove();

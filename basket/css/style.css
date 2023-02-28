@@ -1,11 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100&display=swap');
 
 body {
-    background: #ffffff;
+    background-color: aqua;
 }
 
-body {
-    background-color: aqua;
+.blockForm {
+    width: 100%;
+    height: 600px;
+    background-color: #F2F2F2;
+    ;
+}
+
+.blockFormHed {
+    width: 50%;
+    height: 100px;
+    border-bottom: 1px solid #A4ACAD;
+    position: absolute;
+}
+
+.formBackButton {
+    position: absolute;
+    cursor: pointer;
+    top: calc(50% - 11px);
+    left: 20px;
+}
+
+.formBackСircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #FF9846;
+    position: absolute;
+    top: 2px;
+}
+
+.formBackTrigle {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 5px;
+    left: 7px;
+    transition: 0.5s;
+}
+
+.formBackButton:hover>.formBackСircle>.formBackTrigle {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+}
+
+.formBackButtonText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    display: inline;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+.formBackButton:hover>.formBackButtonText {
+    color: #FF9846;
+}
+
+.phone {
+    width: 220px;
+    height: 100px;
+    margin-left: calc(50% - (220px / 2));
+}
+
+.phone ul {
+    padding: 0;
+    margin: 0;
+}
+
+.phone li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contactsText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #000000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.watch1 {
+    position: absolute;
+    top: 4px;
+    left: 15px;
+}
+
+.tel11 {
+    text-align: center;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.phoneText {
+    position: relative;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #A4ACAD;
+    display: inline;
+}
+
+.tel1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 3px;
+    color: #FF9846;
+}
+
+.tel2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 3px;
+    color: #FF9846;
 }
 
 #fotoMini {
@@ -59,3 +192,101 @@ body {
     background-color: crimson;
     cursor: pointer;
 }
+
+.textData {
+    position: absolute;
+    left: 30px;
+    top: 130px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+/* ------------------------ form --------------------- */
+.formOrder {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+}
+
+.formText {
+    margin-bottom: 10px;
+    width: 210px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+    border-radius: 5px;
+    padding-left: 10px;
+    transition: 2s;
+    border: 1px solid black;
+}
+
+.formText:focus {
+    box-shadow: 0 0 15px #759d60;
+    transition: 0.5s;
+    color: #000000;
+}
+
+.textareaCommit {
+    width: 210px;
+    height: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #A4ACAD;
+    border-radius: 5px;
+    padding-left: 10px;
+    transition: 2s;
+    padding: 5px;
+    overflow: auto;
+    resize: none;
+}
+
+.textareaCommit:focus {
+    box-shadow: 0 0 15px #759d60;
+    transition: 0.5s;
+    color: #000000;
+}
+
+.cashUser {
+    width: 105px;
+    height: 30px;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px 0px 0px 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#cash:checked+.cashUser {
+    background-color: #FF9846;
+}
+
+#card:checked+.cardUser {
+    background-color: #FF9846;
+}
+
+#courier:checked+.formCourier {}
+
+#pickup:checked+.formPickup {}
