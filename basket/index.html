@@ -73,21 +73,41 @@
             <input class="inputApartament inputClick" type="text" name="apartament" value="Кв.*">
             <input class="inputСode inputClick" type="text" name="addres" value="Код">
             <input class="inputEmail inputClick" type="text" name="email" value="E-mail">
+
+            <input class="buttonForm" type="submit" value="Оформить заказ">
+
+
+            <div class="blockSelectedProduct">
+                <div class="hedBascetText">Корзина</div>
+
+                <div class="wraperTemplateCloneBlock">
+                    <template id="templateCloneBlock">
+                        <div id="clickDelet" class="blockProduct" data-iterator="">
+                            <img class="fotoProductMini" src="" alt="foto">
+                            <div class="nameProduct">pizza</div>
+                            <div class="minus">-</div>
+                            <div id="quantity">1</div>
+                            <div class="plus">+</div>
+                            <div class="priceProduct">155<span> грн.</span></div>
+                            <div id="sum">000</div>
+                            <div class="deleterProduct">удалить</div>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="deliverySumText">Доставка</div>
+                <div class="sumOrder">Итого</div>
+
+                <div>0</div>
+                <div>Товаров</div>
+
+                <div class="deliverySumTextNumber">0</div>
+                <div class="sumOrderNumber">0</div>
+            </div>
         </form>
 
     </div>
 
-    <template id="templateCloneBlock">
-        <div id="clickDelet" class="blockProduct" data-iterator="">
-            <img class="fotoProductMini" src="../css/css.foto/1617186819_41-p-krasivaya-pitstsa-krasivo-49.jpg"
-                alt="foto">
-            <div class="nameProduct">pizza</div>
-            <div id="quantity">1</div>
-            <div class="priceProduct">155<span> грн.</span></div>
-            <div id="sum">000</div>
-            <div class="deleterProduct">удалить</div>
-        </div>
-    </template>
 
 
 

@@ -11,7 +11,7 @@ function createBlock() {
         if (nameOrder[a] == '' || nameOrder == ' ') {
         } else {
             let clone = document.createElement('div');
-            document.querySelector('.formOrder').after(clone);
+            document.querySelector('.wraperTemplateCloneBlock').prepend(clone);
             clone.append(templateCloneBlock.content.cloneNode(true));
             let nameProd = document.querySelector('.nameProduct');
             let fotoMin = document.querySelector('.fotoProductMini');
