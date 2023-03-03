@@ -159,14 +159,6 @@ a {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #759d60;
-}
-
-.blockProduct {
-    width: 500px;
-    height: 70px;
-    background-color: aquamarine;
-    margin: 0px 0px 10px 50px;
 }
 
 .hedBascetText {
@@ -185,7 +177,6 @@ a {
 .deliverySumText {
     width: 150px;
     height: 30px;
-    background-color: #e734e4;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -194,12 +185,12 @@ a {
     display: flex;
     align-items: center;
     color: #000000;
+    margin-left: 300px;
 }
 
 .deliverySumTextNumber {
-    width: 100px;
+    width: 150px;
     height: 30px;
-    background-color: rgb(65, 65, 149);
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -210,13 +201,13 @@ a {
     color: #000000;
     position: absolute;
     top: 400px;
-    left: 200px;
+    left: 450px;
+    overflow: auto;
 }
 
 .sumOrder {
     width: 150px;
     height: 30px;
-    background-color: #883586;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -224,13 +215,32 @@ a {
     line-height: 22px;
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #FF9846;
+    position: absolute;
+    top: 465px;
+    left: 300px;
 }
 
 .sumOrderNumber {
-    width: 100px;
+    width: 150px;
     height: 30px;
-    background-color: rgb(100, 100, 236);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #FF9846;
+    position: absolute;
+    top: 465px;
+    left: 450px;
+    overflow: auto;
+}
+
+.quantityProductText {
+    width: 150px;
+    height: 30px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -239,40 +249,174 @@ a {
     display: flex;
     align-items: center;
     color: #000000;
+    position: absolute;
+    top: 430px;
+    left: 300px;
 }
 
+.quantityProductNumber {
+    width: 150px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    position: absolute;
+    top: 430px;
+    left: 450px;
+    overflow: auto;
+}
+
+.blockProduct {
+    width: 550px;
+    height: 70px;
+    margin: 0px 0px 10px 30px;
+    display: flex;
+    align-items: center;
+}
 
 .fotoProductMini {
     width: 60px;
     height: 60px;
-    margin-left: 5px;
-    margin-top: 5px;
     display: inline;
 }
 
 .nameProduct {
-    display: inline;
-    margin: 0 0 0 10px;
+    width: 200px;
+    height: 25px;
+    display: inline-block;
+    margin: 0 10px 0 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    color: #000000;
+    overflow: hidden;
 }
 
-#quantity {
-    display: inline;
-    margin: 0 10px 0 10px;
+.minus {
+    width: 20px;
+    height: 25px;
+    margin: 0 10px 0 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
 }
+
+.plus {
+    width: 20px;
+    height: 25px;
+    margin: 0 10px 0 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.quantity {
+    width: 35px;
+    height: 32px;
+    margin: 0 10px 0 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    overflow: hidden;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
 
 .priceProduct {
-    display: inline;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    margin: 0 7px 0 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    overflow: hidden;
 }
 
-#sum {
-    display: inline;
-    margin: 0 10px 0 10px;
+.textMoney {
+    margin: 0 10px 0 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    overflow: hidden;
+    display: inline-block;
 }
 
 .deleterProduct {
-    display: inline;
-    background-color: crimson;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
+    margin-left: 15px;
+    position: relative;
+    border-radius: 3px;
+}
+
+.deleterProduct:hover {
+    background-color: #ff4646;
+}
+
+.fotoLid {
+    width: 22px;
+    height: 10px;
+    transform: rotate(15deg);
+    position: absolute;
+    top: -4px;
+    left: 4px;
+    transition: 0.5s;
+}
+
+.deleterProduct:hover>.fotoLid {
+    top: -8px;
+    left: -8px;
+    transform: rotate(-20deg);
+    transition: 0.5s;
+}
+
+.fotoBascet {
+    width: 22px;
+    height: 25px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
 }
 
 .minus {
@@ -639,6 +783,7 @@ a {
     background-color: #FF9846;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
 }
 
 .buttonForm:hover {

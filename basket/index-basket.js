@@ -29,9 +29,17 @@ window.addEventListener("click", deleteBlock);
 
 function deleteBlock(e) {
     let string, y;
-    if (e.target.className == 'deleterProduct') {
-        y = e.target.parentElement.dataset.iterator;
-        e.target.parentElement.remove();
+    if (e.target.className === 'deleterProduct' || e.target.className === 'fotoLid' || e.target.className === 'fotoBascet') {
+        let parentTarget, ParentParent;
+        if (e.target.className === 'fotoLid' || e.target.className === 'fotoBascet') {
+            parentTarget = e.target.parentElement;
+            ParentParent = parentTarget.parentElement;
+        }
+
+        y = ParentParent.dataset.iterator;
+        ParentParent.remove();
+        // y = e.target.parentElement.dataset.iterator;
+        // e.target.parentElement.remove();
         delete nameOrder[y];
         delete priceProduct[y];
         delete src[y];
@@ -49,3 +57,4 @@ function deleteBlock(e) {
     }
 
 };
+
