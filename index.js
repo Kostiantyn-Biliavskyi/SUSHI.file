@@ -527,6 +527,8 @@ window.addEventListener("click", customerСhoice);
 var nameOrder = '', priceProduct = '', src = '';
 var iBasket = 0;
 
+localStorage.setItem('examination', nameOrder);
+
 function def() {
     iBasket = localStorage.getItem('iBasket');
     if (iBasket == 0) {
@@ -552,6 +554,8 @@ function customerСhoice(e) {
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
+
+        localStorage.setItem('examination', nameOrder);
 
         localStorage.setItem('nameOrder', nameOrder);
         localStorage.setItem('priceProduct', priceProduct);

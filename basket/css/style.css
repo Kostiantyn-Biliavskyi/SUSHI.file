@@ -804,3 +804,20 @@ a {
 .buttonForm:hover {
     background-color: #f66206;
 }
+
+.emptyBasket {
+    width: 400px;
+    padding: 20px 0 20px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #f66206;
+    margin-left: 100px;
+}
