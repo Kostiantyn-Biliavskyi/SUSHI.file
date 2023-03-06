@@ -555,8 +555,6 @@ function customerСhoice(e) {
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
 
-        localStorage.setItem('examination', nameOrder);
-
         localStorage.setItem('nameOrder', nameOrder);
         localStorage.setItem('priceProduct', priceProduct);
         localStorage.setItem('src', src);

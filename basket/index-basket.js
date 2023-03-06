@@ -18,14 +18,9 @@ inputFocus.addEventListener('click', function (e) {
 });
 
 // добавление товара в корзину
-var nameOrder = [], priceProduct = [], src = [], iBasket1 = 0, examination = '';
+var nameOrder = [], priceProduct = [], src = [], iBasket1 = 0;
 
-examination = localStorage.getItem('examination');
-if (examination == '' || examination == null) {
-    emptyBasket();
-} else {
-    createBlock();
-}
+createBlock();
 
 function emptyBasket() {
     let emptyBasket = document.createElement('div');
@@ -35,31 +30,31 @@ function emptyBasket() {
 };
 
 function createBlock() {
-    examination = localStorage.getItem('examination');
-
-    if (examination == '') {
+    nameOrder = localStorage.getItem('nameOrder');
+    if (nameOrder == '' || nameOrder == ' ' || nameOrder == null) {
         emptyBasket();
-    } else {
-        iBasket1 = localStorage.getItem('iBasket');
-        nameOrder = localStorage.getItem('nameOrder').split(',');
-        priceProduct = localStorage.getItem('priceProduct').split(',');
-        src = localStorage.getItem('src').split(',');
+        return 0;
+    }
+    iBasket1 = localStorage.getItem('iBasket');
+    nameOrder = localStorage.getItem('nameOrder').split(',');
+    priceProduct = localStorage.getItem('priceProduct').split(',');
+    src = localStorage.getItem('src').split(',');
 
-        for (let a = 0; a < nameOrder.length - 1; a++) {
-            if (nameOrder[a] == '' || nameOrder == ' ') {
-            } else {
-                let clone = document.createElement('div');
-                document.querySelector('.wraperTemplateCloneBlock').prepend(clone);
-                clone.append(templateCloneBlock.content.cloneNode(true));
-                let nameProd = document.querySelector('.nameProduct');
-                let fotoMin = document.querySelector('.fotoProductMini');
-                let priceProd = document.querySelector('.priceProduct');
-                let blockProd = document.querySelector('.blockProduct');
-                fotoMin.src = '../' + src[a];
-                nameProd.innerHTML = nameOrder[a];
-                priceProd.innerHTML = priceProduct[a];
-                blockProd.dataset.iterator = a;
-            }
+    for (let a = 0; a < nameOrder.length - 1; a++) {
+
+        if (nameOrder[a] == '' || nameOrder[a] == ' ') {
+        } else {
+            let clone = document.createElement('div');
+            document.querySelector('.wraperTemplateCloneBlock').prepend(clone);
+            clone.append(templateCloneBlock.content.cloneNode(true));
+            let nameProd = document.querySelector('.nameProduct');
+            let fotoMin = document.querySelector('.fotoProductMini');
+            let priceProd = document.querySelector('.priceProduct');
+            let blockProd = document.querySelector('.blockProduct');
+            fotoMin.src = '../' + src[a];
+            nameProd.innerHTML = nameOrder[a];
+            priceProd.innerHTML = priceProduct[a];
+            blockProd.dataset.iterator = a;
         }
     }
 };
