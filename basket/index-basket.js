@@ -18,16 +18,15 @@ inputFocus.addEventListener('click', function (e) {
 });
 
 // добавление товара в корзину
-var nameOrder = [], priceProduct = [], src = [], iBasket1 = 0;
-
-createBlock();
-
 function emptyBasket() {
     let emptyBasket = document.createElement('div');
     emptyBasket.className = 'emptyBasket';
     emptyBasket.innerHTML = 'Корзина пуста. <br><br> Добавьте товар !';
     document.querySelector('.wraperTemplateCloneBlock').prepend(emptyBasket);
 };
+var nameOrder = [], priceProduct = [], src = [], quantityMas = [], iBasket1 = 0;
+
+createBlock();
 
 function createBlock() {
     nameOrder = localStorage.getItem('nameOrder');
@@ -52,28 +51,48 @@ function createBlock() {
             let fotoMin = document.querySelector('.fotoProductMini');
             let priceProd = document.querySelector('.priceProduct');
             let blockProd = document.querySelector('.blockProduct');
+            let quantityProd = document.querySelector('.quantity');
             fotoMin.src = '../' + src[a];
             nameProd.innerHTML = nameOrder[a];
             priceProd.innerHTML = priceProduct[a];
             blockProd.dataset.iterator = a;
         }
     }
-
-    clickCardProduct.addEventListener('click', function (e) {
-        var parent = e.target.closest('.blockProduct');
-        var quantity = parent.querySelector('.quantity').value;
-
-        if (e.target.className == 'minus') {
-            quantity = quantity - 1;
-            alert(quantity + '  ---');
-        }
-        if (e.target.className == 'plus') {
-            alert('+');
-        }
-        return 0;
-    });
-
 };
+
+clickCardProduct.addEventListener('click', function (e) {
+
+    if (e.target.className == 'minus') {
+        e.target.style.backgroundColor = '#FF9846';
+        setTimeout(() => e.target.style.backgroundColor = '', 100);
+
+        let parentBl = e.target.parentElement;
+        var quantityBl = +parentBl.querySelector('.quantity').value;
+        quantityBl = quantityBl - 1;
+        parentBl.querySelector('.quantity').value = quantityBl;
+
+        /*let poisk = parentBl.querySelector('.nameProduct').innerText;
+        for (let a = 0; a < nameOrder.length - 1; a++) {
+            if (nameOrder[a] == poisk) {
+                quantityMas[a] = quantityBl;
+            }
+        }
+        localStorage.setItem('quantityBl', quantityMas);
+        alert(quantityMas);*/
+    }
+
+    if (e.target.className == 'plus') {
+        e.target.style.backgroundColor = '#FF9846';
+        setTimeout(() => e.target.style.backgroundColor = '', 100);
+
+        let parentBl = e.target.parentElement;
+        let quantityBl = +parentBl.querySelector('.quantity').value;
+        quantityBl = quantityBl + 1;
+        parentBl.querySelector('.quantity').value = quantityBl;
+        localStorage.setItem('quantityBl', quantityBl);
+    }
+    return 0;
+});
 
 window.addEventListener("click", deleteBlock);
 
@@ -100,7 +119,6 @@ function deleteBlock(e) {
             return 0;
         } else {
             iBasket1 = iBasket1 - 1;
-            alert(iBasket1);
             document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
             localStorage.setItem('iBasket', iBasket1)
             localStorage.setItem('nameOrder', nameOrder);
