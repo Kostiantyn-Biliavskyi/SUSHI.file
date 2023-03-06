@@ -25,7 +25,7 @@ createBlock();
 function emptyBasket() {
     let emptyBasket = document.createElement('div');
     emptyBasket.className = 'emptyBasket';
-    emptyBasket.innerHTML = 'Корзина пуста. <br><br> Добавьте товар в корзину !';
+    emptyBasket.innerHTML = 'Корзина пуста. <br><br> Добавьте товар !';
     document.querySelector('.wraperTemplateCloneBlock').prepend(emptyBasket);
 };
 
@@ -39,6 +39,7 @@ function createBlock() {
     nameOrder = localStorage.getItem('nameOrder').split(',');
     priceProduct = localStorage.getItem('priceProduct').split(',');
     src = localStorage.getItem('src').split(',');
+    document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
 
     for (let a = 0; a < nameOrder.length - 1; a++) {
 
@@ -57,6 +58,21 @@ function createBlock() {
             blockProd.dataset.iterator = a;
         }
     }
+
+    clickCardProduct.addEventListener('click', function (e) {
+        var parent = e.target.closest('.blockProduct');
+        var quantity = parent.querySelector('.quantity').value;
+
+        if (e.target.className == 'minus') {
+            quantity = quantity - 1;
+            alert(quantity + '  ---');
+        }
+        if (e.target.className == 'plus') {
+            alert('+');
+        }
+        return 0;
+    });
+
 };
 
 window.addEventListener("click", deleteBlock);
@@ -79,9 +95,13 @@ function deleteBlock(e) {
         if (string == '') {
             localStorage.clear();
             emptyBasket();
+            iBasket1 = iBasket1 - 1;
+            document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
             return 0;
         } else {
             iBasket1 = iBasket1 - 1;
+            alert(iBasket1);
+            document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
             localStorage.setItem('iBasket', iBasket1)
             localStorage.setItem('nameOrder', nameOrder);
             localStorage.setItem('src', src);
