@@ -404,9 +404,9 @@ a {
     border-radius: 3px;
 }
 
-.deleterProduct:hover {
-    background-color: #ff4646;
-    opacity: 0.8;
+.deleterProduct:hover>.fotoBascet {
+    transition: 0.5s;
+    opacity: 1;
 }
 
 .fotoLid {
@@ -421,6 +421,7 @@ a {
 }
 
 .deleterProduct:hover>.fotoLid {
+    opacity: 1;
     top: -13px;
     left: -10px;
     transform: rotate(-20deg);
