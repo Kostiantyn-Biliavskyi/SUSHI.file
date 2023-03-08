@@ -70,15 +70,14 @@ clickCardProduct.addEventListener('click', function (e) {
         var quantityBl = +parentBl.querySelector('.quantity').value;
         quantityBl = quantityBl - 1;
         parentBl.querySelector('.quantity').value = quantityBl;
-
-        /*let poisk = parentBl.querySelector('.nameProduct').innerText;
+        let poisk = parentBl.querySelector('.nameProduct').innerText;
         for (let a = 0; a < nameOrder.length - 1; a++) {
             if (nameOrder[a] == poisk) {
                 quantityMas[a] = quantityBl;
             }
         }
         localStorage.setItem('quantityBl', quantityMas);
-        alert(quantityMas);*/
+
     }
 
     if (e.target.className == 'plus') {
