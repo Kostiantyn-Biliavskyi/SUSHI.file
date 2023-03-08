@@ -24,7 +24,7 @@ function emptyBasket() {
     emptyBasket.innerHTML = 'Корзина пуста. <br><br> Добавьте товар !';
     document.querySelector('.wraperTemplateCloneBlock').prepend(emptyBasket);
 };
-var nameOrder = [], priceProduct = [], src = [], quantityMas = [], iBasket1 = 0;
+var nameOrder = [], priceProduct = [], src = [], iBasket1 = 0, quantityProdMas = [];
 
 createBlock();
 
@@ -39,6 +39,13 @@ function createBlock() {
     priceProduct = localStorage.getItem('priceProduct').split(',');
     src = localStorage.getItem('src').split(',');
     document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
+    var k = localStorage.getItem('quantityBl');
+    // alert(k + '  - k ');
+    if (k != null) {
+        // alert(77777777);
+        quantityProdMas = localStorage.getItem('quantityBl').split(',');
+    }
+
 
     for (let a = 0; a < nameOrder.length - 1; a++) {
 
@@ -51,7 +58,15 @@ function createBlock() {
             let fotoMin = document.querySelector('.fotoProductMini');
             let priceProd = document.querySelector('.priceProduct');
             let blockProd = document.querySelector('.blockProduct');
-            let quantityProd = document.querySelector('.quantity');
+            if (k == null) {
+                quantityProdMas[a] = document.querySelector('.quantity').value;
+            } else {
+                if (quantityProdMas[a] == undefined) {
+                    quantityProdMas[a] = document.querySelector('.quantity').value;
+                }
+                document.querySelector('.quantity').value = quantityProdMas[a];
+
+            }
             fotoMin.src = '../' + src[a];
             nameProd.innerHTML = nameOrder[a];
             priceProd.innerHTML = priceProduct[a];
@@ -65,20 +80,23 @@ clickCardProduct.addEventListener('click', function (e) {
     if (e.target.className == 'minus') {
         e.target.style.backgroundColor = '#FF9846';
         setTimeout(() => e.target.style.backgroundColor = '', 100);
+        // alert(quantityProdMas);
 
         let parentBl = e.target.parentElement;
         var quantityBl = +parentBl.querySelector('.quantity').value;
         quantityBl = quantityBl - 1;
         parentBl.querySelector('.quantity').value = quantityBl;
 
-        /*let poisk = parentBl.querySelector('.nameProduct').innerText;
+        let poisk = parentBl.querySelector('.nameProduct').innerText;
         for (let a = 0; a < nameOrder.length - 1; a++) {
             if (nameOrder[a] == poisk) {
-                quantityMas[a] = quantityBl;
+                quantityProdMas[a] = quantityBl;
             }
         }
-        localStorage.setItem('quantityBl', quantityMas);
-        alert(quantityMas);*/
+        // alert(quantityProdMas + ' - massiv');
+        let de = quantityProdMas.join(',');
+        localStorage.setItem('quantityBl', de);
+        // alert(de + ' - string');
     }
 
     if (e.target.className == 'plus') {
@@ -89,7 +107,17 @@ clickCardProduct.addEventListener('click', function (e) {
         let quantityBl = +parentBl.querySelector('.quantity').value;
         quantityBl = quantityBl + 1;
         parentBl.querySelector('.quantity').value = quantityBl;
-        localStorage.setItem('quantityBl', quantityBl);
+
+        let poisk = parentBl.querySelector('.nameProduct').innerText;
+        for (let a = 0; a < nameOrder.length - 1; a++) {
+            if (nameOrder[a] == poisk) {
+                quantityProdMas[a] = quantityBl;
+            }
+        }
+        // alert(quantityProdMas + ' - massiv');
+        let de = quantityProdMas.join(',');
+        localStorage.setItem('quantityBl', de);
+        // alert(de + ' - string');
     }
     return 0;
 });
