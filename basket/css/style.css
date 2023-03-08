@@ -153,6 +153,13 @@ a {
     position: absolute;
     top: -80px;
     left: 550px;
+    -webkit-user-select: none;
+    /* отменяет выделение текста*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    /* отменяет выделение текста*/
 }
 
 .wraperTemplateCloneBlock {
@@ -294,7 +301,7 @@ a {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 22px;
     align-items: center;
     color: #000000;
@@ -302,41 +309,48 @@ a {
 }
 
 .minus {
-    width: 20px;
-    height: 25px;
-    margin: 0 10px 0 0;
+    width: 30px;
+    height: 32px;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 32px;
+    display: flex;
     text-align: center;
     color: #000000;
     cursor: pointer;
     display: inline-block;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .plus {
-    width: 20px;
-    height: 25px;
-    margin: 0 10px 0 0;
+    width: 30px;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    align-items: center;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
     text-align: center;
     color: #000000;
     cursor: pointer;
     display: inline-block;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.minus:hover {
+    background-color: #c0c6c7;
+}
+
+.plus:hover {
+    background-color: #c0c6c7;
 }
 
 .quantity {
     width: 35px;
     height: 32px;
-    margin: 0 10px 0 0;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -350,7 +364,6 @@ a {
     border: none;
     cursor: pointer;
 }
-
 
 .priceProduct {
     display: inline-block;
@@ -393,6 +406,7 @@ a {
 
 .deleterProduct:hover {
     background-color: #ff4646;
+    opacity: 0.8;
 }
 
 .fotoLid {
@@ -403,6 +417,7 @@ a {
     top: -8px;
     left: 0;
     transition: 0.5s;
+    opacity: 0.3;
 }
 
 .deleterProduct:hover>.fotoLid {
@@ -416,30 +431,7 @@ a {
     width: 22px;
     height: 25px;
     position: absolute;
-}
-
-.minus {
-    display: inline;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 22px;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-}
-
-.plus {
-    display: inline;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    align-items: center;
-    text-align: center;
-    color: #000000;
+    opacity: 0.3;
 }
 
 .textData {

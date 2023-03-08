@@ -40,12 +40,9 @@ function createBlock() {
     src = localStorage.getItem('src').split(',');
     document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
     var k = localStorage.getItem('quantityBl');
-    // alert(k + '  - k ');
     if (k != null) {
-        // alert(77777777);
         quantityProdMas = localStorage.getItem('quantityBl').split(',');
     }
-
 
     for (let a = 0; a < nameOrder.length - 1; a++) {
 
@@ -65,41 +62,44 @@ function createBlock() {
                     quantityProdMas[a] = document.querySelector('.quantity').value;
                 }
                 document.querySelector('.quantity').value = quantityProdMas[a];
-
             }
             fotoMin.src = '../' + src[a];
             nameProd.innerHTML = nameOrder[a];
-            priceProd.innerHTML = priceProduct[a];
+            priceProd.innerHTML = priceProduct[a] * quantityProdMas[a];
             blockProd.dataset.iterator = a;
         }
     }
 };
 
 clickCardProduct.addEventListener('click', function (e) {
-
+    let sumProduct;
     if (e.target.className == 'minus') {
+        sumProduct = +localStorage.getItem('sumProduct');
         e.target.style.backgroundColor = '#FF9846';
         setTimeout(() => e.target.style.backgroundColor = '', 100);
-        // alert(quantityProdMas);
 
         let parentBl = e.target.parentElement;
-        var quantityBl = +parentBl.querySelector('.quantity').value;
+        let quantityBl = +parentBl.querySelector('.quantity').value;
         quantityBl = quantityBl - 1;
         parentBl.querySelector('.quantity').value = quantityBl;
 
-        let poisk = parentBl.querySelector('.nameProduct').innerText;
+        let priceObjct = parentBl.querySelector('.priceProduct');
+        let poisk = parentBl.querySelector('.nameProduct').textContent;
+
         for (let a = 0; a < nameOrder.length - 1; a++) {
             if (nameOrder[a] == poisk) {
                 quantityProdMas[a] = quantityBl;
+                sumProduct = sumProduct - priceProduct[a];
+                priceObjct.textContent = sumProduct;
+                localStorage.setItem('sumProduct', sumProduct);
             }
         }
-        // alert(quantityProdMas + ' - massiv');
         let de = quantityProdMas.join(',');
         localStorage.setItem('quantityBl', de);
-        // alert(de + ' - string');
     }
 
     if (e.target.className == 'plus') {
+        sumProduct = +localStorage.getItem('sumProduct');
         e.target.style.backgroundColor = '#FF9846';
         setTimeout(() => e.target.style.backgroundColor = '', 100);
 
@@ -108,16 +108,18 @@ clickCardProduct.addEventListener('click', function (e) {
         quantityBl = quantityBl + 1;
         parentBl.querySelector('.quantity').value = quantityBl;
 
-        let poisk = parentBl.querySelector('.nameProduct').innerText;
+        let priceObjct = parentBl.querySelector('.priceProduct');
+        let poisk = parentBl.querySelector('.nameProduct').textContent;
         for (let a = 0; a < nameOrder.length - 1; a++) {
             if (nameOrder[a] == poisk) {
                 quantityProdMas[a] = quantityBl;
+                sumProduct = priceProduct[a] * quantityBl;
+                priceObjct.textContent = sumProduct;
+                localStorage.setItem('sumProduct', sumProduct);
             }
         }
-        // alert(quantityProdMas + ' - massiv');
         let de = quantityProdMas.join(',');
         localStorage.setItem('quantityBl', de);
-        // alert(de + ' - string');
     }
     return 0;
 });
@@ -132,7 +134,6 @@ function deleteBlock(e) {
             parentTarget = e.target.parentElement;
             ParentParent = parentTarget.parentElement;
         }
-
         y = ParentParent.dataset.iterator;
         ParentParent.remove();
         delete nameOrder[y];
