@@ -230,8 +230,8 @@ a {
 }
 
 .sumOrderNumber {
-    width: 150px;
-    height: 30px;
+    width: 140px;
+    height: 25px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -242,8 +242,22 @@ a {
     color: #FF9846;
     position: absolute;
     top: 465px;
-    left: 450px;
-    overflow: auto;
+    left: 400px;
+    overflow: hidden;
+}
+
+.sumOrderText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #FF9846;
+    position: absolute;
+    top: 467px;
+    left: 550px;
 }
 
 .quantityProductText {
