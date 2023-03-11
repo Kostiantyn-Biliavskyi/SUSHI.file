@@ -1,7 +1,6 @@
 var inputFocus = document.querySelector('.formOrder');
 
 inputFocus.addEventListener('click', function (e) {
-    var valueTar = e.target.value;
     if (e.target.value === 'Имя* ' || e.target.value === 'Фамилия* ' || e.target.value === 'Телефон* '
         || e.target.value === 'Введите промокод ' || e.target.value === 'Город* ' || e.target.value === 'Улица* '
         || e.target.value === 'Дом* ' || e.target.value === 'Кв.* ' || e.target.value === 'Код '
@@ -9,9 +8,46 @@ inputFocus.addEventListener('click', function (e) {
         e.target.value = "";
     }
 
-    e.target.onblur = function () {
+    e.target.onblur = function (e) {
         if (e.target.value == "" || e.target.value == " " || e.target.value == "  ") {
-            e.target.value = valueTar;
+            switch (e.target.name) {
+                case 'name':
+                    e.target.value = 'Имя* ';
+                    break;
+                case 'surname':
+                    e.target.value = 'Фамилия* ';
+                    break;
+                case 'tel':
+                    e.target.value = 'Телефон* ';
+                    break;
+                case 'commit':
+                    e.target.value = 'Коментарий к заказу ';
+                    break;
+                case 'promo':
+                    e.target.value = 'Введите промокод ';
+                    break;
+                case 'city':
+                    e.target.value = 'Город* ';
+                    break;
+                case 'street':
+                    e.target.value = 'Улица* ';
+                    break;
+                case 'house':
+                    e.target.value = 'Дом* ';
+                    break;
+                case 'apartament':
+                    e.target.value = 'Кв.* ';
+                    break;
+                case 'code':
+                    e.target.value = 'Код ';
+                    break;
+                case 'email':
+                    e.target.value = 'E-mail ';
+                    break;
+                default:
+                    alert('ERROR');
+                    break;
+            }
         }
     };
 
@@ -155,6 +191,12 @@ function deleteBlock(e) {
             ParentParent = parentTarget.parentElement;
         }
         y = ParentParent.dataset.iterator;
+
+        iBasket1 = iBasket1 - (+ParentParent.querySelector('.quantity').value);
+        document.querySelector('.quantityProductNumber').textContent = iBasket1;
+
+        sumTotal = sumTotal - (+ParentParent.querySelector('.priceProduct').textContent);
+        document.querySelector('.sumOrderNumber').value = sumTotal;
         ParentParent.remove();
         delete nameOrder[y];
         delete priceProduct[y];
@@ -163,12 +205,8 @@ function deleteBlock(e) {
         if (string == '') {
             localStorage.clear();
             emptyBasket();
-            iBasket1 = iBasket1 - 1;
-            document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
             return 0;
         } else {
-            iBasket1 = iBasket1 - 1;
-            document.querySelector('.quantityProductNumber').innerHTML = iBasket1;
             localStorage.setItem('iBasket', iBasket1)
             localStorage.setItem('nameOrder', nameOrder);
             localStorage.setItem('src', src);
@@ -179,6 +217,34 @@ function deleteBlock(e) {
 };
 valuta.addEventListener('focus', function () {
     valuta.blur();
+});
+
+form.addEventListener('submit', function (e) {
+
+    var parentForm = document.querySelector('.formOrder');
+    var iter = 0;
+    if (nameOrder == '' || nameOrder == ' ' || nameOrder == null) {
+        document.querySelector('.emptyBasket').style.backgroundColor = 'red';
+        setTimeout(() => { document.querySelector('.emptyBasket').style.backgroundColor = '#f66206'; }, 200);
+        x++;
+        e.preventDefault();
+    }
+    const test = ['Имя* ', 'Фамилия* ', 'Телефон* ', 'Город* ', 'Улица* ', 'Дом* ', 'Кв.* '];
+    const classReq = document.querySelectorAll('._req');
+    for (let i = 0; i < classReq.length; i++) {
+        if (classReq[i].value === test[i]) {
+            e.preventDefault();
+            classReq[i].style.boxShadow = "0 0 15px #f74a47";
+            setTimeout(() => { classReq[i].style.boxShadow = ""; }, 1500);
+            iter++;
+        }
+    }
+    alert(iter);
+    // if (iter1 > 0) {
+    //     alert();
+    // }
+
+
 });
 // --------------------------------------------------------------
 

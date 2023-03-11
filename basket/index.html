@@ -50,10 +50,10 @@
         </div>
         <div class="textData">Ваши данные</div>
 
-        <form class="formOrder" action="order.php" method="post">
-            <input class="formText" type="text" name="name" value="Имя* "><br>
-            <input class="formText" type="text" name="surname" value="Фамилия* "><br>
-            <input class="formText" type="text" name="tel" value="Телефон* "><br>
+        <form id="form" class="formOrder" action="order.php" method="post">
+            <input class="formText _req" type="text" name="name" value="Имя* "><br>
+            <input class="formText _req" type="text" name="surname" value="Фамилия* "><br>
+            <input class="formText _req" type="text" name="tel" value="Телефон* "><br>
             <textarea class="textareaCommit" name="commit">Коментарий к заказу </textarea><br>
             <input class="formText" type="text" name="promo" value="Введите промокод ">
 
@@ -67,11 +67,11 @@
             <input style="display: none;" type="radio" name="delivery" id="pickup">
             <label class="formPickup" for="pickup"><span>Самовывоз</span></label><br>
 
-            <input class="inputCity inputClick" type="text" name="city" value="Город* "><br>
-            <input class="inputStreet inputClick" type="text" name="street" value="Улица* "><br>
-            <input class="inputHouse inputClick" type="text" name="house" value="Дом* ">
-            <input class="inputApartament inputClick" type="text" name="apartament" value="Кв.* ">
-            <input class="inputСode inputClick" type="text" name="addres" value="Код ">
+            <input class="inputCity inputClick _req" type="text" name="city" value="Город* "><br>
+            <input class="inputStreet inputClick _req" type="text" name="street" value="Улица* "><br>
+            <input class="inputHouse inputClick _req" type="text" name="house" value="Дом* ">
+            <input class="inputApartament inputClick _req" type="text" name="apartament" value="Кв.* ">
+            <input class="inputСode inputClick" type="text" name="code" value="Код ">
             <input class="inputEmail inputClick" type="text" name="email" value="E-mail ">
 
             <input class="buttonForm" type="submit" value="Оформить заказ">

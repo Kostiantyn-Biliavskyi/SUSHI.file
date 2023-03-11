@@ -56,6 +56,8 @@ function movementFotoMain() {
                 sliderDot[4].style.backgroundColor = "#f66206";
                 break;
             default:
+                alert('ERROR');
+                break;
         }
     };
     go();
@@ -561,7 +563,7 @@ function customerСhoice(e) {
     }
 };
 // -------------------------------------------------------------
-var clickButton = document.querySelector('.block');
+var clickButton = document.querySelector('.block');// при клике в меню делает бакграунд серам.выделяет клик
 clickButton.addEventListener('click', function (e) {
     if (e.target.id == 'sliderMiniLiButton') {
         let paren = e.target.parentElement;
