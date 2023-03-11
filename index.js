@@ -240,11 +240,6 @@ function citySelection(e) {
     return 0;
 };
 // -----------------------------------------------------------
-jQuery(function ($) {
-    $("#telUser").mask("+380( 99 ) 999 99 99");
-});
-
-// ------------------------------------------------------------
 var review = document.querySelector(".reviews");
 review = addEventListener("click", callProductSelection);
 menu.addEventListener("click", productSelection);
@@ -565,3 +560,25 @@ function customerСhoice(e) {
         return 0;
     }
 };
+// -------------------------------------------------------------
+var clickButton = document.querySelector('.block');
+clickButton.addEventListener('click', function (e) {
+    if (e.target.id == 'sliderMiniLiButton') {
+        let paren = e.target.parentElement;
+        paren.querySelector('.literColor').style.color = "#000000";
+        setTimeout(() => paren.querySelector('.literColor').style.color = '#F2F2F2', 100);
+
+    }
+});
+// ------------------------------------------------------------
+menu.addEventListener('click', function (e) {
+
+    e.target.closest('.menuButton').style.backgroundColor = '#ebe8e8';
+    setTimeout(() => e.target.closest('.menuButton').style.backgroundColor = '', 100);
+});
+// -------------------------------------------------------------
+jQuery(function ($) {
+    $("#telUser").mask("+380( 99 ) 999 99 99");
+});
+
+// ------------------------------------------------------------

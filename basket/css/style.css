@@ -244,6 +244,7 @@ a {
     top: 465px;
     left: 400px;
     overflow: hidden;
+    border: none;
 }
 
 .sumOrderText {

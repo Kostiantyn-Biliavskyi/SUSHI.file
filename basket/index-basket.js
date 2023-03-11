@@ -177,6 +177,9 @@ function deleteBlock(e) {
     }
 
 };
+valuta.addEventListener('focus', function () {
+    valuta.blur();
+});
 // --------------------------------------------------------------
 
 
