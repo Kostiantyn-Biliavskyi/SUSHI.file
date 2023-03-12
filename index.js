@@ -563,7 +563,7 @@ function customerСhoice(e) {
     }
 };
 // -------------------------------------------------------------
-var clickButton = document.querySelector('.block');// при клике в меню делает бакграунд серам.выделяет клик
+var clickButton = document.querySelector('.block');
 clickButton.addEventListener('click', function (e) {
     if (e.target.id == 'sliderMiniLiButton') {
         let paren = e.target.parentElement;
@@ -573,10 +573,9 @@ clickButton.addEventListener('click', function (e) {
     }
 });
 // ------------------------------------------------------------
-menu.addEventListener('click', function (e) {
-
+menu.addEventListener('click', function (e) {// при клике в меню делает бакграунд серам.выделяет клик
     e.target.closest('.menuButton').style.backgroundColor = '#ebe8e8';
-    setTimeout(() => e.target.closest('.menuButton').style.backgroundColor = '', 100);
+    setTimeout(() => e.target.closest('.menuButton').style.backgroundColor = '', 150);
 });
 // -------------------------------------------------------------
 jQuery(function ($) {
