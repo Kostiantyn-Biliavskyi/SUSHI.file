@@ -266,7 +266,7 @@ form.addEventListener('submit', function (e) {
 });
 
 function numberExam() {
-    alert('Напешите номерр телефона');
+    alert('Укажите номер телефона');
 };
 function fieldsExam() {
     alert('Заполните все поля формы')

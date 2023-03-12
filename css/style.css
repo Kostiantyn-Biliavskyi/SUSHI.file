@@ -640,6 +640,7 @@ option:checked {
     right: 20px;
 }
 
+/* ############################################################################################### */
 .mainSliderTextButton {
     width: 250px;
     height: 60px;
@@ -648,12 +649,6 @@ option:checked {
     position: absolute;
     top: 380px;
     right: 20px;
-    cursor: pointer;
-}
-
-.mainSliderTextButtonText {
-    width: 110px;
-    height: 30px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -662,10 +657,8 @@ option:checked {
     letter-spacing: 3px;
     font-style: normal;
     color: #ffffff;
-    position: absolute;
-    top: calc(50% - 15px);
-    left: calc(50% - 55px);
     cursor: pointer;
+    border: none;
 }
 
 .mainSliderTextButton:hover {

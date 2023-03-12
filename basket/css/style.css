@@ -470,8 +470,14 @@ a {
     width: 1200px;
     height: 600px;
     background: #E5E5E5;
-    margin-left: calc(50% - (1200px / 2));
-    position: absolute;
+    position: relative;
+    left: calc(50% - 600px);
+}
+
+@media (width <=1300px) {
+    .blockForm {
+        left: 0;
+    }
 }
 
 .formOrder {

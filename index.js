@@ -5,10 +5,10 @@ function typ(e) {
     let y = e.target.dataset.nameSushi;
     switch (y) {
         case 'fil':
-            alert("lososi");
+            // alert("lososi");
             break;
         case 'krev':
-            alert("krevetki");
+            // alert("krevetki");
             break;
         default:
     }
@@ -569,7 +569,12 @@ clickButton.addEventListener('click', function (e) {
         let paren = e.target.parentElement;
         paren.querySelector('.literColor').style.color = "#000000";
         setTimeout(() => paren.querySelector('.literColor').style.color = '#F2F2F2', 100);
+    }
 
+    if (e.target.className == 'mainSliderTextButton') {
+        let paren = e.target.parentElement;
+        paren.querySelector('.mainSliderTextButton').style.color = "#000000";
+        setTimeout(() => paren.querySelector('.mainSliderTextButton').style.color = '#F2F2F2', 100);
     }
 });
 // ------------------------------------------------------------
