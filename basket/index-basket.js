@@ -218,11 +218,8 @@ function deleteBlock(e) {
 valuta.addEventListener('focus', function () {
     valuta.blur();
 });
-
+var iter = 0;
 form.addEventListener('submit', function (e) {
-
-    var parentForm = document.querySelector('.formOrder');
-    var iter = 0;
     if (nameOrder == '' || nameOrder == ' ' || nameOrder == null) {
         document.querySelector('.emptyBasket').style.backgroundColor = 'red';
         setTimeout(() => { document.querySelector('.emptyBasket').style.backgroundColor = '#f66206'; }, 200);
@@ -239,13 +236,44 @@ form.addEventListener('submit', function (e) {
             iter++;
         }
     }
-    alert(iter);
-    // if (iter1 > 0) {
-    //     alert();
-    // }
 
+    if (iter > 0) {
+        setTimeout(fieldsExam, 1000);
+    }
 
+    if (classReq[2].value != 'Телефон* ') {
+        let y = Number(classReq[2].value);
+        if (Number.isInteger(y)) {
+        } else {
+            e.preventDefault();
+            classReq[2].style.boxShadow = "0 0 15px #f74a47";
+            setTimeout(() => { classReq[2].style.boxShadow = ""; }, 1500);
+            setTimeout(numberExam, 1000);
+        }
+    }
+
+    let email = document.querySelector('.email');
+    if (email.value == '' || email.value == 'E-mail ' || email.value == ' ') {
+    } else {
+        if (email.value.includes('@')) {
+        } else {
+            e.preventDefault();
+            email.style.boxShadow = "0 0 15px #f74a47";
+            setTimeout(() => { email.style.boxShadow = ""; }, 1500);
+            setTimeout(emailExam, 1000);
+        }
+    }
 });
+
+function numberExam() {
+    alert('Напешите номерр телефона');
+};
+function fieldsExam() {
+    alert('Заполните все поля формы')
+}
+function emailExam() {
+    alert('Не правельно набран Е-mail');
+}
 // --------------------------------------------------------------
 
 
