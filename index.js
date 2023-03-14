@@ -2,7 +2,7 @@
 mainSlider.addEventListener("click", typ);
 
 function typ(e) {
-    let y = e.target.dataset.nameSushi;
+    let y = e.target.dataset.nameSlider;
     switch (y) {
         case 'fil':
             // alert("lososi");
@@ -540,6 +540,25 @@ function def() {
 def();
 
 function customerСhoice(e) {
+
+    if (e.target.className === 'mainSliderTextButton') {
+        if (nameOrder == null) {
+            iBasket = 0;
+            nameOrder = '';
+            src = '';
+            priceProduct = '';
+        }
+        src = src + (e.target.parentNode.querySelector('.mainSliderFoto').getAttribute('src') + ',');
+        nameOrder = nameOrder + (e.target.parentNode.querySelector('.mainSliderText1').textContent + ',');
+        priceProduct = priceProduct + (e.target.parentNode.querySelector('.mainNewPrise').textContent + ',');
+        localStorage.setItem('nameOrder', nameOrder);
+        localStorage.setItem('priceProduct', priceProduct);
+        localStorage.setItem('src', src);
+        iBasket++;
+        sumProduct.innerHTML = iBasket;
+        localStorage.setItem('iBasket', iBasket);
+    }
+
     if (e.target.id === 'sliderMiniLiButton') {
 
         if (nameOrder == null) {
@@ -551,16 +570,14 @@ function customerСhoice(e) {
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
-
         localStorage.setItem('nameOrder', nameOrder);
         localStorage.setItem('priceProduct', priceProduct);
         localStorage.setItem('src', src);
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
-    } else {
-        return 0;
     }
+    // return 0;
 };
 // -------------------------------------------------------------
 var clickButton = document.querySelector('.block');
