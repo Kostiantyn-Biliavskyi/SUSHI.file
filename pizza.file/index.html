@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="..\css\css.foto\logo.png" type="image/x-icon">
+    <title>Bomset</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+
+<body id="body">
+    <div class="block">
+        <div class="firma" id="firma" data-product="mainPage">
+            <img class="firmaFoto" data-product="mainPage" src="..\css\css.foto\logo.png">
+            <h3 class="firmaText" data-product="mainPage">Bomset</h3>
+        </div>
+        <div class="lineMenu"></div>
+
+        <div class="menu" id="menu">
+
+            <div id="mainPage" class="menuButton" data-product="mainPage">
+                <img class="mainPageFoto" data-product="mainPage" src="..\css\css.foto\logo.png">
+                <div class="mainPageText" data-product="mainPage">Главная</div>
+            </div>
+            <div class="menuButton" data-product="pizza">
+                <img data-product="pizza" class="pizza" src="..\css\css.foto\Vector.png" alt="pizza">
+                <img data-product="pizza" class="pizza1" src="..\css\css.foto\Vector1.png" alt="pizza1">
+                <div id="menuButtonText" data-product="pizza"> Пицца</div>
+            </div>
+            <div class="menuButton" data-product="seti">
+                <img class="set" data-product="seti" src="..\css\css.foto\Ellipse 2.png">
+                <img class="set1" data-product="seti" src="..\css\css.foto\Ellipse 4.png">
+                <img class="set2" data-product="seti" src="..\css\css.foto\Ellipse 5.png">
+                <img class="set3" data-product="seti" src="..\css\css.foto\Ellipse 3.png">
+
+                <img class="set4" data-product="seti" src="..\css\css.foto\Ellipse 2.png">
+                <img class="set5" data-product="seti" src="..\css\css.foto\Ellipse 4.png">
+                <img class="set6" data-product="seti" src="..\css\css.foto\Ellipse 5.png">
+                <img class="set7" data-product="seti" src="..\css\css.foto\Ellipse 3.png">
+                <div id="menuButtonText" data-product="seti">Сеты</div>
+            </div>
+            <div class="menuButton" data-product="wok">
+                <img class="wok" data-product="wok" src="..\css\css.foto\Vector2.png">
+                <div id="menuButtonText" data-product="wok"> WOK </div>
+            </div>
+            <div class="menuButton" data-product="roll">
+                <img class="roll" data-product="roll" src="..\css\css.foto\Vector3.png">
+                <div id="menuButtonText" data-product="roll"> Роллы </div>
+            </div>
+            <div class="menuButton" data-product="sushi_1">
+                <img class="sushi" data-product="sushi_1" src="..\css\css.foto\Vector4.png">
+                <div id="menuButtonText" data-product="sushi_1"> Суши </div>
+            </div>
+            <div class="menuButton" data-product="salad">
+                <img class="salad" data-product="salad" src="..\css\css.foto\Vector5.png">
+                <div id="menuButtonText" data-product="salad"> Салаты </div>
+            </div>
+            <div class="menuButton" data-product="soup">
+                <img class="soup" data-product="soup" src="..\css\css.foto\Vector6.png">
+                <div id="menuButtonText" data-product="soup"> Супы </div>
+            </div>
+            <div class="menuButton">
+                <img class="kornDogi" src="..\css\css.foto\Shape7.png">
+                <div id="menuButtonText"> Корн доги </div>
+            </div>
+            <div class="menuButton">
+                <img class="drinks" src="..\css\css.foto\Vector8.png">
+                <div id="menuButtonText"> Напитки </div>
+            </div>
+            <div class="menuButton" data-product="akcii">
+                <img class="stock" data-product="akcii" src="..\css\css.foto\Vector9.png">
+                <div class="percent" data-product="akcii"> % </div>
+                <div id="menuButtonText" data-product="akcii"> Акции </div>
+            </div>
+        </div>
+        <!-- ----------------------- centerMain --------------------------------- -->
+        <div class="centerMain" id="centerMain">
+            <div class="phone">
+                <ul>
+                    <li>
+                        <div class="contactsText">Наш телефон</div>
+                    </li>
+                    <li>
+                        <div class="tel11">
+                            <a class="tel1" href=tel:"+38077878877">+38077878877</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tel11">
+                            <a class="tel2" href=tel:"+38999998888">+38999998888</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tel11">
+                            <img class="watch" src="..\css\css.foto\watch.png">
+                            <img class="watch1" src="..\css\css.foto\watch1.png">
+                            <div class="phoneText"> работаем с 10:00 до 00:00</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="city" id="city">
+                <div class="cityText">Город :</div>
+                <form>
+                    <select class="selectSity" value="">
+                        <option>Харьков</option>
+                        <option>Киев</option>
+                        <option>Львов</option>
+                        <option>Днепр</option>
+                    </select>
+                </form>
+            </div>
+
+            <a href="..\basket\index.html">
+                <div id="basketClick" class="blokcBasketHed">
+                    <div id="sumProduct"></div>
+                    <img class="basketHed" src="..\css\css.foto\free-icon-shopping-cart-of-checkered-design-34627.png"
+                        alt="корзина">
+                </div>
+            </a>
+            <div class="reviews" data-product="review">Отзывы</div>
+
+            <div class="delivery">Доставка и оплата</div>
+            <div class="lineHed"></div>
+
+
+            <div class="createDivNew">
+                <div class="titleProduct">
+                    <img class="pizzaLargeFoto" src="..\css\css.foto\Vector.png" alt="pizza">
+                    <img class="pizza1LargeFoto" src="..\css\css.foto\Vector1.png" alt="pizza">
+                    <div class="textProductLarge">Пицца</div>
+                    <div id="sortingProduct">Сортировка
+                        <div id="menuSort">
+                            <ul>
+                                <li class="nameMenuSort" id="sortName">Название</li>
+                                <li class="nameMenuSort" id="sortCheap">Сначала дешевле</li>
+                                <li class="nameMenuSort" id="sortExpensive">Сначала дороже</li>
+                                <li class="nameMenuSort" id="sortPieces">Количество кусочков</li>
+                                <li class="nameMenuSort" id="sortWeight">Вес</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="tablePizzaTr"> -->
+                <div class="product">
+                    <img class="sliderMiniLiFoto" src="..\css\css.foto\1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg"
+                        alt="foto">
+                    <div class="sliderMiniLiTextName">Пицца <span class="productName">Карибы</span></div>
+                    <div class="sliderMiniLiTextWeight"><span class="productWeight">850</span>&nbsp; грамм</div>
+                    <div class="sliderMiniLiTextPrice"><span class="Thprices">300</span>&nbsp;грн.</div>
+                    <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- ----------------------------------- blockTextAnotacion ------------- -->
+            <div class="blockTextAnotaciya">
+                <div class="blockTextAnotaciyaTitle">Заказать суши в городе</div>
+                <p class="blockTextAnotaciyaP1"> Ресторан “Суши и Лапша” предлагаем своим клиентам самые вкусные
+                    суши с
+                    доставкой на дом,
+                    приготовленные по классическим и адаптированным к европейской аудитории рецептам, а также
+                    собственным наработкам наших поваров. Мы ценим время наших клиентов, поэтому вы можете заказать
+                    суши
+                    в Харькове с доставкой на дом или в офис.</p>
+
+                <p class="blockTextAnotaciyaP2"> В нашем меню более 20 видов суши:</p>
+                <ul class="blockTextAnotaciyaUl">
+                    <li>Классические с сырым лососем, тунцом, окунем.</li>
+                    <li class="blockTextAnotaciyaLi2">Экзотические с тигровой креветкой, морским гребешком.</li>
+                    <li class="blockTextAnotaciyaLi3">Пикантные с копченым лососем, угрем.</li>
+                </ul>
+                <p class="blockTextAnotaciyaP3"> В меню также представлены гунканы: с начинкой из красной икры и
+                    тобико,
+                    а также феликсы, где
+                    японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить
+                    суши с
+                    соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец,
+                    лосось
+                    и окунь.</p>
+            </div>
+            <div id="blockTextAnotaciyaButton">Подробнее
+                <div class="blockTextAnotaciyaTrigle"></div>
+            </div>
+            <div class="centerMainLineBottom"></div>
+            <div class="centerMainInfa">
+                <div id="centerMainInfaCompany">О компании</div>
+                <div id="centerMainInfaDelivery">Доставка и оплата</div>
+                <div id="centerMainInfaMaterials">Лента материалов</div>
+                <div id="centerMainInfaReturn">Политика возврата</div>
+            </div>
+            <div class="centerMainMesenger">
+                <div class="centerMainMesengerText1">Введите номер</div>
+                <div class="centerMainMesengerTel"> <input type="tel" id="telUser" name="tel" value="0"
+                        placeholder="+380( __ )___ __ __"></div>
+                <div class="centerMainMesengerText2">Выберите удобный мессенджер для общения</div>
+                <a href="https://www.viber.com/ru/"> <img id="centrViber"
+                        src="..\css\css.foto\free-icon-viber-3670059.png" alt="viber"></a>
+                <a href="https://telegram.org/"> <img id="centrTelegram"
+                        src="..\css\css.foto\free-icon-telegram-3670070.png" alt="telegram"></a>
+                <a
+                    href="https://www.instagram.com/challenge/?next=https%3A%2F%2Fwww.instagram.com%2F%3F__coig_challenged%3D1">
+                    <img id="centrInstagram" src="..\css\css.foto\free-icon-instagram-3955024.png" alt="instagram"></a>
+            </div>
+            <div class="centerMainTelefon">
+                <div class="centerMainTelefonNumber1">Тел:+389 777 887 78</div>
+                <div class="centerMainTelefonNumber2">Тел:+389 999 988 88</div>
+                <div class="centerMainTelefonAddress">Адрес:Бакаева 126</div>
+            </div>
+        </div>
+
+
+        <!-- -------------------------- centerMain ----------------------------->
+        <div class="basket">
+            <div class="basketText1">Ваша корзина пуста</div>
+            <div class="basketText2">Добавьте же скорее что-нибудь!</div>
+            <div class="basketText3">Бесплатная доставка от 800грн.</div>
+        </div>
+
+        <div class="map">
+            <div class="dot">
+                <img class="dotFoto1" src="..\css\css.foto\Vector11.png">
+                <img class="dotFoto2" src="..\css\css.foto\Vector12.png">
+            </div>
+
+            <a href="https://www.google.ru/maps/@49.9634294,36.3194639,13z"><img class="fotoMap" id="kharkiv"
+                    src="..\css\css.foto\Харьков.png"></a>
+
+            <a href="https://www.google.ru/maps/@50.4385162,30.6180069,12.08z"><img class="fotoMap" id="kiiv"
+                    src="..\css\css.foto\Kiiv.png"></a>
+
+            <a href="https://www.google.ru/maps/@49.8647152,24.1245191,11.96z"><img class="fotoMap" id="lviv"
+                    src="..\css\css.foto\Lviv.png"></a>
+
+            <a href="https://www.google.ru/maps/@48.4568826,35.0416506,12.96z"><img class="fotoMap" id="dnipro"
+                    src="..\css\css.foto\Dnipro.png"></a>
+
+            <div class="mapText1">Укажите адрес</div>
+            <div class="mapText2">И узнаете времи доставки</div>
+        </div>
+
+        <!-- <template id="templatePizza"> -->
+
+
+        <!-- <div class="pageHiddenSushi">
+                <table id="tablePizza">
+                    <tr class="tablePizzaTr">
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg" alt="foto">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Карибы</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">850</span>&nbsp; грамм</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">300</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186819_41-p-krasivaya-pitstsa-krasivo-49.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Август</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">850</span>&nbsp; грамм</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">850</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186821_6-p-krasivaya-pitstsa-krasivo-6.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Сырная</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">1050</span>&nbsp; грамм.
+                            </div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">500</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186823_2-p-krasivaya-pitstsa-krasivo-2.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Филадельфия</span>
+                            </div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">900</span>&nbsp;грамм.</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">350</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Овощная</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">1050</span>&nbsp; грамм
+                            </div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">1500</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186838_8-p-krasivaya-pitstsa-krasivo-10.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Салями</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">1050</span>&nbsp;грамм</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">1500</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186861_4-p-krasivaya-pitstsa-krasivo-4.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Анчоусы</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">500</span>&nbsp;грамм.</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">250</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186872_10-p-krasivaya-pitstsa-krasivo-13.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Куриная</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">500</span>&nbsp;грамм.</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">200</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186881_35-p-krasivaya-pitstsa-krasivo-43.jpg" alt="foto">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Паприка</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">2010</span>&nbsp;грамм.
+                            </div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">350</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                    </tr>
+                    <tr class="tablePizzaTr">
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg" alt="foto">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Креветки</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">850</span>&nbsp;грамм</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">300</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186819_41-p-krasivaya-pitstsa-krasivo-49.jpg" alt="foto">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Курица сыр</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">850</span>&nbsp;грамм</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">350</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186821_6-p-krasivaya-pitstsa-krasivo-6.jpg" alt="foto">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Грибы сыр</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">1050</span>&nbsp;грамм.
+                            </div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">500</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186823_2-p-krasivaya-pitstsa-krasivo-2.jpg" alt="foto">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Фирменная</span>
+                            </div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">900</span>&nbsp;грамм.</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">375</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Салями сыр</span>
+                            </div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">1050</span>&nbsp; грамм
+                            </div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">1500</span> грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186838_8-p-krasivaya-pitstsa-krasivo-10.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Супер</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">1050</span>&nbsp;грамм</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">1505</span> &nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186861_4-p-krasivaya-pitstsa-krasivo-4.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Мидии</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">500</span>&nbsp;грамм.</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">280</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186872_10-p-krasivaya-pitstsa-krasivo-13.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Мясная</span></div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">500</span>&nbsp;грамм.</div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">250</span>&nbsp;грн. </div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                        <td class="product">
+                            <img class="sliderMiniLiFoto"
+                                src="..\css\css.foto\1617186881_35-p-krasivaya-pitstsa-krasivo-43.jpg" alt="">
+                            <div class="sliderMiniLiTextName">Пицца <span class="productName">Паприка сыр</span>
+                            </div>
+                            <div class="sliderMiniLiTextWeight"><span class="productWeight">2010</span>&nbsp;грамм.
+                            </div>
+                            <div class="sliderMiniLiTextPrice"><span class="Thprices">750</span>&nbsp;грн.</div>
+                            <button id="sliderMiniLiButton" class="literColor">Хочу</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="pageNavigation">
+                <div id="page_1" class="page_1"> 1 </div>
+                <div id="page_2" class="page_2"> 2 </div>
+            </div>
+        </template> -->
+        <!-- --------------------------------------------------------------- -->
+
+        <!-- ------------------------------------------------------------------ -->
+        <template id="templateReview">
+
+            <div class="titleProduct">
+                <div class="textProductLarge">Отзывы</div>
+                <div id="createReview">
+                    <div id="createReviewText">+ Добавить отзыв</div>
+                </div>
+            </div>
+
+            <ul class="blockReview">
+                <li class="userReview">
+                    <h3 class="nameUserReview">Розалия</h3>
+                    <div class="dateReview">02.07.22.</div>
+                    <p class="textReview">Ваша доставка и ваши блюда лучшие в Харькове! всегда очень вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.Ваша доставка и ваши блюда лучшие в Харькове! всегда очень
+                        вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.</p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Елена</h3>
+                    <div class="dateReview">09.02.22.</div>
+                    <p class="textReview">Ооочень вкусно!!!!!
+                    </p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Виктор Гаврилюк</h3>
+                    <div class="dateReview">15.09.21.</div>
+                    <p class="textReview">Ваша доставка и ваши блюда лучшие в Харькове! всегда очень вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.Ваша доставка и ваши блюда лучшие в Харькове! всегда очень
+                        вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.</p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Сеупан</h3>
+                    <div class="dateReview">02.07.22.</div>
+                    <p class="textReview">Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал
+                        лучше,
+                        суши вкуснее. За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту.
+                        Успехов Вам и приятных бонусов нам
+                    </p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Розалия</h3>
+                    <div class="dateReview">02.07.22.</div>
+                    <p class="textReview">Ваша доставка и ваши блюда лучшие в Харькове! всегда очень вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.Ваша доставка и ваши блюда лучшие в Харькове! всегда очень
+                        вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.</p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Юля</h3>
+                    <div class="dateReview">03.10.22.</div>
+                    <p class="textReview">Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал
+                        лучше,
+                        суши вкуснее. За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту.
+                        Успехов Вам и приятных бонусов нам
+                    </p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Максим</h3>
+                    <div class="dateReview">23.11.22.</div>
+                    <p class="textReview">Ваша доставка и ваши блюда лучшие в Харькове! всегда очень вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.Ваша доставка и ваши блюда лучшие в Харькове! всегда очень
+                        вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.</p>
+                </li>
+                <li class="userReview">
+                    <h3 class="nameUserReview">Сергей</h3>
+                    <div class="dateReview">12.04.22.</div>
+                    <p class="textReview">Ваша доставка и ваши блюда лучшие в Харькове! всегда очень вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.Ваша доставка и ваши блюда лучшие в Харькове! всегда очень
+                        вкусно,
+                        вовремя,
+                        всегда вежливые
+                        курьеры и девушки на телефоне.</p>
+                </li>
+            </ul>
+            <div id="paranja"></div>
+            <div id="paranjaForm">
+                <div id="closeForm">
+                    <div id="lineClose1"></div>
+                    <div id="lineClose2"></div>
+                </div>
+                <form action="send.php" method="post" class="formUserReview">
+                    <label class="labelText" for="nameUserForm">Ваше имя*:</label><br>
+                    <input id="nameUserForm" type="text" name="name" required><br>
+                    <label class="labelText" for="textMessage">Отзыв*:</label><br>
+                    <textarea name="text" id="textMessage" required></textarea><br>
+                    <input id="buttonForm" type="button"
+                        value="Оставить отзыв"><!--отправить форму на сервер  type="submit"  -->
+                </form>
+            </div>
+        </template>
+
+    </div>
+
+    <script src="index.js"></script>
+    <script src="../maskinput.js/maskinput.js"></script>
+
+
+</body>
+
+</html>

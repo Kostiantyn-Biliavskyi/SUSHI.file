@@ -1,3 +1,9 @@
+var back = document.querySelector('.back');
+back.addEventListener('click', backBascet);
+function backBascet() {
+    history.back();// назат возвращает
+};
+
 var inputFocus = document.querySelector('.formOrder');
 
 inputFocus.addEventListener('click', function (e) {
