@@ -1,6 +1,23 @@
 
-var mas = [ty = { name: 'pizza', src: 't', prise: 300 }, li = { name: 'sushi', src: 'to', prise: 200 }];
-alert(mas[0].prise);
+var mas = [pizza_1 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Карибы', prise: 300, weight: 850 },
+pizza_2 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Август', prise: 500, weight: 600 },
+pizza_3 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Сырная', prise: 850, weight: 700 }];
+
+let cordLineHed = document.querySelector(".titleProduct");
+var createDivProdukt;
+createDivProdukt = document.createElement('div');
+createDivProdukt.className = "createDivNew";
+cordLineHed.after(createDivProdukt);
+
+let srcProduct, nameProduct, weightProduct, productPrise;
+
+
+for (let i = 0; i < mas.length; i++) {
+    createDivProdukt.append(templatePizza.content.cloneNode(true));
+
+
+}
+
 // ------------------------------------------------------------
 function textOpeningBlock() {
 
@@ -67,168 +84,15 @@ function citySelection(e) {
     return 0;
 };
 // -----------------------------------------------------------
-var review = document.querySelector(".reviews");
-review = addEventListener("click", callProductSelection);
-menu.addEventListener("click", productSelection);
-firma.addEventListener("click", productSelection);
-function callProductSelection(e) {
-    if (e.target.className == "reviews") {
-        productSelection(e);
-    }
-    return 0;
-};
-var cordLineHed, createDivProdukt;
-function productSelection(e) {
 
-    cordLineHed = document.querySelector(".lineHed");
-
-    if (e.target.id == "menu" || e.target.id == "pageNavigation") {
-        return 0;
-    } else {
-        if (document.body.querySelector(".createDivNew") != null) {
-            createDivProdukt.remove();
-        }
-
-        if (e.target.dataset.product == "mainPage") {
-            blockCentrSliders.style.display = "";
-            return 0;
-        } else {
-            createDivProdukt = document.createElement('div');
-            createDivProdukt.className = "createDivNew";
-            cordLineHed.after(createDivProdukt);
-        }
-        switch (e.target.dataset.product) {
-            case "pizza":
-                createDivProdukt.append(templatePizza.content.cloneNode(true));
-                search();
-                centrButton();
-                break;
-            case "seti":
-                createDivProdukt.append(templateSeti.content.cloneNode(true));
-                search();
-                break;
-            case "wok":
-                createDivProdukt.append(templateWok.content.cloneNode(true));
-                search();
-                break;
-            case "roll":
-                createDivProdukt.append(templateRoll.content.cloneNode(true));
-                search();
-                break;
-            case "sushi_1":
-                createDivProdukt.append(templateSushi.content.cloneNode(true));
-                search();
-                centrButton();
-                break;
-            case "salad":
-                createDivProdukt.append(templateSalad.content.cloneNode(true));
-                search();
-                break;
-            case "soup":
-                createDivProdukt.append(templateSoup.content.cloneNode(true));
-                search();
-                break;
-            case "review":
-                createDivProdukt.append(templateReview.content.cloneNode(true));
-                clickCreateReview();
-                break;
-            default:
-                alert("ERROR");
-        }
-    }
-    return 0;
-};
-
-function centrButton() {// для многостараничных меню. делает кнопки активными
-    let widthCreatedDiv = document.body.querySelector(".createDivNew");// центрирует кнопки страниц внизу
-    let widthBlockPage = pageNavigation.offsetWidth / 2;
-    let widthblockCenterMain = widthCreatedDiv.offsetWidth / 2;
-    widthCreatedDiv = widthblockCenterMain - widthBlockPage;
-    pageNavigation.style.left = widthCreatedDiv + "px";
-    pageNavigation.addEventListener("click", styleButtonNavigation);
-    pageNavigation.addEventListener("click", switchingPage);
-    pageNavigation.addEventListener("mouseover", comesButton);
-    pageNavigation.addEventListener("mouseout", leavesButton);
-    saveClick_2 = document.getElementById("page_1");
-    iPage = 0;
-    return 0;
-};
-var saveClick_1, saveClick_2, iPage = 0;
-function search() { // одностраничное меню
-    sortingProduct.addEventListener("click", sortProduct);
-    sortingProduct.addEventListener("mouseover", menuSortingOpen);
-    sortingProduct.addEventListener("mouseout", menuSortingClose);
-    // tablePizza.addEventListener("click", customerСhoice);
-};
-
-function comesButton(e) {
-    if (e.target.id != "pageNavigation") {
-        e.target.style.boxShadow = "0px 0px 3px 2px darkgrey";
-    }
-    return 0;
-};
-function leavesButton(e) {
-    if (e.target.id != "pageNavigation") {
-        e.target.style.boxShadow = "0px 0px 0px 0px";
-    }
-    return 0;
-};
-
+sortingProduct.addEventListener("click", sortProduct);
+sortingProduct.addEventListener("mouseover", menuSortingOpen);
+sortingProduct.addEventListener("mouseout", menuSortingClose);
 function menuSortingOpen() {
     menuSort.style.display = "block";
 };
 function menuSortingClose() {
     menuSort.style.display = "none";
-};
-
-var heightPage;
-function switchingPage(e) {// перенключение страниц
-    heightPage = tablePizza.offsetHeight;
-
-    switch (e.target.id) {
-        case "page_1":
-            tablePizza.style.top = 0 + "px";
-            break;
-        case "page_2":
-            tablePizza.style.top = -1290 + "px";
-            break;
-        case "page_3":
-            tablePizza.style.top = -(1290 * 2) + "px";
-            break;
-        default:
-    }
-    return 0;
-};
-
-function styleButtonNavigation(e) {// стилезует кнопки переключения страниц
-
-    if (e.target.id == "pageNavigation") {
-        return 0;
-    } else {
-        iPage++;
-        switch (iPage) {
-            case 1:
-                saveClick_1 = document.getElementById(e.target.id);
-                saveClick_1.style.backgroundColor = "#F46D40";
-                saveClick_1.style.color = "white";
-
-                saveClick_2.style.backgroundColor = "white";
-                saveClick_2.style.color = "blueviolet";
-                break;
-            case 2:
-                saveClick_2 = document.getElementById(e.target.id);
-                saveClick_2.style.backgroundColor = "#F46D40";
-                saveClick_2.style.color = "white";
-
-                saveClick_1.style.backgroundColor = "white";
-                saveClick_1.style.color = "blueviolet";
-                iPage = 0;
-                break;
-            default:
-        }
-
-    }
-    return 0;
 };
 
 function sortProduct(e) {// сортирует страницу по возростанию
@@ -311,38 +175,7 @@ function sortProduct(e) {// сортирует страницу по возро�
 
     return 0;
 };
-function clickCreateReview() {
-    createReview.addEventListener("click", clientWritesReview);
-};
 
-function clientWritesReview() {
-    paranja.classList.toggle('paranjaClass');
-    paranjaForm.classList.toggle('paranjaFormClass');
-    paranjaForm.style.display = "block";
-    buttonForm.addEventListener("click", sendingForm);
-    closeForm.addEventListener("click", clickCloseForm);
-};
-
-function sendingForm() {
-
-    if (nameUserForm.value === "" || nameUserForm.value === " " || textMessage.value === "  " || textMessage.value === "," || textMessage.value === ".") {
-        nameUserForm.style.boxShadow = "0 0 15px #f74a47";
-        nameUserForm.value = "Укажите имя.";
-        setTimeout(() => { nameUserForm.style.boxShadow = ""; nameUserForm.value = ""; }, 1500);
-    }
-    if (textMessage.value === "" || textMessage.value === " " || textMessage.value === "  ") {
-        textMessage.style.boxShadow = "0 0 15px #f74a47";
-        textMessage.value = "Оставте отзыв.";
-        setTimeout(() => { textMessage.style.boxShadow = ""; textMessage.value = ""; }, 1500);
-    }
-};
-
-function clickCloseForm() {
-    paranja.classList.toggle('paranjaClass');
-    paranjaForm.classList.toggle('paranjaFormClass');
-    paranjaForm.style.display = "none";
-    return 0;
-};
 // -------------------------------------------------------------------
 window.addEventListener("click", customerСhoice);
 var nameOrder = '', priceProduct = '', src = '';
@@ -404,7 +237,7 @@ function customerСhoice(e) {
     return 0;
 };
 // -------------------------------------------------------------
-var clickButton = document.querySelector('.block');
+var clickButton = document.querySelector('.block');// в кнопке делает буквы черными
 clickButton.addEventListener('click', function (e) {
     if (e.target.id == 'sliderMiniLiButton') {
         let paren = e.target.parentElement;

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="..\css\css.foto\logo.png" type="image/x-icon">
     <title>Bomset</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -127,25 +128,26 @@
             <div class="lineHed"></div>
 
 
-            <div class="createDivNew">
-                <div class="titleProduct">
-                    <img class="pizzaLargeFoto" src="..\css\css.foto\Vector.png" alt="pizza">
-                    <img class="pizza1LargeFoto" src="..\css\css.foto\Vector1.png" alt="pizza">
-                    <div class="textProductLarge">Пицца</div>
-                    <div id="sortingProduct">Сортировка
-                        <div id="menuSort">
-                            <ul>
-                                <li class="nameMenuSort" id="sortName">Название</li>
-                                <li class="nameMenuSort" id="sortCheap">Сначала дешевле</li>
-                                <li class="nameMenuSort" id="sortExpensive">Сначала дороже</li>
-                                <li class="nameMenuSort" id="sortPieces">Количество кусочков</li>
-                                <li class="nameMenuSort" id="sortWeight">Вес</li>
-                            </ul>
-                        </div>
+            <!-- <div class="createDivNew"> -->
+            <div class="titleProduct">
+                <img class="pizzaLargeFoto" src="..\css\css.foto\Vector.png" alt="pizza">
+                <img class="pizza1LargeFoto" src="..\css\css.foto\Vector1.png" alt="pizza">
+                <div class="textProductLarge">Пицца</div>
+                <div id="sortingProduct">Сортировка
+                    <div id="menuSort">
+                        <ul>
+                            <li class="nameMenuSort" id="sortName">Название</li>
+                            <li class="nameMenuSort" id="sortCheap">Сначала дешевле</li>
+                            <li class="nameMenuSort" id="sortExpensive">Сначала дороже</li>
+                            <li class="nameMenuSort" id="sortPieces">Количество кусочков</li>
+                            <li class="nameMenuSort" id="sortWeight">Вес</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+            <!-- </div> -->
 
-                <!-- <div class="tablePizzaTr"> -->
+            <template id="templatePizza">
                 <div class="product">
                     <img class="sliderMiniLiFoto" src="..\css\css.foto\1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg"
                         alt="foto">
@@ -154,8 +156,7 @@
                     <div class="sliderMiniLiTextPrice"><span class="Thprices">300</span>&nbsp;грн.</div>
                     <button id="sliderMiniLiButton" class="literColor">Хочу</button>
                 </div>
-            </div>
-            <!-- </div> -->
+            </template>
 
             <!-- ----------------------------------- blockTextAnotacion ------------- -->
             <div class="blockTextAnotaciya">
@@ -424,7 +425,7 @@
         <!-- --------------------------------------------------------------- -->
 
         <!-- ------------------------------------------------------------------ -->
-        <template id="templateReview">
+        <!-- <template id="templateReview">
 
             <div class="titleProduct">
                 <div class="textProductLarge">Отзывы</div>
@@ -532,9 +533,9 @@
                     <textarea name="text" id="textMessage" required></textarea><br>
                     <input id="buttonForm" type="button"
                         value="Оставить отзыв"><!--отправить форму на сервер  type="submit"  -->
-                </form>
+        <!-- </form>
             </div>
-        </template>
+        </template> -->
 
     </div>
 

@@ -640,7 +640,6 @@ option:checked {
     right: 20px;
 }
 
-/* ############################################################################################### */
 .mainSliderTextButton {
     width: 250px;
     height: 60px;
@@ -666,8 +665,7 @@ option:checked {
 }
 
 /* ---------------------------- navigationMainSlider ---------------------------------- */
-
-.navigationMainSlider {
+createDivNew .navigationMainSlider {
     width: 200px;
     height: 20px;
     position: absolute;
@@ -1496,9 +1494,12 @@ option:checked {
 }
 
 .titleProduct {
-    position: absolute;
-    width: 957px;
+    width: 960px;
     height: 45px;
+    position: absolute;
+    top: 130px;
+    left: 55px;
+    background-color: #759d60;
 }
 
 .pizzaLargeFoto {
@@ -1539,12 +1540,21 @@ option:checked {
 }
 
 /* ###############################################################################33 */
-.createDivNew {
+.createDivNewProduct {
     width: 960px;
     height: 1420px;
     position: absolute;
     top: 130px;
     left: 55px;
+}
+
+.createDivNew {
+    width: 960px;
+    height: 1375px;
+    position: absolute;
+    top: 175px;
+    left: 55px;
+    background-color: #d47c09;
 }
 
 .pageHiddenSushi {
