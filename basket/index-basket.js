@@ -105,7 +105,7 @@ function createBlock() {
                 }
                 document.querySelector('.quantity').value = quantityProdMas[a];
             }
-            fotoMin.src = '../' + src[a];
+            fotoMin.src = '' + src[a];
             nameProd.innerHTML = nameOrder[a];
             let x = priceProduct[a] * quantityProdMas[a];
             priceProd.innerHTML = priceProduct[a] * quantityProdMas[a];

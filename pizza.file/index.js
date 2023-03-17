@@ -1,23 +1,92 @@
 
 var mas = [pizza_1 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Карибы', prise: 300, weight: 850 },
 pizza_2 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Август', prise: 500, weight: 600 },
-pizza_3 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Сырная', prise: 850, weight: 700 }];
+pizza_3 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Сырная', prise: 850, weight: 700 },
+pizza_4 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Филадельфия', prise: 350, weight: 550 },
+pizza_5 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Овощная', prise: 400, weight: 500 },
+pizza_6 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Салями', prise: 450, weight: 550 },
+pizza_7 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Паприка', prise: 500, weight: 500 },
+pizza_8 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Креветки', prise: 350, weight: 550 },
+pizza_9 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Анчоусы', prise: 600, weight: 550 },
 
-let cordLineHed = document.querySelector(".titleProduct");
-var createDivProdukt;
-createDivProdukt = document.createElement('div');
-createDivProdukt.className = "createDivNew";
-cordLineHed.after(createDivProdukt);
+];
 
-let srcProduct, nameProduct, weightProduct, productPrise;
+createCardProduct();
+function createCardProduct() {// создание карточки товара
+    let xDiv = document.querySelector('.createDivNew');
+    for (let i = 0; i < 9; i++) {
+        let newWraper = document.createElement('div');
+        newWraper.className = 'wraper';
+        xDiv.prepend(newWraper);
 
+        newWraper.prepend(templatePizza.content.cloneNode(true));
+        newWraper.querySelector('.sliderMiniLiFoto').src = mas[i].src;
+        newWraper.querySelector('.productName').textContent = mas[i].name;
+        newWraper.querySelector('.Thprices').textContent = mas[i].prise;
+        newWraper.querySelector('.productWeight').textContent = mas[i].weight;
+    }
 
-for (let i = 0; i < mas.length; i++) {
-    createDivProdukt.append(templatePizza.content.cloneNode(true));
+};
+function sortPrise() {// сорт дороже
+    let masSort = [], bufer;
+    for (let i = 0; i < mas.length; i++) {
+        masSort[i] = mas[i].prise;
+    }
+    masSort.sort(function (a, b) { return a - b });
+    for (let i = 0; i < mas.length; i++) {
+        for (let ii = 0; ii < mas.length; ii++) {
+            if (masSort[i] == mas[ii].prise) {
+                bufer = mas[i]
+                mas[i] = mas[ii];
+                mas[ii] = bufer;
+            }
+        }
+    }
+    createCardProduct();
+};
+function sortPriseСheap() {// сорт дешевле
+    let masSort = [], bufer;
+    for (let i = 0; i < mas.length; i++) {
+        masSort[i] = mas[i].prise;
+    }
+    masSort.sort(function (a, b) { return a - b });
+    for (let i = 0; i < mas.length; i++) {
+        for (let ii = 0; ii < mas.length; ii++) {
+            if (masSort[i] == mas[ii].prise) {
+                bufer = mas[i]
+                mas[i] = mas[ii];
+                mas[ii] = bufer;
+            }
+        }
+    }
+    mas.reverse();
+    createCardProduct();
+};
+function deleteDiv() { // удаляет все карточки
+    for (let i = 0; i < mas.length; i++) {
+        let xDiv = document.querySelector('.wraper');
+        xDiv.remove();
+    }
+};
+document.addEventListener('click', sortProduct);
 
+function sortProduct(e) {
 
-}
+    switch (e.target.id) {
+        case 'sortExpensive':
+            deleteDiv();
+            sortPrise();
+            break;
+        case 'sortCheap':
+            deleteDiv();
+            sortPriseСheap();
+            break;
+        default:
+            break;
+    }
+};
 
+console.log(mas);
 // ------------------------------------------------------------
 function textOpeningBlock() {
 
@@ -85,7 +154,7 @@ function citySelection(e) {
 };
 // -----------------------------------------------------------
 
-sortingProduct.addEventListener("click", sortProduct);
+// sortingProduct.addEventListener("click", sortProduct);
 sortingProduct.addEventListener("mouseover", menuSortingOpen);
 sortingProduct.addEventListener("mouseout", menuSortingClose);
 function menuSortingOpen() {
@@ -95,7 +164,7 @@ function menuSortingClose() {
     menuSort.style.display = "none";
 };
 
-function sortProduct(e) {// сортирует страницу по возростанию
+/*function sortProduct(e) {// сортирует страницу по возростанию
     let iFunc = 0, masProduct = [], iii = 0, nameClassSort = "";
 
     switch (e.target.id) {
@@ -174,7 +243,7 @@ function sortProduct(e) {// сортирует страницу по возро�
     sortCheap();
 
     return 0;
-};
+};*/
 
 // -------------------------------------------------------------------
 window.addEventListener("click", customerСhoice);

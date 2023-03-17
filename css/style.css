@@ -1539,14 +1539,11 @@ createDivNew .navigationMainSlider {
     display: inline-table;
 }
 
-/* ###############################################################################33 */
-.createDivNewProduct {
-    width: 960px;
-    height: 1420px;
-    position: absolute;
-    top: 130px;
-    left: 55px;
+.wraper {
+    display: inline-table;
 }
+
+/* ###############################################################################33 */
 
 .createDivNew {
     width: 960px;
