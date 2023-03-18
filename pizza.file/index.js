@@ -62,6 +62,43 @@ function sortPriseСheap() {// сорт дешевле
     mas.reverse();
     createCardProduct();
 };
+function sortWeight() {// сорт вес
+    let masSort = [], bufer;
+    for (let i = 0; i < mas.length; i++) {
+        masSort[i] = mas[i].weight;
+    }
+    masSort.sort(function (a, b) { return a - b });
+    mas.reverse();
+    for (let i = 0; i < mas.length; i++) {
+        for (let ii = 0; ii < mas.length; ii++) {
+            if (masSort[i] == mas[ii].weight) {
+                bufer = mas[i]
+                mas[i] = mas[ii];
+                mas[ii] = bufer;
+            }
+        }
+    }
+
+    createCardProduct();
+};
+function sortName() { //сорт по названию
+    let masSort = [], bufer;
+    for (let i = 0; i < mas.length; i++) {
+        masSort[i] = mas[i].name;
+    }
+    masSort.sort((a, b) => a.localeCompare(b));
+    masSort.reverse();
+    for (let i = 0; i < mas.length; i++) {
+        for (let ii = 0; ii < mas.length; ii++) {
+            if (masSort[i] == mas[ii].name) {
+                bufer = mas[i]
+                mas[i] = mas[ii];
+                mas[ii] = bufer;
+            }
+        }
+    }
+    createCardProduct();
+};
 function deleteDiv() { // удаляет все карточки
     for (let i = 0; i < mas.length; i++) {
         let xDiv = document.querySelector('.wraper');
@@ -81,12 +118,20 @@ function sortProduct(e) {
             deleteDiv();
             sortPriseСheap();
             break;
+        case 'sortWeight':
+            deleteDiv();
+            sortWeight();
+            break;
+        case 'sortName':
+            deleteDiv();
+            sortName();
+            break;
         default:
             break;
     }
 };
 
-console.log(mas);
+
 // ------------------------------------------------------------
 function textOpeningBlock() {
 
@@ -163,87 +208,6 @@ function menuSortingOpen() {
 function menuSortingClose() {
     menuSort.style.display = "none";
 };
-
-/*function sortProduct(e) {// сортирует страницу по возростанию
-    let iFunc = 0, masProduct = [], iii = 0, nameClassSort = "";
-
-    switch (e.target.id) {
-        case "sortCheap":
-            nameClassSort = ".Thprices";
-            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
-                    masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
-                    iii++;
-                }
-            }
-            masProduct.sort(function (a, b) { return a - b });
-            break;
-        case "sortExpensive":
-            nameClassSort = ".Thprices";
-            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
-                    masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
-                    iii++;
-                }
-            }
-            masProduct.sort(function (a, b) { return a - b });
-            masProduct.reverse();
-            break;
-        case "sortWeight":
-            nameClassSort = ".productWeight";
-            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
-                    masProduct[iii] = +tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
-                    iii++;
-                }
-            }
-            masProduct.sort(function (a, b) { return a - b });
-            break;
-        case "sortName":
-            nameClassSort = ".productName";
-            for (let ix = 0; ix < tablePizza.rows.length; ix++) {
-                for (let iy = 0; iy < tablePizza.rows[ix].cells.length; iy++) {
-                    masProduct[iii] = tablePizza.rows[ix].cells[iy].querySelector(nameClassSort).textContent;
-                    iii++;
-                }
-            }
-            masProduct.sort((a, b) => a.localeCompare(b));
-            break;
-        default:
-            break;
-    }
-
-    function sortCheap() {
-        let Irow = 0, Ikcells = 0, rut;
-        for (let ir = 0; ir < masProduct.length; ir++) {
-            if (ir == 3 || ir == 6 || ir == 9 || ir == 12 || ir == 15 || ir == 18 || ir == 21 || ir == 24) {
-                Irow = Irow + 1;
-                Ikcells = 0;
-            }
-            for (let it = 0; it < tablePizza.rows.length; it++) {
-                for (let id = 0; id < tablePizza.rows[it].cells.length; id++) {
-                    if (masProduct[ir] == tablePizza.rows[it].cells[id].querySelector(nameClassSort).textContent) {
-                        rut = tablePizza.rows[Irow].cells[Ikcells].innerHTML;
-                        tablePizza.rows[Irow].cells[Ikcells].innerHTML = tablePizza.rows[it].cells[id].innerHTML;
-                        tablePizza.rows[it].cells[id].innerHTML = rut;
-                    }
-                }
-            }
-            Ikcells++;
-        }
-
-        if (iFunc == 4) {
-            iFunc = 0;
-            return 0;
-        } else {
-            iFunc++;
-            sortCheap();
-        }
-    }
-    sortCheap();
-
-    return 0;
-};*/
 
 // -------------------------------------------------------------------
 window.addEventListener("click", customerСhoice);
