@@ -1499,7 +1499,6 @@ createDivNew .navigationMainSlider {
     position: absolute;
     top: 130px;
     left: 55px;
-    background-color: #759d60;
 }
 
 .pizzaLargeFoto {
@@ -1543,15 +1542,13 @@ createDivNew .navigationMainSlider {
     display: inline-table;
 }
 
-/* ###############################################################################33 */
-
 .createDivNew {
     width: 960px;
     height: 1375px;
     position: absolute;
     top: 175px;
     left: 55px;
-    background-color: #d47c09;
+    background-color: #0ff942;
 }
 
 .pageHiddenSushi {
@@ -1590,12 +1587,14 @@ createDivNew .navigationMainSlider {
 
 #pageNavigation {
     text-align: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
     position: absolute;
-    top: 1350px;
+    top: 1345px;
+    background-color: blueviolet;
 }
 
+/* №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ */
 .page_1 {
     width: 30px;
     height: 30px;
