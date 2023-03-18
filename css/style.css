@@ -1587,11 +1587,9 @@ createDivNew .navigationMainSlider {
 
 #pageNavigation {
     text-align: center;
-    /* margin-top: 20px; */
     display: flex;
     position: absolute;
     top: 1345px;
-    background-color: blueviolet;
 }
 
 /* №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ */

@@ -1,4 +1,3 @@
-
 var mas = [pizza_1 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Карибы', prise: 300, weight: 850 },
 pizza_2 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Август', prise: 500, weight: 600 },
 pizza_3 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Сырная', prise: 850, weight: 700 },
@@ -9,17 +8,18 @@ pizza_7 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.j
 pizza_8 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Креветки', prise: 350, weight: 550 },
 pizza_9 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Анчоусы', prise: 600, weight: 550 },
 pizza_10 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Сыр паприка', prise: 700, weight: 750 },
-pizza_11 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Мидии', prise: 750, weight: 650 },
+pizza_11 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Мидии', prise: 750, weight: 650 },
 pizza_12 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Фирменная', prise: 800, weight: 950 },
 pizza_13 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Мясная', prise: 600, weight: 550 },
 pizza_14 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Грибы сыр', prise: 500, weight: 550 },
 pizza_15 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Грибная', prise: 450, weight: 500 },
+
 ];
 
 createCardProduct();
 function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
-    for (let i = 0; i < 9; i++) {
+    for (let i = 8; i < mas.length; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
         xDiv.prepend(newWraper);
@@ -135,20 +135,7 @@ function sortProduct(e) {
             break;
     }
 };
-pageNavigation.addEventListener("mouseover", comesButton);
-pageNavigation.addEventListener("mouseout", leavesButton);
-function comesButton(e) {
-    if (e.target.dataset.page == "boxShadow") {
-        e.target.style.boxShadow = "0px 0px 3px 2px darkgrey";
-    }
-    return 0;
-};
-function leavesButton(e) {
-    if (e.target.dataset.page == "boxShadow") {
-        e.target.style.boxShadow = "0px 0px 0px 0px";
-    }
-    return 0;
-};
+
 function cordButton() {
     let widthBlock = document.querySelector('.createDivNew').offsetWidth;
     let widthPage = pageNavigation.offsetWidth;
