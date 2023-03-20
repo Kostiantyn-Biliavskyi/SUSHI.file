@@ -9,11 +9,11 @@ pizza_7 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.j
 pizza_8 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Креветки', prise: 350, weight: 550 },
 pizza_9 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Анчоусы', prise: 600, weight: 550 },
 pizza_10 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Сыр паприка', prise: 700, weight: 750 },
-pizza_11 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Мидии', prise: 750, weight: 650 },
+pizza_11 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Мидии', prise: 750, weight: 650 },
 pizza_12 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Фирменная', prise: 800, weight: 950 },
 pizza_13 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Мясная', prise: 600, weight: 550 },
 pizza_14 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Грибы сыр', prise: 500, weight: 550 },
-pizza_15 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Грибная', prise: 450, weight: 500 },
+pizza_15 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Грибная', prise: 450, weight: 500 }
 ];
 
 createCardProduct();
@@ -22,9 +22,10 @@ function createCardProduct() {// создание карточки товара
     for (let i = 0; i < 9; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
-        xDiv.prepend(newWraper);
+        xDiv.append(newWraper);
 
-        newWraper.prepend(templatePizza.content.cloneNode(true));
+        newWraper.append(templatePizza.content.cloneNode(true));
+
         newWraper.querySelector('.sliderMiniLiFoto').src = mas[i].src;
         newWraper.querySelector('.productName').textContent = mas[i].name;
         newWraper.querySelector('.Thprices').textContent = mas[i].prise;
@@ -47,6 +48,7 @@ function sortPrise() {// сорт дороже
             }
         }
     }
+    mas.reverse();
     createCardProduct();
 };
 function sortPriseСheap() {// сорт дешевле
@@ -64,8 +66,14 @@ function sortPriseСheap() {// сорт дешевле
             }
         }
     }
-    mas.reverse();
-    createCardProduct();
+    // mas.reverse();
+    // if (iter1 == 1) {
+    //     createCardProduct();
+    // } else {
+    //     sortPriseСheap();
+    // }
+    // iter1++;
+
 };
 function sortWeight() {// сорт вес
     let masSort = [], bufer;
@@ -105,7 +113,7 @@ function sortName() { //сорт по названию
     createCardProduct();
 };
 function deleteDiv() { // удаляет все карточки
-    for (let i = 0; i < mas.length; i++) {
+    for (let i = 0; i < 9; i++) {
         let xDiv = document.querySelector('.wraper');
         xDiv.remove();
     }
