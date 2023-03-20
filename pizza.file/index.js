@@ -32,6 +32,16 @@ function createCardProduct() {// создание карточки товара
         newWraper.querySelector('.productWeight').textContent = mas[i].weight;
     }
 
+    let masString = [], masNew = '';
+    for (let x = 0; x < mas.length; x++) {
+        masString[x] = x + ' = {src:' + mas[x].src + ', name:' + mas[x].name + ', prise:' + mas[x].prise + ', weight:' + mas[x].weight + '}';
+        // $`x`
+    }
+    masString = masString.join(';');
+    masNew = '[' + masString + ']';
+    alert(masNew);
+    localStorage.setItem('masProduct', masNew);
+
 };
 function sortPrise() {// сорт дороже
     let masSort = [], bufer;
@@ -57,23 +67,18 @@ function sortPriseСheap() {// сорт дешевле
         masSort[i] = mas[i].prise;
     }
     masSort.sort(function (a, b) { return a - b });
-    for (let i = 0; i < mas.length; i++) {
-        for (let ii = 0; ii < mas.length; ii++) {
-            if (masSort[i] == mas[ii].prise) {
-                bufer = mas[i]
-                mas[i] = mas[ii];
-                mas[ii] = bufer;
+    for (let a = 0; a < 2; a++) {
+        for (let i = 0; i < mas.length; i++) {
+            for (let ii = 0; ii < mas.length; ii++) {
+                if (masSort[i] == mas[ii].prise) {
+                    bufer = mas[i]
+                    mas[i] = mas[ii];
+                    mas[ii] = bufer;
+                }
             }
         }
     }
-    // mas.reverse();
-    // if (iter1 == 1) {
-    //     createCardProduct();
-    // } else {
-    //     sortPriseСheap();
-    // }
-    // iter1++;
-
+    createCardProduct();
 };
 function sortWeight() {// сорт вес
     let masSort = [], bufer;
@@ -82,16 +87,17 @@ function sortWeight() {// сорт вес
     }
     masSort.sort(function (a, b) { return a - b });
     mas.reverse();
-    for (let i = 0; i < mas.length; i++) {
-        for (let ii = 0; ii < mas.length; ii++) {
-            if (masSort[i] == mas[ii].weight) {
-                bufer = mas[i]
-                mas[i] = mas[ii];
-                mas[ii] = bufer;
+    for (let a = 0; a < 2; a++) {
+        for (let i = 0; i < mas.length; i++) {
+            for (let ii = 0; ii < mas.length; ii++) {
+                if (masSort[i] == mas[ii].weight) {
+                    bufer = mas[i]
+                    mas[i] = mas[ii];
+                    mas[ii] = bufer;
+                }
             }
         }
     }
-
     createCardProduct();
 };
 function sortName() { //сорт по названию
@@ -100,7 +106,6 @@ function sortName() { //сорт по названию
         masSort[i] = mas[i].name;
     }
     masSort.sort((a, b) => a.localeCompare(b));
-    masSort.reverse();
     for (let i = 0; i < mas.length; i++) {
         for (let ii = 0; ii < mas.length; ii++) {
             if (masSort[i] == mas[ii].name) {
@@ -113,9 +118,9 @@ function sortName() { //сорт по названию
     createCardProduct();
 };
 function deleteDiv() { // удаляет все карточки
-    for (let i = 0; i < 9; i++) {
-        let xDiv = document.querySelector('.wraper');
-        xDiv.remove();
+    let xDiv = document.querySelectorAll('.wraper');
+    for (let i = 0; i < xDiv.length; i++) {
+        xDiv[i].remove();
     }
 };
 document.addEventListener('click', sortProduct);
