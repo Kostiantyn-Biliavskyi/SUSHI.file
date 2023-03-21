@@ -4,7 +4,6 @@ function createTwoMas() {
     let mas = [];
     mas = sessionStorage.getItem('masProduct').split(';');
     for (let i = 0; i < mas.length; i++) {
-
         masTwo[i] = [];// объявление двумерного массива
         let superMas = [];
         superMas = mas[i].split(',');
@@ -28,9 +27,7 @@ function createCardProduct() {// создание карточки товара
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
         xDiv.append(newWraper);
-
         newWraper.append(templatePizza.content.cloneNode(true));
-
         newWraper.querySelector('.sliderMiniLiFoto').src = masTwo[i][0];
         newWraper.querySelector('.productName').textContent = masTwo[i][1];
         newWraper.querySelector('.Thprices').textContent = masTwo[i][2];

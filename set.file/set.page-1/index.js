@@ -1,5 +1,5 @@
 var mas = [
-    //                        фото                                      название. цена. вес.  
+    //                        фото.                                      название. цена. вес.  
     ['../../css/css.foto/big-big.png', 'Саломон', 600, 850],
     ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Якудза', 500, 700],
     ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Филодельфия с лососем', 850, 1200],
@@ -14,7 +14,7 @@ var mas = [
 function createTwoMas() {
     let masTwo = [];
     if (sessionStorage.getItem('masSort') != null) {
-        masTwo = sessionStorage.getItem('masSort').split(';');
+        masTwo = sessionStorage.getItem('masSetSort').split(';');
         for (let i = 0; i < masTwo.length; i++) {
             mas[i] = [];// объявление двумерного массива
             let superMas = [];
@@ -50,7 +50,7 @@ function createCardProduct() {// создание карточки товара
         masString[x] = mas[x][0] + ',' + mas[x][1] + ',' + mas[x][2] + ',' + mas[x][3];
     }
     stringNew = masString.join(';');
-    sessionStorage.setItem('masProduct', stringNew);
+    sessionStorage.setItem('masSet', stringNew);
 };
 
 function sortPrise() {// сорт дороже
@@ -62,7 +62,7 @@ function sortPrise() {// сорт дороже
     for (let a = 0; a < 2; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][2]) {
+                if (masSort[i] === mas[ii][2]) {
                     bufer = mas[i]
                     mas[i] = mas[ii];
                     mas[ii] = bufer;
@@ -72,7 +72,7 @@ function sortPrise() {// сорт дороже
     }
     mas.reverse();
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masSetSort', masString);
     createTwoMas();
 };
 
@@ -85,7 +85,7 @@ function sortPriseСheap() {// сорт дешевле
     for (let a = 0; a < 2; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][2]) {
+                if (masSort[i] === mas[ii][2]) {
                     bufer = mas[i]
                     mas[i] = mas[ii];
                     mas[ii] = bufer;
@@ -94,7 +94,7 @@ function sortPriseСheap() {// сорт дешевле
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masSetSort', masString);
     createTwoMas();
 };
 
@@ -108,7 +108,7 @@ function sortWeight() {// сорт вес
     for (let a = 0; a < 2; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][3]) {
+                if (masSort[i] === mas[ii][3]) {
                     bufer = mas[i]
                     mas[i] = mas[ii];
                     mas[ii] = bufer;
@@ -117,7 +117,7 @@ function sortWeight() {// сорт вес
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masSetSort', masString);
     createTwoMas();
 };
 
@@ -129,7 +129,7 @@ function sortName() { //сорт по названию
     masSort.sort((a, b) => a.localeCompare(b));
     for (let i = 0; i < mas.length; i++) {
         for (let ii = 0; ii < mas.length; ii++) {
-            if (masSort[i] == mas[ii][1]) {
+            if (masSort[i] === mas[ii][1]) {
                 bufer = mas[i]
                 mas[i] = mas[ii];
                 mas[ii] = bufer;
@@ -137,7 +137,7 @@ function sortName() { //сорт по названию
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masSetSort', masString);
     createTwoMas();
 };
 function deleteDiv() { // удаляет все карточки
@@ -321,9 +321,6 @@ function customerСhoice(e) {
             priceProduct = '';
         }
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
-        // if (src != '') {
-        //    src= src.substring(3);
-        // }
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
         localStorage.setItem('nameOrder', nameOrder);

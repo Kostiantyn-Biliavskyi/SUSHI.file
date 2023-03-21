@@ -1,27 +1,20 @@
-
 var mas = [
-    //                        фото                                      название. цена. вес.  
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Карибы', 300, 850],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Август', 500, 600],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Сырная', 850, 700],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Филадельфия', 350, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Овощная', 400, 500],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Салями', 450, 550],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Паприка', 500, 500],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Креветки', 350, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Анчоусы', 600, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Сыр паприка', 700, 750],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Мидии', 750, 650],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Фирменная', 800, 950],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Мясная', 600, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Грибы сыр', 500, 550],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Грибная', 450, 500]
+    //                        фото.                                      название. цена. вес.  
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Саломон', 600, 850],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Якудза', 500, 700],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филодельфия с лососем', 850, 1200],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия с угрём', 350, 550],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Камикадзе', 1000, 900],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия топ', 450, 550],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Филадельфия сёмга', 800, 1100],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Креветки', 350, 550],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Анчоусы', 600, 550],
 ];
 
 function createTwoMas() {
     let masTwo = [];
     if (sessionStorage.getItem('masSort') != null) {
-        masTwo = sessionStorage.getItem('masSort').split(';');
+        masTwo = sessionStorage.getItem('masWokSort').split(';');
         for (let i = 0; i < masTwo.length; i++) {
             mas[i] = [];// объявление двумерного массива
             let superMas = [];
@@ -43,7 +36,9 @@ function createCardProduct() {// создание карточки товара
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
         xDiv.append(newWraper);
+
         newWraper.append(templatePizza.content.cloneNode(true));
+
         newWraper.querySelector('.sliderMiniLiFoto').src = mas[i][0];
         newWraper.querySelector('.productName').textContent = mas[i][1];
         newWraper.querySelector('.Thprices').textContent = mas[i][2];
@@ -55,7 +50,7 @@ function createCardProduct() {// создание карточки товара
         masString[x] = mas[x][0] + ',' + mas[x][1] + ',' + mas[x][2] + ',' + mas[x][3];
     }
     stringNew = masString.join(';');
-    sessionStorage.setItem('masProduct', stringNew);
+    sessionStorage.setItem('masWok', stringNew);
 };
 
 function sortPrise() {// сорт дороже
@@ -77,7 +72,7 @@ function sortPrise() {// сорт дороже
     }
     mas.reverse();
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masWokSort', masString);
     createTwoMas();
 };
 
@@ -99,7 +94,7 @@ function sortPriseСheap() {// сорт дешевле
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masWokSort', masString);
     createTwoMas();
 };
 
@@ -122,7 +117,7 @@ function sortWeight() {// сорт вес
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masWokSort', masString);
     createTwoMas();
 };
 
@@ -142,7 +137,7 @@ function sortName() { //сорт по названию
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masSort', masString);
+    sessionStorage.setItem('masWokSort', masString);
     createTwoMas();
 };
 function deleteDiv() { // удаляет все карточки
@@ -325,7 +320,7 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
-        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
+        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
         localStorage.setItem('nameOrder', nameOrder);
