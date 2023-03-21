@@ -1,21 +1,14 @@
-
 var mas = [
     //                        фото                                      название. цена. вес.  
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Карибы', 300, 850],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Август', 500, 600],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Сырная', 850, 700],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Филадельфия', 350, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Овощная', 400, 500],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Салями', 450, 550],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Паприка', 500, 500],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Креветки', 350, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Анчоусы', 600, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Сыр паприка', 700, 750],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Мидии', 750, 650],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Фирменная', 800, 950],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Мясная', 600, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Грибы сыр', 500, 550],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Грибная', 450, 500]
+    ['../../css/css.foto/big-big.png', 'Саломон', 600, 850],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Якудза', 500, 700],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Филодельфия с лососем', 850, 1200],
+    ['../../css/css.foto/big-big.png', 'Филадельфия с угрём', 350, 550],
+    ['../../css/css.foto/big-big.png', 'Камикадзе', 1000, 900],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Филадельфия топ', 450, 550],
+    ['../../css/css.foto/big-big.png', 'Филадельфия сёмга', 800, 1100],
+    ['../../css/css.foto/big-big.png', 'Креветки', 350, 550],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Анчоусы', 600, 550],
 ];
 
 function createTwoMas() {
@@ -38,7 +31,6 @@ createTwoMas();
 
 function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
-
 
     for (let i = 0; i < 9; i++) {
         let newWraper = document.createElement('div');
@@ -328,7 +320,10 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
-        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
+        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
+        // if (src != '') {
+        //    src= src.substring(3);
+        // }
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
         localStorage.setItem('nameOrder', nameOrder);

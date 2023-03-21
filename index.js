@@ -1,18 +1,4 @@
 
-mainSlider.addEventListener("click", typ);
-
-function typ(e) {
-    let y = e.target.dataset.nameSlider;
-    switch (y) {
-        case 'fil':
-            // alert("lososi");
-            break;
-        case 'krev':
-            // alert("krevetki");
-            break;
-        default:
-    }
-};
 // --------------- функция слайдера фото и точки меняют цвет ------------------------
 var stopSetTimeoutGo, i = -1, sliderDot;
 function movementFotoMain() {
@@ -275,13 +261,13 @@ function productSelection(e) {
         }
         switch (e.target.dataset.product) {
             case "pizza":
-                createDivProdukt.append(templatePizza.content.cloneNode(true));
-                search();
-                centrButton();
+                // createDivProdukt.append(templatePizza.content.cloneNode(true));
+                //  search();
+                // centrButton();
                 break;
             case "seti":
-                createDivProdukt.append(templateSeti.content.cloneNode(true));
-                search();
+                //createDivProdukt.append(templateSeti.content.cloneNode(true));
+                // search();
                 break;
             case "wok":
                 createDivProdukt.append(templateWok.content.cloneNode(true));

@@ -665,7 +665,7 @@ option:checked {
 }
 
 /* ---------------------------- navigationMainSlider ---------------------------------- */
-createDivNew .navigationMainSlider {
+.navigationMainSlider {
     width: 200px;
     height: 20px;
     position: absolute;

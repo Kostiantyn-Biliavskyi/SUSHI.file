@@ -1,34 +1,19 @@
-/*var mas = [pizza_1 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Карибы', prise: 300, weight: 850 },
-pizza_2 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Август', prise: 500, weight: 600 },
-pizza_3 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Сырная', prise: 850, weight: 700 },
-pizza_4 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Филадельфия', prise: 350, weight: 550 },
-pizza_5 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Овощная', prise: 400, weight: 500 },
-pizza_6 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Салями', prise: 450, weight: 550 },
-pizza_7 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Паприка', prise: 500, weight: 500 },
-pizza_8 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Креветки', prise: 350, weight: 550 },
-pizza_9 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Анчоусы', prise: 600, weight: 550 },
-pizza_10 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Сыр паприка', prise: 700, weight: 750 },
-pizza_11 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Мидии', prise: 750, weight: 650 },
-pizza_12 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Фирменная', prise: 800, weight: 950 },
-pizza_13 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Мясная', prise: 600, weight: 550 },
-pizza_14 = { src: '../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', name: 'Грибы сыр', prise: 500, weight: 550 },
-pizza_15 = { src: '../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', name: 'Грибная', prise: 450, weight: 500 },
 
-];*/
+var masTwo = [];
+function createTwoMas() {
+    let mas = [];
+    mas = sessionStorage.getItem('masProduct').split(';');
+    for (let i = 0; i < mas.length; i++) {
 
-var mas = [];
-mas = localStorage.getItem('masProduct').split(';');
-
-alert(mas);
-
-
-
-/*for (let i = 0; i < mas.length; i++) {
-    let key = localStorage.key(i);
-    alert(`${key}: ${localStorage.getItem(key)}`);
-}*/
-
-
+        masTwo[i] = [];// объявление двумерного массива
+        let superMas = [];
+        superMas = mas[i].split(',');
+        for (let a = 0; a < 4; a++) {
+            masTwo[i][a] = superMas[a];
+        }
+    }
+};
+createTwoMas();
 
 document.querySelector('.page_1').style.color = 'blueviolet';
 document.querySelector('.page_1').style.backgroundColor = 'white';
@@ -39,126 +24,24 @@ createCardProduct();
 function createCardProduct() {// создание карточки товара
 
     let xDiv = document.querySelector('.createDivNew');
-    for (let i = 8; i < mas.length; i++) {
+    for (let i = 8; i < masTwo.length; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
-        xDiv.prepend(newWraper);
+        xDiv.append(newWraper);
 
-        newWraper.prepend(templatePizza.content.cloneNode(true));
-        newWraper.querySelector('.sliderMiniLiFoto').src = mas[i].src;
-        newWraper.querySelector('.productName').textContent = mas[i].name;
-        newWraper.querySelector('.Thprices').textContent = mas[i].prise;
-        newWraper.querySelector('.productWeight').textContent = mas[i].weight;
-    }
+        newWraper.append(templatePizza.content.cloneNode(true));
 
-};
-
-function sortPrise() {// сорт дороже
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i].prise;
+        newWraper.querySelector('.sliderMiniLiFoto').src = masTwo[i][0];
+        newWraper.querySelector('.productName').textContent = masTwo[i][1];
+        newWraper.querySelector('.Thprices').textContent = masTwo[i][2];
+        newWraper.querySelector('.productWeight').textContent = masTwo[i][3];
     }
-    masSort.sort(function (a, b) { return a - b });
-    for (let i = 0; i < mas.length; i++) {
-        for (let ii = 0; ii < mas.length; ii++) {
-            if (masSort[i] == mas[ii].prise) {
-                bufer = mas[i]
-                mas[i] = mas[ii];
-                mas[ii] = bufer;
-            }
-        }
-    }
-    mas.reverse();
-    createCardProduct();
-};
-
-function sortPriseСheap() {// сорт дешевле
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i].prise;
-    }
-    masSort.sort(function (a, b) { return a - b });
-    for (let a = 0; a < 2; a++) {
-        for (let i = 0; i < mas.length; i++) {
-            for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii].prise) {
-                    bufer = mas[i]
-                    mas[i] = mas[ii];
-                    mas[ii] = bufer;
-                }
-            }
-        }
-    }
-    createCardProduct();
-};
-
-function sortWeight() {// сорт вес
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i].weight;
-    }
-    masSort.sort(function (a, b) { return a - b });
-    mas.reverse();
-    for (let a = 0; a < 2; a++) {
-        for (let i = 0; i < mas.length; i++) {
-            for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii].weight) {
-                    bufer = mas[i]
-                    mas[i] = mas[ii];
-                    mas[ii] = bufer;
-                }
-            }
-        }
-    }
-    createCardProduct();
-};
-function sortName() { //сорт по названию
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i].name;
-    }
-    masSort.sort((a, b) => a.localeCompare(b));
-    for (let i = 0; i < mas.length; i++) {
-        for (let ii = 0; ii < mas.length; ii++) {
-            if (masSort[i] == mas[ii].name) {
-                bufer = mas[i]
-                mas[i] = mas[ii];
-                mas[ii] = bufer;
-            }
-        }
-    }
-    createCardProduct();
 };
 
 function deleteDiv() { // удаляет все карточки
     let xDiv = document.querySelectorAll('.wraper');
     for (let i = 0; i < xDiv.length; i++) {
         xDiv[i].remove();
-    }
-};
-
-document.addEventListener('click', sortProduct);
-function sortProduct(e) {
-
-    switch (e.target.id) {
-        case 'sortExpensive':
-            deleteDiv();
-            sortPrise();
-            break;
-        case 'sortCheap':
-            deleteDiv();
-            sortPriseСheap();
-            break;
-        case 'sortWeight':
-            deleteDiv();
-            sortWeight();
-            break;
-        case 'sortName':
-            deleteDiv();
-            sortName();
-            break;
-        default:
-            break;
     }
 };
 
@@ -262,17 +145,6 @@ function citySelection(e) {
     return 0;
 };
 // -----------------------------------------------------------
-
-// sortingProduct.addEventListener("click", sortProduct);
-sortingProduct.addEventListener("mouseover", menuSortingOpen);
-sortingProduct.addEventListener("mouseout", menuSortingClose);
-function menuSortingOpen() {
-    menuSort.style.display = "block";
-};
-function menuSortingClose() {
-    menuSort.style.display = "none";
-};
-
 // -------------------------------------------------------------------
 window.addEventListener("click", customerСhoice);
 var nameOrder = '', priceProduct = '', src = '';
