@@ -1,188 +1,52 @@
-var mas = [
-    //                        фото.                                      название. цена. вес.  
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Саломон', 600, 850],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Якудза', 500, 700],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филодельфия с лососем', 850, 1200],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия с угрём', 350, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Камикадзе', 1000, 900],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия топ', 450, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Филадельфия сёмга', 800, 1100],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Креветки', 350, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Анчоусы', 600, 550],
-];
-function colorName() {
+function colorName() { // цвет текста меню красный
     let nameTitle = document.querySelectorAll('.menuButtonText');
     for (let key = 0; key < nameTitle.length; key++) {
-        if (nameTitle[key].dataset.product === 'wok') {
+        if (nameTitle[key].dataset.product === 'sushi_1') {
             nameTitle[key].style.color = '#ff4000';
         }
     }
-    page_1.className = 'pageColor';
+    page_3.className = 'pageColor';
 };
 colorName();
 
+var masTwo = [];
 function createTwoMas() {
-    let masTwo = [];
-    if (sessionStorage.getItem('masWokSort') != null) {
-        masTwo = sessionStorage.getItem('masWokSort').split(';');
-        for (let i = 0; i < masTwo.length; i++) {
-            mas[i] = [];// объявление двумерного массива
-            let superMas = [];
-            superMas = masTwo[i].split(',');
-
-            for (let a = 0; a < 4; a++) {
-                mas[i][a] = superMas[a];
-            }
+    let mas = [];
+    mas = sessionStorage.getItem('masSushi').split(';');
+    for (let i = 0; i < mas.length; i++) {
+        masTwo[i] = [];// объявление двумерного массива
+        let superMas = [];
+        superMas = mas[i].split(',');
+        for (let a = 0; a < 4; a++) {
+            masTwo[i][a] = superMas[a];
         }
     }
-    createCardProduct();
 };
 createTwoMas();
 
+createCardProduct();
 function createCardProduct() {// создание карточки товара
-    let xDiv = document.querySelector('.createDivNew');
 
-    for (let i = 0; i < 9; i++) {
+    let xDiv = document.querySelector('.createDivNew');
+    for (let i = 18; i < masTwo.length; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
         xDiv.append(newWraper);
-
         newWraper.append(templatePizza.content.cloneNode(true));
-
-        newWraper.querySelector('.sliderMiniLiFoto').src = mas[i][0];
-        newWraper.querySelector('.productName').textContent = mas[i][1];
-        newWraper.querySelector('.Thprices').textContent = mas[i][2];
-        newWraper.querySelector('.productWeight').textContent = mas[i][3];
+        newWraper.querySelector('.sliderMiniLiFoto').src = masTwo[i][0];
+        newWraper.querySelector('.productName').textContent = masTwo[i][1];
+        newWraper.querySelector('.Thprices').textContent = masTwo[i][2];
+        newWraper.querySelector('.productWeight').textContent = masTwo[i][3];
     }
-
-    let masString = [], stringNew = '';
-    for (let x = 0; x < mas.length; x++) {
-        masString[x] = mas[x][0] + ',' + mas[x][1] + ',' + mas[x][2] + ',' + mas[x][3];
-    }
-    stringNew = masString.join(';');
-    sessionStorage.setItem('masWok', stringNew);
 };
 
-function sortPrise() {// сорт дороже
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i][2];
-    }
-    masSort.sort(function (a, b) { return a - b });
-    for (let a = 0; a < 2; a++) {
-        for (let i = 0; i < mas.length; i++) {
-            for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][2]) {
-                    bufer = mas[i]
-                    mas[i] = mas[ii];
-                    mas[ii] = bufer;
-                }
-            }
-        }
-    }
-    mas.reverse();
-    let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
-    createTwoMas();
-};
-
-function sortPriseСheap() {// сорт дешевле
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i][2];
-    }
-    masSort.sort(function (a, b) { return a - b });
-    for (let a = 0; a < 2; a++) {
-        for (let i = 0; i < mas.length; i++) {
-            for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][2]) {
-                    bufer = mas[i]
-                    mas[i] = mas[ii];
-                    mas[ii] = bufer;
-                }
-            }
-        }
-    }
-    let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
-    createTwoMas();
-};
-
-function sortWeight() {// сорт вес
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i][3];
-    }
-    masSort.sort(function (a, b) { return a - b });
-    mas.reverse();
-    for (let a = 0; a < 2; a++) {
-        for (let i = 0; i < mas.length; i++) {
-            for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][3]) {
-                    bufer = mas[i]
-                    mas[i] = mas[ii];
-                    mas[ii] = bufer;
-                }
-            }
-        }
-    }
-    let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
-    createTwoMas();
-};
-
-function sortName() { //сорт по названию
-    let masSort = [], bufer;
-    for (let i = 0; i < mas.length; i++) {
-        masSort[i] = mas[i][1];
-    }
-    masSort.sort((a, b) => a.localeCompare(b));
-    for (let a = 0; a < 2; a++) {
-        for (let i = 0; i < mas.length; i++) {
-            for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] == mas[ii][1]) {
-                    bufer = mas[i]
-                    mas[i] = mas[ii];
-                    mas[ii] = bufer;
-                }
-            }
-        }
-    }
-    let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
-    createTwoMas();
-};
 function deleteDiv() { // удаляет все карточки
     let xDiv = document.querySelectorAll('.wraper');
     for (let i = 0; i < xDiv.length; i++) {
         xDiv[i].remove();
     }
 };
-document.addEventListener('click', sortProduct);
 
-function sortProduct(e) {
-
-    switch (e.target.id) {
-        case 'sortExpensive':
-            deleteDiv();
-            sortPrise();
-            break;
-        case 'sortCheap':
-            deleteDiv();
-            sortPriseСheap();
-            break;
-        case 'sortWeight':
-            deleteDiv();
-            sortWeight();
-            break;
-        case 'sortName':
-            deleteDiv();
-            sortName();
-            break;
-        default:
-            break;
-    }
-};
 pageNavigation.addEventListener("mouseover", comesButton);
 pageNavigation.addEventListener("mouseout", leavesButton);
 function comesButton(e) {
@@ -197,6 +61,17 @@ function leavesButton(e) {
     }
     return 0;
 };
+
+function cordButton() {
+    let widthBlock = document.querySelector('.createDivNew').offsetWidth;
+    let widthPage = pageNavigation.offsetWidth;
+    widthBlock = widthBlock / 2;
+    widthPage = widthPage / 2;
+    widthPage = widthBlock - widthPage;
+    pageNavigation.style.left = widthPage + 'px';
+}
+cordButton();
+
 function cordButton() {
     let widthBlock = document.querySelector('.createDivNew').offsetWidth;
     let widthPage = pageNavigation.offsetWidth;
@@ -273,19 +148,8 @@ function citySelection(e) {
     return 0;
 };
 // -----------------------------------------------------------
-
-// sortingProduct.addEventListener("click", sortProduct);
-sortingProduct.addEventListener("mouseover", menuSortingOpen);
-sortingProduct.addEventListener("mouseout", menuSortingClose);
-function menuSortingOpen() {
-    menuSort.style.display = "block";
-};
-function menuSortingClose() {
-    menuSort.style.display = "none";
-};
-
 // -------------------------------------------------------------------
-window.addEventListener("click", customerСhoice);
+window.addEventListener("click", customerСhoice); //  КОРЗИНА
 var nameOrder = '', priceProduct = '', src = '';
 var iBasket = 0;
 
@@ -332,7 +196,7 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
-        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
+        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
         localStorage.setItem('nameOrder', nameOrder);

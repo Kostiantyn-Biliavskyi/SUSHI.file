@@ -1,3 +1,13 @@
+function colorName() {
+    let nameTitle = document.querySelectorAll('.menuButtonText');
+    for (let key = 0; key < nameTitle.length; key++) {
+        if (nameTitle[key].dataset.product === 'pizza') {
+            nameTitle[key].style.color = '#ff4000';
+        }
+    }
+    page_2.className = 'pageColor';
+};
+colorName();
 
 var masTwo = [];
 function createTwoMas() {
@@ -13,11 +23,6 @@ function createTwoMas() {
     }
 };
 createTwoMas();
-
-document.querySelector('.page_1').style.color = 'blueviolet';
-document.querySelector('.page_1').style.backgroundColor = 'white';
-document.querySelector('.page_2').style.color = 'white';
-document.querySelector('.page_2').style.backgroundColor = '#F46D40';
 
 createCardProduct();
 function createCardProduct() {// создание карточки товара
@@ -42,7 +47,7 @@ function deleteDiv() { // удаляет все карточки
     }
 };
 
-pageNavigation.addEventListener("mouseover", comesButton);
+pageNavigation.addEventListener("mouseover", comesButton); // тень кнопок навигации 
 pageNavigation.addEventListener("mouseout", leavesButton);
 function comesButton(e) {
     if (e.target.dataset.page == "boxShadow") {
@@ -56,6 +61,7 @@ function leavesButton(e) {
     }
     return 0;
 };
+
 function cordButton() {
     let widthBlock = document.querySelector('.createDivNew').offsetWidth;
     let widthPage = pageNavigation.offsetWidth;

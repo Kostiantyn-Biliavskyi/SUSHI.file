@@ -1,19 +1,40 @@
 var mas = [
     //                        фото.                                      название. цена. вес.  
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Саломон', 600, 850],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Якудза', 500, 700],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филодельфия с лососем', 850, 1200],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия с угрём', 350, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Камикадзе', 1000, 900],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия топ', 450, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Филадельфия сёмга', 800, 1100],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Креветки', 350, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Анчоусы', 600, 550],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Бонито', 780, 850],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Якудза', 500, 700],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Филодельфия с лососем', 900, 1200],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Филадельфия с угрём', 590, 550],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Камикадзе', 1300, 900],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Танаки', 950, 550],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Филадельфия сёмга', 800, 1100],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Креветками', 799, 550],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Анчоусы', 600, 550],
+
+    ['../../css/css.foto/sushi-tray-with-makis-and-tuna-nigiris-and-salmon-view-from-above.jpg', 'Мидори хот', 1050, 900],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Унаги маки', 890, 700],
+    ['../../css/css.foto/sushi-tray-with-makis-and-tuna-nigiris-and-salmon-view-from-above.jpg', 'Хосомаки', 950, 800],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Томаго', 899, 990],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Нигири', 700, 950],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Бонито', 780, 850],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Якудза', 500, 700],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Филодельфия с лососем', 900, 1200],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Филадельфия с угрём', 590, 550],
+
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Камикадзе', 1300, 900],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Филадельфия сёмга', 800, 1100],
+    ['../../css/css.foto/top-view-of-tasty-and-delicious-sushi-on-a-wooden-board.jpg', 'Танаки', 799, 550],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Анчоусы', 600, 550],
+    ['../../css/css.foto/sushi-tray-with-makis-and-tuna-nigiris-and-salmon-view-from-above.jpg', 'Мидори хот', 1050, 900],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Унаги маки', 890, 700],
+    ['../../css/css.foto/sushi-tray-with-makis-and-tuna-nigiris-and-salmon-view-from-above.jpg', 'Хосомаки', 950, 800],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Томаго', 899, 950],
+    ['../../css/css.foto/traditional-japanese-sushi-arrangement.jpg', 'Нигири', 700, 950]
 ];
+
 function colorName() {
     let nameTitle = document.querySelectorAll('.menuButtonText');
     for (let key = 0; key < nameTitle.length; key++) {
-        if (nameTitle[key].dataset.product === 'wok') {
+        if (nameTitle[key].dataset.product === 'sushi_1') {
             nameTitle[key].style.color = '#ff4000';
         }
     }
@@ -23,8 +44,8 @@ colorName();
 
 function createTwoMas() {
     let masTwo = [];
-    if (sessionStorage.getItem('masWokSort') != null) {
-        masTwo = sessionStorage.getItem('masWokSort').split(';');
+    if (sessionStorage.getItem('masSushiSort') != null) {
+        masTwo = sessionStorage.getItem('masSushiSort').split(';');
         for (let i = 0; i < masTwo.length; i++) {
             mas[i] = [];// объявление двумерного массива
             let superMas = [];
@@ -60,7 +81,7 @@ function createCardProduct() {// создание карточки товара
         masString[x] = mas[x][0] + ',' + mas[x][1] + ',' + mas[x][2] + ',' + mas[x][3];
     }
     stringNew = masString.join(';');
-    sessionStorage.setItem('masWok', stringNew);
+    sessionStorage.setItem('masSushi', stringNew);
 };
 
 function sortPrise() {// сорт дороже
@@ -82,7 +103,7 @@ function sortPrise() {// сорт дороже
     }
     mas.reverse();
     let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
+    sessionStorage.setItem('masSushiSort', masString);
     createTwoMas();
 };
 
@@ -104,7 +125,7 @@ function sortPriseСheap() {// сорт дешевле
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
+    sessionStorage.setItem('masSushiSort', masString);
     createTwoMas();
 };
 
@@ -127,7 +148,7 @@ function sortWeight() {// сорт вес
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
+    sessionStorage.setItem('masSushiSort', masString);
     createTwoMas();
 };
 
@@ -137,7 +158,7 @@ function sortName() { //сорт по названию
         masSort[i] = mas[i][1];
     }
     masSort.sort((a, b) => a.localeCompare(b));
-    for (let a = 0; a < 2; a++) {
+    for (let a = 0; a < 5; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
                 if (masSort[i] == mas[ii][1]) {
@@ -149,7 +170,7 @@ function sortName() { //сорт по названию
         }
     }
     let masString = mas.join(';');
-    sessionStorage.setItem('masWokSort', masString);
+    sessionStorage.setItem('masSushiSort', masString);
     createTwoMas();
 };
 function deleteDiv() { // удаляет все карточки
@@ -183,7 +204,7 @@ function sortProduct(e) {
             break;
     }
 };
-pageNavigation.addEventListener("mouseover", comesButton);
+pageNavigation.addEventListener("mouseover", comesButton); // тень кнопок навигации
 pageNavigation.addEventListener("mouseout", leavesButton);
 function comesButton(e) {
     if (e.target.dataset.page == "boxShadow") {
@@ -197,6 +218,7 @@ function leavesButton(e) {
     }
     return 0;
 };
+
 function cordButton() {
     let widthBlock = document.querySelector('.createDivNew').offsetWidth;
     let widthPage = pageNavigation.offsetWidth;

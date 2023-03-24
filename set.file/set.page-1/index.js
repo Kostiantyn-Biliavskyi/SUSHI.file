@@ -10,10 +10,20 @@ var mas = [
     ['../../css/css.foto/big-big.png', 'Креветки', 350, 550],
     ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Анчоусы', 600, 550],
 ];
+function colorName() {
+    let nameTitle = document.querySelectorAll('.menuButtonText');
+    for (let key = 0; key < nameTitle.length; key++) {
+        if (nameTitle[key].dataset.product === 'seti') {
+            nameTitle[key].style.color = '#ff4000';
+        }
+    }
+    page_1.className = 'pageColor';
+};
+colorName();
 
 function createTwoMas() {
     let masTwo = [];
-    if (sessionStorage.getItem('masSort') != null) {
+    if (sessionStorage.getItem('masSetSort') != null) {
         masTwo = sessionStorage.getItem('masSetSort').split(';');
         for (let i = 0; i < masTwo.length; i++) {
             mas[i] = [];// объявление двумерного массива
@@ -62,7 +72,7 @@ function sortPrise() {// сорт дороже
     for (let a = 0; a < 2; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] === mas[ii][2]) {
+                if (masSort[i] == mas[ii][2]) {
                     bufer = mas[i]
                     mas[i] = mas[ii];
                     mas[ii] = bufer;
@@ -85,7 +95,7 @@ function sortPriseСheap() {// сорт дешевле
     for (let a = 0; a < 2; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] === mas[ii][2]) {
+                if (masSort[i] == mas[ii][2]) {
                     bufer = mas[i]
                     mas[i] = mas[ii];
                     mas[ii] = bufer;
@@ -108,7 +118,7 @@ function sortWeight() {// сорт вес
     for (let a = 0; a < 2; a++) {
         for (let i = 0; i < mas.length; i++) {
             for (let ii = 0; ii < mas.length; ii++) {
-                if (masSort[i] === mas[ii][3]) {
+                if (masSort[i] == mas[ii][3]) {
                     bufer = mas[i]
                     mas[i] = mas[ii];
                     mas[ii] = bufer;
@@ -127,12 +137,14 @@ function sortName() { //сорт по названию
         masSort[i] = mas[i][1];
     }
     masSort.sort((a, b) => a.localeCompare(b));
-    for (let i = 0; i < mas.length; i++) {
-        for (let ii = 0; ii < mas.length; ii++) {
-            if (masSort[i] === mas[ii][1]) {
-                bufer = mas[i]
-                mas[i] = mas[ii];
-                mas[ii] = bufer;
+    for (let a = 0; a < 5; a++) {
+        for (let i = 0; i < mas.length; i++) {
+            for (let ii = 0; ii < mas.length; ii++) {
+                if (masSort[i] == mas[ii][1]) {
+                    bufer = mas[i]
+                    mas[i] = mas[ii];
+                    mas[ii] = bufer;
+                }
             }
         }
     }

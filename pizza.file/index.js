@@ -17,6 +17,16 @@ var mas = [
     ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Грибы сыр', 500, 550],
     ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Грибная', 450, 500]
 ];
+function colorName() {
+    let nameTitle = document.querySelectorAll('.menuButtonText');
+    for (let key = 0; key < nameTitle.length; key++) {
+        if (nameTitle[key].dataset.product === 'pizza') {
+            nameTitle[key].style.color = '#ff4000';
+        }
+    }
+    page_1.className = 'pageColor';
+};
+colorName();
 
 function createTwoMas() {
     let masTwo = [];
@@ -176,7 +186,7 @@ function sortProduct(e) {
             break;
     }
 };
-pageNavigation.addEventListener("mouseover", comesButton);
+pageNavigation.addEventListener("mouseover", comesButton); // тень кнопок навигации 
 pageNavigation.addEventListener("mouseout", leavesButton);
 function comesButton(e) {
     if (e.target.dataset.page == "boxShadow") {
@@ -190,6 +200,7 @@ function leavesButton(e) {
     }
     return 0;
 };
+
 function cordButton() {
     let widthBlock = document.querySelector('.createDivNew').offsetWidth;
     let widthPage = pageNavigation.offsetWidth;

@@ -1,4 +1,5 @@
 
+document.querySelector('.mainPageText').style.color = '#ff4000';
 // --------------- функция слайдера фото и точки меняют цвет ------------------------
 var stopSetTimeoutGo, i = -1, sliderDot;
 function movementFotoMain() {
