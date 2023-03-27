@@ -170,24 +170,6 @@ def();
 
 function customerСhoice(e) {
 
-    if (e.target.className === 'mainSliderTextButton') {
-        if (nameOrder == null) {
-            iBasket = 0;
-            nameOrder = '';
-            src = '';
-            priceProduct = '';
-        }
-        src = src + (e.target.parentNode.querySelector('.mainSliderFoto').getAttribute('src') + ',');
-        nameOrder = nameOrder + (e.target.parentNode.querySelector('.mainSliderText1').textContent + ',');
-        priceProduct = priceProduct + (e.target.parentNode.querySelector('.mainNewPrise').textContent + ',');
-        localStorage.setItem('nameOrder', nameOrder);
-        localStorage.setItem('priceProduct', priceProduct);
-        localStorage.setItem('src', src);
-        iBasket++;
-        sumProduct.innerHTML = iBasket;
-        localStorage.setItem('iBasket', iBasket);
-    }
-
     if (e.target.id === 'sliderMiniLiButton') {
 
         if (nameOrder == null) {
@@ -196,7 +178,7 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
-        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
+        src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
         localStorage.setItem('nameOrder', nameOrder);
