@@ -1,21 +1,21 @@
 
 var mas = [
     //                        фото                                      название. цена. вес.  
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Карибы', 300, 850],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Август', 500, 600],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Сырная', 850, 700],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Филадельфия', 350, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Овощная', 400, 500],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Салями', 450, 550],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Паприка', 500, 500],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Креветки', 350, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Анчоусы', 600, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Сыр паприка', 700, 750],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Мидии', 750, 650],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Фирменная', 800, 950],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Мясная', 600, 550],
-    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Грибы сыр', 500, 550],
-    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Грибная', 450, 500]
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Карибы', 300, 850],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Август', 500, 600],
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Сырная', 850, 700],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Филадельфия', 350, 550],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Овощная', 400, 500],
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Салями', 450, 550],
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Паприка', 500, 500],
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Креветки', 350, 550],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Анчоусы', 600, 550],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Сыр паприка', 700, 750],
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Мидии', 750, 650],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Фирменная', 800, 950],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Мясная', 600, 550],
+    ['../css/css.foto/1617186830_24-p-krasivaya-pitstsa-krasivo-31.jpg', 'Пица Грибы сыр', 500, 550],
+    ['../css/css.foto/1617186811_40-p-krasivaya-pitstsa-krasivo-48.jpg', 'Пица Грибная', 450, 500]
 ];
 function colorName() {
     let nameTitle = document.querySelectorAll('.menuButtonText');
@@ -48,6 +48,13 @@ createTwoMas();
 
 function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
+    let masName = localStorage.getItem('nameOrder'), label = 0;
+
+    if (masName === null || masName === '' || masName === ' ') {
+    } else {
+        masName = localStorage.getItem('nameOrder').split(',');
+        label = 1;
+    }
 
     for (let i = 0; i < 9; i++) {
         let newWraper = document.createElement('div');
@@ -58,6 +65,14 @@ function createCardProduct() {// создание карточки товара
         newWraper.querySelector('.productName').textContent = mas[i][1];
         newWraper.querySelector('.Thprices').textContent = mas[i][2];
         newWraper.querySelector('.productWeight').textContent = mas[i][3];
+
+        if (label === 1) {
+            for (let r = 0; r < masName.length; r++) {
+                if (mas[i][1] === masName[r]) {
+                    newWraper.querySelector('.literColor').textContent = 'В корзине';
+                }
+            }
+        }
     }
 
     let masString = [], stringNew = '';
@@ -318,6 +333,11 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') {
+            return 0;
+        }
+
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
@@ -327,6 +347,7 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине';
     }
     return 0;
 };
