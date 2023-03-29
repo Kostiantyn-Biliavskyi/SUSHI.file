@@ -5,7 +5,6 @@ body {
 }
 
 .block {
-    /* width: 100%; */
     width: 1510px;
     height: 2295px;
     position: relative;
@@ -1047,7 +1046,7 @@ option:checked {
     color: #F2F2F2;
 }
 
-#sliderMiniLiButton:hover {
+centerMain #sliderMiniLiButton:hover {
     background: #ff4000;
 }
 
@@ -1760,13 +1759,14 @@ option:checked {
 }
 
 .blockReview {
+    display: block;
     list-style: none;
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 100px;
+    top: 220px;
     width: 100%;
-    height: 100%;
+    height: 1000px;
     overflow: auto;
 }
 
@@ -1777,7 +1777,7 @@ option:checked {
 
 .nameUserReview {
     display: inline;
-    margin: 10px 20px 20px 10px;
+    margin: 10px 20px 20px 40px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -1799,7 +1799,7 @@ option:checked {
 }
 
 .textReview {
-    margin: 20px 0 0 10px;
+    margin: 20px 10px 0 20px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -1810,7 +1810,7 @@ option:checked {
     color: #000000;
 }
 
-page_2 .paranjaClass {
+.paranjaClass {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -1970,6 +1970,10 @@ page_2 .paranjaClass {
     transition: 0.2s;
 }
 
+#sliderMiniLiButton:hover {
+    background-color: #ff4000;
+}
+
 /* -------------------------- @ MEDIA --------------------------------- */
 @media screen and (max-width:1400px) {
     .block {
@@ -1994,3 +1998,57 @@ page_2 .paranjaClass {
     position: absolute;
     left: 7px;
 }
+
+/*------- review --------------*/
+.reviewsBlock {
+    width: 1510px;
+    height: 1500px;
+    position: relative;
+    left: 10%;
+}
+
+.centerMainReview {
+    position: absolute;
+    width: 1060px;
+    height: 1500px;
+    left: 180px;
+    top: 0px;
+    background: #ecebeb;
+}
+
+.centerMainLineBottomReview {
+    width: 950px;
+    height: 2px;
+    background-color: #A4ACAD;
+    position: absolute;
+    top: 1224px;
+    left: 55px;
+}
+
+.centerMainInfaReview {
+    width: 316px;
+    height: 247px;
+    position: absolute;
+    top: 1248px;
+    left: 55px;
+    border-right: 0.5px solid #A4ACAD;
+}
+
+.centerMainMesengerReview {
+    width: 316px;
+    height: 247px;
+    position: absolute;
+    top: 1248px;
+    left: 371px;
+}
+
+.centerMainTelefonReview {
+    width: 316px;
+    height: 247px;
+    position: absolute;
+    top: 1248px;
+    left: 687px;
+    border-left: 0.5px solid #A4ACAD;
+}
+
+/* -------------------------- */

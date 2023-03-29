@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100&display=swap');
 
 body {
-    background-color: aqua;
+    background-color: rgb(189, 246, 246);
 }
 
 .blockFormHed {
@@ -16,6 +16,9 @@ body {
     cursor: pointer;
     top: calc(50% - 11px);
     left: 20px;
+    background-color: #cfcece;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
 }
 
 .formBackСircle {
@@ -24,7 +27,7 @@ body {
     border-radius: 10px;
     background-color: #FF9846;
     position: absolute;
-    top: 2px;
+    top: 5px;
 }
 
 .formBackTrigle {
@@ -141,20 +144,14 @@ a {
     margin-top: 5px;
 }
 
-#clearBlock {
-    width: 50px;
-    height: 50px;
-    background-color: aqua;
-}
-
 .blockSelectedProduct {
     width: 600px;
     height: 400px;
     position: absolute;
     top: -80px;
     left: 550px;
-    -webkit-user-select: none;
     /* отменяет выделение текста*/
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
@@ -363,6 +360,7 @@ a {
     background-color: #c0c6c7;
 }
 
+/* 333333333333333333333333333333333333333333333333333333333333333333333333 */
 .quantity {
     width: 35px;
     height: 32px;
@@ -378,6 +376,12 @@ a {
     display: inline-block;
     border: none;
     cursor: pointer;
+    /* отменяет выделение текста*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .priceProduct {
@@ -464,6 +468,7 @@ a {
     color: #000000;
 }
 
+sumOrderNumber
 /* ------------------------ form --------------------- */
 
 .blockForm {
@@ -472,6 +477,11 @@ a {
     background: #E5E5E5;
     position: relative;
     left: calc(50% - 600px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 @media (width <=1300px) {
