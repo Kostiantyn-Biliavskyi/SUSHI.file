@@ -360,7 +360,6 @@ a {
     background-color: #c0c6c7;
 }
 
-/* 333333333333333333333333333333333333333333333333333333333333333333333333 */
 .quantity {
     width: 35px;
     height: 32px;
@@ -376,12 +375,6 @@ a {
     display: inline-block;
     border: none;
     cursor: pointer;
-    /* отменяет выделение текста*/
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 
 .priceProduct {
@@ -468,13 +461,12 @@ a {
     color: #000000;
 }
 
-sumOrderNumber
 /* ------------------------ form --------------------- */
 
 .blockForm {
     width: 1200px;
     height: 600px;
-    background: #E5E5E5;
+    background-color: #E5E5E5;
     position: relative;
     left: calc(50% - 600px);
     -webkit-user-select: none;

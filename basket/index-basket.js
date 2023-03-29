@@ -221,7 +221,8 @@ function deleteBlock(e) {
     }
 
 };
-valuta.addEventListener('focus', function () {
+
+valuta.addEventListener('focus', function () { // снимает фокюс с input
     valuta.blur();
 });
 var iter = 0;
@@ -270,7 +271,7 @@ form.addEventListener('submit', function (e) {
         }
     }
 });
-
+valuta
 function numberExam() {
     alert('Укажите номер телефона');
 };
