@@ -1,14 +1,14 @@
 var mas = [
     //                        фото.                                      название. цена. вес.  
-    ['../../css/css.foto/big-big.png', 'Саломон', 600, 850],
-    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Якудза', 500, 700],
-    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Филодельфия с лососем', 850, 1200],
-    ['../../css/css.foto/big-big.png', 'Филадельфия с угрём', 350, 550],
-    ['../../css/css.foto/big-big.png', 'Камикадзе', 1000, 900],
-    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Филадельфия топ', 450, 550],
-    ['../../css/css.foto/big-big.png', 'Филадельфия сёмга', 800, 1100],
-    ['../../css/css.foto/big-big.png', 'Креветки', 350, 550],
-    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Анчоусы', 600, 550],
+    ['../../css/css.foto/big-big.png', 'Сет Саломон', 600, 850],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Сет Якудза', 500, 700],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Сет Филодельфия с лососем', 850, 1200],
+    ['../../css/css.foto/big-big.png', 'Сет Филадельфия с угрём', 350, 550],
+    ['../../css/css.foto/big-big.png', 'Сет Камикадзе', 1000, 900],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Сет Филадельфия топ', 450, 550],
+    ['../../css/css.foto/big-big.png', 'Сет Филадельфия сёмга', 800, 1100],
+    ['../../css/css.foto/big-big.png', 'Сет Креветки', 350, 550],
+    ['../../css/css.foto/assortments-sushi-with-sticks-top-view.jpg', 'Сет Анчоусы', 600, 550],
 ];
 function colorName() {
     let nameTitle = document.querySelectorAll('.menuButtonText');
@@ -42,6 +42,13 @@ createTwoMas();
 function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
 
+    let masName = localStorage.getItem('nameOrder'), label = 0;// изменения текста "Хочу"
+    if (masName === null || masName === '' || masName === ' ') {
+    } else {
+        masName = localStorage.getItem('nameOrder').split(',');
+        label = 1;
+    }
+
     for (let i = 0; i < 9; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
@@ -53,6 +60,14 @@ function createCardProduct() {// создание карточки товара
         newWraper.querySelector('.productName').textContent = mas[i][1];
         newWraper.querySelector('.Thprices').textContent = mas[i][2];
         newWraper.querySelector('.productWeight').textContent = mas[i][3];
+
+        if (label === 1) { // изменения текста "Хочу"
+            for (let r = 0; r < masName.length; r++) {
+                if (mas[i][1] === masName[r]) {
+                    newWraper.querySelector('.literColor').textContent = 'В корзине';
+                }
+            }
+        }
     }
 
     let masString = [], stringNew = '';
@@ -314,6 +329,11 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') { // изменения текста "Хочу"
+            return 0;
+        }
+
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
@@ -323,6 +343,7 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине'; // изменения текста "Хочу"
     }
     return 0;
 };

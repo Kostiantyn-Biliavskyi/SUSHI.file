@@ -1,17 +1,17 @@
 var mas = [
     //                        фото.                                                         название. цена. вес.  
-    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Фруктовый', 380, 250],
-    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Цезарь', 400, 350],
-    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Весенний', 250, 300],
-    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Оливье', 180, 350],
-    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Камикадзе', 300, 250],
-    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Клубничный', 350, 450],
-    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Зелень ветчина', 300, 350],
-    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Креветками', 390, 350],
-    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Анчоусы', 350, 250],
-   ];
-   
-   function colorName() {
+    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Суп Фруктовый', 380, 250],
+    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Суп Цезарь', 400, 350],
+    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Суп Весенний', 250, 300],
+    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Суп Оливье', 180, 350],
+    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Суп Камикадзе', 300, 250],
+    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Суп Клубничный', 350, 450],
+    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Суп Зелень ветчина', 300, 350],
+    ['../../css/css.foto/Soups_Vegetables_Lime_Plate_Chopsticks_Spoon_609269_1280x853.jpg', 'Суп Креветками', 390, 350],
+    ['../../css/css.foto/Soups_Bread_Borscht_Plate_Spoon_569890_1280x853.jpg', 'Суп Анчоусы', 350, 250],
+];
+
+function colorName() {
     let nameTitle = document.querySelectorAll('.menuButtonText');
     for (let key = 0; key < nameTitle.length; key++) {
         if (nameTitle[key].dataset.product === 'soup') {
@@ -19,10 +19,10 @@ var mas = [
         }
     }
     page_1.className = 'pageColor';
-   };
-   colorName();
-   
-   function createTwoMas() {
+};
+colorName();
+
+function createTwoMas() {
     let masTwo = [];
     if (sessionStorage.getItem('masSoupSort') != null) {
         masTwo = sessionStorage.getItem('masSoupSort').split(';');
@@ -30,41 +30,55 @@ var mas = [
             mas[i] = [];// объявление двумерного массива
             let superMas = [];
             superMas = masTwo[i].split(',');
-   
+
             for (let a = 0; a < 4; a++) {
                 mas[i][a] = superMas[a];
             }
         }
     }
     createCardProduct();
-   };
-   createTwoMas();
-   
-   function createCardProduct() {// создание карточки товара
+};
+createTwoMas();
+
+function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
-   
+
+    let masName = localStorage.getItem('nameOrder'), label = 0; // изменения текста "Хочу"
+    if (masName === null || masName === '' || masName === ' ') {
+    } else {
+        masName = localStorage.getItem('nameOrder').split(',');
+        label = 1;
+    }
+
     for (let i = 0; i < 9; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
         xDiv.append(newWraper);
-   
+
         newWraper.append(templatePizza.content.cloneNode(true));
-   
+
         newWraper.querySelector('.sliderMiniLiFoto').src = mas[i][0];
         newWraper.querySelector('.productName').textContent = mas[i][1];
         newWraper.querySelector('.Thprices').textContent = mas[i][2];
         newWraper.querySelector('.productWeight').textContent = mas[i][3];
+        if (label === 1) { // изменения текста "Хочу"
+            for (let r = 0; r < masName.length; r++) {
+                if (mas[i][1] === masName[r]) {
+                    newWraper.querySelector('.literColor').textContent = 'В корзине';
+                }
+            }
+        }
     }
-   
+
     let masString = [], stringNew = '';
     for (let x = 0; x < mas.length; x++) {
         masString[x] = mas[x][0] + ',' + mas[x][1] + ',' + mas[x][2] + ',' + mas[x][3];
     }
     stringNew = masString.join(';');
     sessionStorage.setItem('masSoup', stringNew);
-   };
-   
-   function sortPrise() {// сорт дороже
+};
+
+function sortPrise() {// сорт дороже
     let masSort = [], bufer;
     for (let i = 0; i < mas.length; i++) {
         masSort[i] = mas[i][2];
@@ -85,9 +99,9 @@ var mas = [
     let masString = mas.join(';');
     sessionStorage.setItem('masSoupSort', masString);
     createTwoMas();
-   };
-   
-   function sortPriseСheap() {// сорт дешевле
+};
+
+function sortPriseСheap() {// сорт дешевле
     let masSort = [], bufer;
     for (let i = 0; i < mas.length; i++) {
         masSort[i] = mas[i][2];
@@ -107,9 +121,9 @@ var mas = [
     let masString = mas.join(';');
     sessionStorage.setItem('masSoupSort', masString);
     createTwoMas();
-   };
-   
-   function sortWeight() {// сорт вес
+};
+
+function sortWeight() {// сорт вес
     let masSort = [], bufer;
     for (let i = 0; i < mas.length; i++) {
         masSort[i] = mas[i][3];
@@ -130,9 +144,9 @@ var mas = [
     let masString = mas.join(';');
     sessionStorage.setItem('masSoupSort', masString);
     createTwoMas();
-   };
-   
-   function sortName() { // сорт по названию
+};
+
+function sortName() { // сорт по названию
     let masSort = [], bufer;
     for (let i = 0; i < mas.length; i++) {
         masSort[i] = mas[i][1];
@@ -152,17 +166,17 @@ var mas = [
     let masString = mas.join(';');
     sessionStorage.setItem('masSoupSort', masString);
     createTwoMas();
-   };
-   function deleteDiv() { // удаляет все карточки
+};
+function deleteDiv() { // удаляет все карточки
     let xDiv = document.querySelectorAll('.wraper');
     for (let i = 0; i < xDiv.length; i++) {
         xDiv[i].remove();
     }
-   };
-   document.addEventListener('click', sortProduct);
-   
-   function sortProduct(e) {
-   
+};
+document.addEventListener('click', sortProduct);
+
+function sortProduct(e) {
+
     switch (e.target.id) {
         case 'sortExpensive':
             deleteDiv();
@@ -183,34 +197,34 @@ var mas = [
         default:
             break;
     }
-   };
-   pageNavigation.addEventListener("mouseover", comesButton);
-   pageNavigation.addEventListener("mouseout", leavesButton);
-   function comesButton(e) {
+};
+pageNavigation.addEventListener("mouseover", comesButton);
+pageNavigation.addEventListener("mouseout", leavesButton);
+function comesButton(e) {
     if (e.target.dataset.page == "boxShadow") {
         e.target.style.boxShadow = "0px 0px 3px 2px darkgrey";
     }
     return 0;
-   };
-   function leavesButton(e) {
+};
+function leavesButton(e) {
     if (e.target.dataset.page == "boxShadow") {
         e.target.style.boxShadow = "0px 0px 0px 0px";
     }
     return 0;
-   };
-   function cordButton() {
+};
+function cordButton() {
     let widthBlock = document.querySelector('.createDivNew').offsetWidth;
     let widthPage = pageNavigation.offsetWidth;
     widthBlock = widthBlock / 2;
     widthPage = widthPage / 2;
     widthPage = widthBlock - widthPage;
     pageNavigation.style.left = widthPage + 'px';
-   }
-   cordButton();
-   
-   // ------------------------------------------------------------
-   function textOpeningBlock() {
-   
+}
+cordButton();
+
+// ------------------------------------------------------------
+function textOpeningBlock() {
+
     blockTextAnotaciyaButton.addEventListener("click", textOpening);
     var AnotaciyaButtonI = 0;
     function textOpening() {
@@ -223,7 +237,7 @@ var mas = [
             document.querySelector(".blockTextAnotaciyaLi3").style.opacity = 1;
             document.querySelector(".blockTextAnotaciyaTrigle").style.transform = "rotate(-315deg)";
             document.querySelector(".blockTextAnotaciyaTrigle").style.top = 10 + "px";
-   
+
         } else {
             AnotaciyaButtonI = 0;
             document.querySelector(".blockTextAnotaciya").style.height = 270 + "px";
@@ -236,15 +250,15 @@ var mas = [
         }
     };
     return 0;
-   };
-   textOpeningBlock();
-   // ---------------------------------------------------------
-   var cityTarget = document.querySelector(".selectSity");
-   
-   cityTarget.addEventListener("click", citySelection);
-   
-   function citySelection(e) {
-   
+};
+textOpeningBlock();
+// ---------------------------------------------------------
+var cityTarget = document.querySelector(".selectSity");
+
+cityTarget.addEventListener("click", citySelection);
+
+function citySelection(e) {
+
     switch (e.target.value) {
         case 'Харьков':
             kharkiv.style.display = "block";
@@ -272,26 +286,26 @@ var mas = [
             break;
     };
     return 0;
-   };
-   // -----------------------------------------------------------
-   
-   sortingProduct.addEventListener("mouseover", menuSortingOpen);
-   sortingProduct.addEventListener("mouseout", menuSortingClose);
-   function menuSortingOpen() {
+};
+// -----------------------------------------------------------
+
+sortingProduct.addEventListener("mouseover", menuSortingOpen);
+sortingProduct.addEventListener("mouseout", menuSortingClose);
+function menuSortingOpen() {
     menuSort.style.display = "block";
-   };
-   function menuSortingClose() {
+};
+function menuSortingClose() {
     menuSort.style.display = "none";
-   };
-   
-   // -------------------------------------------------------------------
-   window.addEventListener("click", customerСhoice);
-   var nameOrder = '', priceProduct = '', src = '';
-   var iBasket = 0;
-   
-   localStorage.setItem('examination', nameOrder);
-   
-   function def() {
+};
+
+// -------------------------------------------------------------------
+window.addEventListener("click", customerСhoice);
+var nameOrder = '', priceProduct = '', src = '';
+var iBasket = 0;
+
+localStorage.setItem('examination', nameOrder);
+
+function def() {
     iBasket = localStorage.getItem('iBasket');
     if (iBasket == 0) {
         sumProduct.innerHTML = '';
@@ -301,19 +315,24 @@ var mas = [
     nameOrder = localStorage.getItem('nameOrder');
     src = localStorage.getItem('src');
     priceProduct = localStorage.getItem('priceProduct');
-   };
-   def();
-   
-   function customerСhoice(e) {
-   
+};
+def();
+
+function customerСhoice(e) {
+
     if (e.target.id === 'sliderMiniLiButton') {
-   
+
         if (nameOrder == null) {
             iBasket = 0;
             nameOrder = '';
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') { // изменения текста "Хочу"
+            return 0;
+        }
+
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
@@ -323,32 +342,33 @@ var mas = [
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине'; // изменения текста "Хочу"
     }
     return 0;
-   };
-   // -------------------------------------------------------------
-   var clickButton = document.querySelector('.block');// в кнопке делает буквы черными
-   clickButton.addEventListener('click', function (e) {
+};
+// -------------------------------------------------------------
+var clickButton = document.querySelector('.block');// в кнопке делает буквы черными
+clickButton.addEventListener('click', function (e) {
     if (e.target.id == 'sliderMiniLiButton') {
         let paren = e.target.parentElement;
         paren.querySelector('.literColor').style.color = "#000000";
         setTimeout(() => paren.querySelector('.literColor').style.color = '#F2F2F2', 100);
     }
-   
+
     if (e.target.className == 'mainSliderTextButton') {
         let paren = e.target.parentElement;
         paren.querySelector('.mainSliderTextButton').style.color = "#000000";
         setTimeout(() => paren.querySelector('.mainSliderTextButton').style.color = '#F2F2F2', 100);
     }
-   });
-   // ------------------------------------------------------------
-   menu.addEventListener('click', function (e) {// при клике в меню делает бакграунд серам.выделяет клик
+});
+// ------------------------------------------------------------
+menu.addEventListener('click', function (e) {// при клике в меню делает бакграунд серам.выделяет клик
     e.target.closest('.menuButton').style.backgroundColor = '#ebe8e8';
     setTimeout(() => e.target.closest('.menuButton').style.backgroundColor = '', 150);
-   });
-   // -------------------------------------------------------------
-   jQuery(function ($) {
+});
+// -------------------------------------------------------------
+jQuery(function ($) {
     $("#telUser").mask("+380( 99 ) 999 99 99");
-   });
-   
+});
+
    // ------------------------------------------------------------

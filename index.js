@@ -279,6 +279,56 @@ function def() {
     nameOrder = localStorage.getItem('nameOrder');
     src = localStorage.getItem('src');
     priceProduct = localStorage.getItem('priceProduct');
+
+    var masName = [], label = 0, classMas, typ, classMasMini, classMasMini2;
+    classMas = mainSliderUl.querySelectorAll('.mainSliderLi');
+    classMasMini = sliderMiniUl1.querySelectorAll('.sliderMiniLi');
+    classMasMini2 = sliderMiniUl2.querySelectorAll('.sliderMiniLi');
+
+    if (nameOrder === null || nameOrder === '' || nameOrder === ' ') {
+    } else {
+        masName = localStorage.getItem('nameOrder').split(',');
+        label = 1;
+    }
+
+    if (label === 1) {
+        for (let i = 0; i < classMas.length; i++) {
+            typ = classMas[i].querySelectorAll('.mainSliderText1');
+
+            for (let ix = 0; ix < typ.length; typ++) {
+                for (let r = 0; r < masName.length; r++) {
+                    if (typ[ix].textContent === masName[r]) {
+                        classMas[i].querySelector('.mainSliderTextButton').textContent = 'В корзине';
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i < classMasMini.length; i++) {
+            typ = classMasMini[i].querySelectorAll('.sliderMiniLiTextName');
+
+            for (let ix = 0; ix < typ.length; typ++) {
+                for (let r = 0; r < masName.length; r++) {
+                    if (typ[ix].textContent === masName[r]) {
+                        classMasMini[i].querySelector('.literColor').textContent = 'В корзине';
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i < classMasMini2.length; i++) {
+            typ = classMasMini2[i].querySelectorAll('.sliderMiniLiTextName');
+
+            for (let ix = 0; ix < typ.length; typ++) {
+                for (let r = 0; r < masName.length; r++) {
+                    if (typ[ix].textContent === masName[r]) {
+                        classMasMini2[i].querySelector('.literColor').textContent = 'В корзине';
+                    }
+                }
+            }
+        }
+    }
+
 };
 def();
 
@@ -291,6 +341,11 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') {
+            return 0;
+        }
+
         src = src + '../' + (e.target.parentNode.querySelector('.mainSliderFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.mainSliderText1').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.mainNewPrise').textContent + ',');
@@ -300,6 +355,8 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине';
+
     }
 
     if (e.target.id === 'sliderMiniLiButton') {
@@ -310,6 +367,11 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') {
+            return 0;
+        }
+
         src = src + '../' + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src') + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
@@ -319,6 +381,7 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине';
     }
     return 0;
 };

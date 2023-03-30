@@ -66,6 +66,16 @@ function clickCloseForm() {
     paranjaForm.style.display = "none";
     return 0;
 };
+// -------------------------------------------------------
+function def() {
+    iBasket = localStorage.getItem('iBasket'); // козина изменяет количество
+    if (iBasket == 0) {
+        sumProduct.innerHTML = '';
+    } else {
+        sumProduct.innerHTML = iBasket;
+    }
+};
+def();
 
 // -----------------------------------------------------------
 menu.addEventListener('click', function (e) { // при клике в меню делает бакграунд серам.выделяет клик

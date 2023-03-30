@@ -26,8 +26,15 @@ createTwoMas();
 
 createCardProduct();
 function createCardProduct() {// создание карточки товара
-
     let xDiv = document.querySelector('.createDivNew');
+
+    let masName = localStorage.getItem('nameOrder'), label = 0; // изменения текста "Хочу"
+    if (masName === null || masName === '' || masName === ' ') {
+    } else {
+        masName = localStorage.getItem('nameOrder').split(',');
+        label = 1;
+    }
+
     for (let i = 18; i < masTwo.length; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
@@ -37,6 +44,15 @@ function createCardProduct() {// создание карточки товара
         newWraper.querySelector('.productName').textContent = masTwo[i][1];
         newWraper.querySelector('.Thprices').textContent = masTwo[i][2];
         newWraper.querySelector('.productWeight').textContent = masTwo[i][3];
+
+        if (label === 1) { // изменения текста "Хочу"
+            for (let r = 0; r < masName.length; r++) {
+                if (masTwo[i][1] === masName[r]) {
+                    newWraper.querySelector('.literColor').textContent = 'В корзине';
+                }
+            }
+        }
+
     }
 };
 
@@ -178,6 +194,11 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') { // изменения текста "Хочу"
+            return 0;
+        }
+
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
@@ -187,6 +208,7 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине'; // изменения текста "Хочу"
     }
     return 0;
 };

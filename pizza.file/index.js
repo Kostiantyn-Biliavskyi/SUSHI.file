@@ -48,8 +48,8 @@ createTwoMas();
 
 function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
-    let masName = localStorage.getItem('nameOrder'), label = 0;
 
+    let masName = localStorage.getItem('nameOrder'), label = 0; // изменения текста "Хочу"
     if (masName === null || masName === '' || masName === ' ') {
     } else {
         masName = localStorage.getItem('nameOrder').split(',');
@@ -66,7 +66,7 @@ function createCardProduct() {// создание карточки товара
         newWraper.querySelector('.Thprices').textContent = mas[i][2];
         newWraper.querySelector('.productWeight').textContent = mas[i][3];
 
-        if (label === 1) {
+        if (label === 1) { // изменения текста "Хочу"
             for (let r = 0; r < masName.length; r++) {
                 if (mas[i][1] === masName[r]) {
                     newWraper.querySelector('.literColor').textContent = 'В корзине';
@@ -292,8 +292,6 @@ function citySelection(e) {
     return 0;
 };
 // -----------------------------------------------------------
-
-// sortingProduct.addEventListener("click", sortProduct);
 sortingProduct.addEventListener("mouseover", menuSortingOpen);
 sortingProduct.addEventListener("mouseout", menuSortingClose);
 function menuSortingOpen() {
@@ -334,7 +332,7 @@ function customerСhoice(e) {
             priceProduct = '';
         }
 
-        if (e.target.innerHTML != 'Хочу') {
+        if (e.target.innerHTML != 'Хочу') { // изменения текста "Хочу"
             return 0;
         }
 
@@ -347,7 +345,7 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
-        e.target.innerHTML = 'В корзине';
+        e.target.innerHTML = 'В корзине'; // изменения текста "Хочу"
     }
     return 0;
 };

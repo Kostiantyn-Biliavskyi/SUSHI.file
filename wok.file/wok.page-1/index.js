@@ -1,14 +1,14 @@
 var mas = [
     //                        фото.                                      название. цена. вес.  
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Саломон', 600, 850],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Якудза', 500, 700],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филодельфия с лососем', 850, 1200],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия с угрём', 350, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Камикадзе', 1000, 900],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Филадельфия топ', 450, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Филадельфия сёмга', 800, 1100],
-    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Креветки', 350, 550],
-    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Анчоусы', 600, 550],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Wok Саломон', 600, 850],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Wok Якудза', 500, 700],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Wok Филодельфия с лососем', 850, 1200],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Wok Филадельфия с угрём', 350, 550],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Wok Камикадзе', 1000, 900],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Wok Филадельфия топ', 450, 550],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Wok Филадельфия сёмга', 800, 1100],
+    ['../../css/css.foto/schezwan-or-szechwan-hakka-noodles-with-paneer-or-cottage-cheese-served-in-a-bowl-selective-focus.jpg', 'Wok Креветки', 350, 550],
+    ['../../css/css.foto/top-view-of-delicious-noodles-concept.jpg', 'Wok Анчоусы', 600, 550],
 ];
 function colorName() {
     let nameTitle = document.querySelectorAll('.menuButtonText');
@@ -42,6 +42,13 @@ createTwoMas();
 function createCardProduct() {// создание карточки товара
     let xDiv = document.querySelector('.createDivNew');
 
+    let masName = localStorage.getItem('nameOrder'), label = 0; // изменения текста "Хочу"
+    if (masName === null || masName === '' || masName === ' ') {
+    } else {
+        masName = localStorage.getItem('nameOrder').split(',');
+        label = 1;
+    }
+
     for (let i = 0; i < 9; i++) {
         let newWraper = document.createElement('div');
         newWraper.className = 'wraper';
@@ -53,6 +60,14 @@ function createCardProduct() {// создание карточки товара
         newWraper.querySelector('.productName').textContent = mas[i][1];
         newWraper.querySelector('.Thprices').textContent = mas[i][2];
         newWraper.querySelector('.productWeight').textContent = mas[i][3];
+
+        if (label === 1) { // изменения текста "Хочу"
+            for (let r = 0; r < masName.length; r++) {
+                if (mas[i][1] === masName[r]) {
+                    newWraper.querySelector('.literColor').textContent = 'В корзине';
+                }
+            }
+        }
     }
 
     let masString = [], stringNew = '';
@@ -314,6 +329,11 @@ function customerСhoice(e) {
             src = '';
             priceProduct = '';
         }
+
+        if (e.target.innerHTML != 'Хочу') { // изменения текста "Хочу"
+            return 0;
+        }
+
         src = src + (e.target.parentNode.querySelector('.sliderMiniLiFoto').getAttribute('src').substring(3) + ',');
         nameOrder = nameOrder + (e.target.parentNode.querySelector('.sliderMiniLiTextName').textContent + ',');
         priceProduct = priceProduct + (e.target.parentNode.querySelector('.Thprices').textContent + ',');
@@ -323,6 +343,7 @@ function customerСhoice(e) {
         iBasket++;
         sumProduct.innerHTML = iBasket;
         localStorage.setItem('iBasket', iBasket);
+        e.target.innerHTML = 'В корзине'; // изменения текста "Хочу"
     }
     return 0;
 };
